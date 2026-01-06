@@ -15,6 +15,7 @@ header {
     text-align: center;
     top: 0;
     font-size: 0.75rem;
+    font-family: v.$font-secondary;
     justify-content: space-around;
     padding: 0.8em 0.8em;
     color: v.$white;
@@ -40,8 +41,8 @@ header {
       align-items: center;
       font-family: Fredoka, sans-serif;
 
-      .fa-bars {
-        font-size: 1.1rem;
+      .hamburger-menu {
+        font-size: 1.2rem;
       }
     }
 
