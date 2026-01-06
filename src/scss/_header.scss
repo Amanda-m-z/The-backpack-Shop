@@ -1,3 +1,5 @@
+@use "variables" as v;
+
 * {
   margin: 0;
   padding: 0;
@@ -15,14 +17,15 @@ header {
     font-size: 0.75rem;
     justify-content: space-around;
     padding: 0.8em 0.8em;
-    background-color: blue;
+    color: v.$white;
+    background-color: v.$secondary;
   }
 
   .header {
     display: flex;
     flex-direction: row;
     padding: 0.75em 1em;
-    background-color: yellow;
+    background-color: v.$primary;
     justify-content: space-between;
     align-items: center;
 
