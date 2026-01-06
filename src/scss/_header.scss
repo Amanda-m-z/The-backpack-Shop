@@ -9,11 +9,11 @@ header {
   display: flex;
   flex-direction: column;
   gap: 0;
+  top: 0;
 
   .above-header {
     display: flex;
     text-align: center;
-    top: 0;
     font-size: 0.75rem;
     font-family: v.$font-secondary;
     justify-content: space-around;
