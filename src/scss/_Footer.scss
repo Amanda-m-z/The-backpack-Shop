@@ -1,13 +1,16 @@
+ @use "variables" as v;
+ /* Footer styling */
  .footer{
     background-color: $secondary;
     color: $white;
     padding: 24px 16px;
  }
-
+/* Inre wrapper */
  .footer-inner-content{
     max-width: 480px;
     margin: 0 auto;
 
+/* logo */
    .logo{
     text-align: center;
     margin-bottom: 20px;
@@ -16,12 +19,13 @@
     margin-bottom: 20px;
      }
  }
-
+/* the columns */
  .colums{
     display: flex;
     flex-direction: column;
  }
 
+ /* inside the columns */
  .colums-content{
     h3{
         font-size: 15px;
@@ -56,6 +60,7 @@
     }
  }
 
+ /* Social icons */
  .social-icons{
     display: flex;
     justify-content: center;
@@ -73,6 +78,7 @@
 
         }
 
+    /* Payment icons */
 .payments{
     display: flex;
     justify-content: center;
