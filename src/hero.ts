@@ -1,4 +1,4 @@
-const heroButton = document.getElementById(
+export const heroButton = document.getElementById(
   "hero-cta"
 ) as HTMLButtonElement | null;
 
