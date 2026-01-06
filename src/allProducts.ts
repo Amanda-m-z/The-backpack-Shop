@@ -1,4 +1,7 @@
+import { Backpack } from "./Backpack";
+
 const allProdcust: Backpack[] = [];
+
 
 //Frilufts-ryggsäckar
 allProdcust.push(new Backpack("Friluft", 1099, 20, "Friluft 1", "backpacks/friluft/friluft1.webp", "mint"));
