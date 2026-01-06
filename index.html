@@ -1,83 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>the-webshop-template</title>
+    <!-- icons from fontawsome -->
+    <script
+      src="https://kit.fontawesome.com/b2d9bcb346.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>the-webshop-template</title>
-  <!-- icons from fontawsome -->
-  <script src="https://kit.fontawesome.com/b2d9bcb346.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-  <header>
-    <div class="above-header">
-      <p>Fri frakt över 599 kr</p>
-    </div>
-
-    <div class="header">
-      <div class="header-left-side">
-        <i class="hamburger-menu fa-solid fa-bars"></i>
-        <h2>Pac Bac</h2>
+  <body>
+    <!-- Header starts here -->
+    <header>
+      <!-- Small banner above the main header -->
+      <div class="above-header">
+        <p>Fri frakt över 599 kr</p>
       </div>
 
-      <div class="search-container">
-        <input class="search-field" type="search" placeholder="Sök produkt" />
+      <!-- Main header -->
+      <div class="header">
+        <div class="header-left-side">
+          <!-- Hamburger menu -->
+          <i class="hamburger-menu fa-solid fa-bars"></i>
 
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </div>
-
-      <div class="header-right-side">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <i class="fa-solid fa-user"></i>
-        <i class="fa-solid fa-heart"></i>
-        <i class="fa-solid fa-cart-shopping"></i>
-      </div>
-    </div>
-
-    <div class="under-header">
-      <div class="under-header-left-side">
-        <a href="">Nyheter</a>
-
-        <a href="">Bästsäljare</a>
-
-        <div class="drop-down-category">
-          <a href="">Ryggsäckar</a>
-          <i class="fa-solid fa-chevron-down"></i>
+          <!-- Brand name -->
+          <h2>Pac Bac</h2>
         </div>
 
-        <div class="drop-down-category">
-          <a href="">Accessoarer</a>
-          <i class="fa-solid fa-chevron-down"></i>
+        <!-- Search container will be shown on larger screens -->
+        <div class="search-container">
+          <input class="search-field" type="search" placeholder="Sök produkt" />
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+
+        <div class="header-right-side">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-solid fa-user"></i>
+          <i class="fa-solid fa-heart"></i>
+          <i class="fa-solid fa-cart-shopping"></i>
         </div>
       </div>
 
-      <div class="under-header-right-side">
-        <a href="">Om oss</a>
+      <!-- Categories that will be shown on larger screens -->
+      <div class="under-header">
+        <div class="under-header-left-side">
+          <a href="">Nyheter</a>
 
-        <a href="">Hållbarhet</a>
+          <a href="">Bästsäljare</a>
 
-        <a href="">Kontakta oss</a>
+          <div class="drop-down-category">
+            <a href="">Ryggsäckar</a>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+
+          <div class="drop-down-category">
+            <a href="">Accessoarer</a>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+        </div>
+
+        <div class="under-header-right-side">
+          <a href="">Om oss</a>
+
+          <a href="">Hållbarhet</a>
+
+          <a href="">Kontakta oss</a>
+        </div>
       </div>
+    </header>
+    <!-- Header ends here -->
+
+    <div id="app">
+      <section class="hero">
+        <img
+          src="images/hero_image.jpg"
+          alt="Ryggsäck för äventyr"
+          class="hero__image"
+        />
+
+        <div class="hero__content">
+          <h1 class="hero__title">Bär ditt liv med stil och komfort</h1>
+
+          <button id="hero-cta" class="hero__button">
+            Utforska ryggsäckar
+          </button>
+        </div>
+      </section>
     </div>
-  </header>
+    <script type="module" src="./src/main.ts"></script>
 
-  <div id="app">
-    <section class="hero">
-      <img src="images/hero_image.jpg" alt="Ryggsäck för äventyr" class="hero__image" />
-
-      <div class="hero__content">
-        <h1 class="hero__title">Bär ditt liv med stil och komfort</h1>
-
-        <button id="hero-cta" class="hero__button">
-          Utforska ryggsäckar
-        </button>
-      </div>
-    </section>
-  </div>
-  <script type="module" src="./src/main.ts"></script>
-
-  <footer id="Footer"></footer>
-</body>
-
+    <footer id="Footer"></footer>
+  </body>
 </html>
