@@ -26,6 +26,11 @@ export const createHTML = (allProducts: Backpack[]) => {
     buttonBuy.innerHTML = "BUY"
     buttonBuy.className = "buttonBuy";
 
+    imgContainer.addEventListener("click", () => {
+    
+    });
+
+
     imgContainer.appendChild(img);
     productContainer.appendChild(imgContainer);
     extraInfo.appendChild(name);
@@ -34,9 +39,6 @@ export const createHTML = (allProducts: Backpack[]) => {
     productContainer.appendChild(extraInfo);
     productsDiv?.appendChild(productContainer);
     
-
-
-        
     });
 
 }
