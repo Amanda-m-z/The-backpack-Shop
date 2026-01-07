@@ -1,4 +1,5 @@
 import type { Backpack } from "./Backpack";
+import { openOneProduct } from "./openOneProduct";
 
 export const createHTML = (allProducts: Backpack[]) => {
 
@@ -27,7 +28,11 @@ export const createHTML = (allProducts: Backpack[]) => {
     buttonBuy.className = "buttonBuy";
 
     imgContainer.addEventListener("click", () => {
-    
+       openOneProduct(item);
+    });
+
+    name.addEventListener("click", () => {
+       openOneProduct(item);
     });
 
 
