@@ -1,6 +1,6 @@
  @use "variables" as v;
  /* Footer styling */
- .footer{
+ .footern{
     background-color: v.$secondary;
     color: v.$white;
     padding: 24px 16px;
@@ -14,22 +14,22 @@
    .logo{
     text-align: center;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: v.$h3-sm;
     font-weight: 700;
-    margin-bottom: 20px;
+    font-family: v.$font-primary;
+
      }
  }
 /* the columns */
- .colums{
+ .columns{
     display: flex;
     flex-direction: column;
  }
 
  /* inside the columns */
- .colums-content{
+ .columns-content{
     h3{
-        font-size: 15px;
-        font-weight: 600;
+        font-size: v.$h4-sm;;
         padding: 16px 0;
         margin: 0;
         border-bottom: 1px solid v.$light-grey;
@@ -43,19 +43,26 @@
 
         li{
             padding: 12px 0;
-            border-bottom: 1px solid v.$light-grey;
+            
         }
 
     }
     a{
-        text-decoration: none;
+        
         color: v.$white;
-        font-size: 14px;
+        font-size: v.$paragraph-size;
+        display: inline-block;
+        font-family: v.$font-secondary;
         text-decoration: none;
-        display: block;
+         transition: border-color 0.3s ease;
+        
+       
 
         &:hover{
-           text-decoration: underline;
+          
+           border-bottom: solid 1px v.$white;
+            
+          
         }
     }
  }
@@ -66,7 +73,7 @@
     justify-content: center;
     margin-top: 32px;
     gap: 16px;
-    font-size: 15px;
+    font-size: v.$h3-sm;
     
 
     i{
@@ -90,8 +97,43 @@
         color: v.$secondary;
         padding: 8px;   
         border-radius: 4px;
-        font-size: 18px;
+        font-size: v.$h3-sm;
     }
     
 
+    }
+
+    @media (min-width: 834px) {
+        h3, li{
+            border-bottom: none;
+            padding: 0;
+
+        }
+        .columns{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+        .columns-content{
+            width: auto;
+        }
+        
+    }
+    @media (min-width:1440px) {
+        .footer-inner-content{
+            max-width: 1140px;
+            display: grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            align-items: start;
+
+        }
+        .columns-content{
+            width: 22%;
+        }
+
+        .logo{
+            text-align: left;
+            font-size: v.$h3-lg; ;
+        }
+        
     }
