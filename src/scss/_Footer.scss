@@ -31,6 +31,7 @@
     font-size: v.$h4-sm;
     padding: 16px 0;
     margin: 0;
+    color: v.$white;
     border-bottom: 1px solid v.$light-grey;
     text-transform: capitalize;
   }
@@ -74,6 +75,7 @@
 /* Payment icons */
 .payments {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin-top: 24px;
   gap: 2rem;
@@ -81,9 +83,9 @@
   i {
     background-color: v.$white;
     color: v.$secondary;
-    padding: 8px;
+    padding: 1px;
     border-radius: 4px;
-    font-size: v.$h3-sm;
+    font-size: v.$h5-sm;
   }
 }
 
@@ -116,5 +118,9 @@
   .logo {
     text-align: left;
     font-size: v.$h3-lg;
+  }
+.payments {
+      grid-column: 1 / -1;
+    justify-self: center;
   }
 }
