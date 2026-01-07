@@ -1,0 +1,51 @@
+@use "variables" as v;
+
+#overlay-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: fixed;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  background-color: v.$secondary;
+  z-index: 1000;
+  color: v.$white;
+  padding: 2rem 1rem;
+}
+
+.top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    color: v.$white;
+  }
+
+  .fa-xmark {
+    font-size: 1.5rem;
+  }
+}
+
+.categories-container {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    color: v.$white;
+    border-bottom: 0.125rem solid v.$divider;
+    padding: 1rem 1rem;
+  }
+}
+
+.drop-down-category {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  a {
+    width: 100%;
+  }
+}
