@@ -1,139 +1,120 @@
- @use "variables" as v;
- /* Footer styling */
- .footern{
-    background-color: v.$secondary;
-    color: v.$white;
-    padding: 24px 16px;
- }
+@use "variables" as v;
+/* Footer styling */
+.footern {
+  background-color: v.$secondary;
+  color: v.$white;
+  padding: 24px 16px;
+}
 /* Inre wrapper */
- .footer-inner-content{
-    max-width: 480px;
-    margin: 0 auto;
+.footer-inner-content {
+  max-width: 480px;
+  margin: 0 auto;
 
-/* logo */
-   .logo{
+  /* logo */
+  .logo {
     text-align: center;
     margin-bottom: 20px;
     font-size: v.$h3-sm;
     font-weight: 700;
-    font-family: v.$font-primary;
-
-     }
- }
+    font-family: v.$font-heading;
+  }
+}
 /* the columns */
- .columns{
-    display: flex;
-    flex-direction: column;
- }
+.columns {
+  display: flex;
+  flex-direction: column;
+}
 
- /* inside the columns */
- .columns-content{
-    h3{
-        font-size: v.$h4-sm;;
-        padding: 16px 0;
-        margin: 0;
-        border-bottom: 1px solid v.$light-grey;
-        text-transform: capitalize;
+/* inside the columns */
+.columns-content {
+  h3 {
+    font-size: v.$h4-sm;
+    padding: 16px 0;
+    margin: 0;
+    border-bottom: 1px solid v.$light-grey;
+    text-transform: capitalize;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
+    li {
+      padding: 12px 0;
     }
-    ul{
-            list-style: none;
-        padding: 0; 
-        margin: 0;
+  }
+  a {
+    color: v.$white;
+    font-size: v.$paragraph-size;
+    display: inline-block;
+    font-family: v.$font-body;
+    text-decoration: none;
+    transition: border-color 0.3s ease;
 
-        li{
-            padding: 12px 0;
-            
-        }
-
+    &:hover {
+      border-bottom: solid 1px v.$white;
     }
-    a{
-        
-        color: v.$white;
-        font-size: v.$paragraph-size;
-        display: inline-block;
-        font-family: v.$font-secondary;
-        text-decoration: none;
-         transition: border-color 0.3s ease;
-        
-       
+  }
+}
 
-        &:hover{
-          
-           border-bottom: solid 1px v.$white;
-            
-          
-        }
-    }
- }
+/* Social icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  gap: 16px;
+  font-size: v.$h3-sm;
 
- /* Social icons */
- .social-icons{
-    display: flex;
-    justify-content: center;
-    margin-top: 32px;
-    gap: 16px;
+  i {
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+}
+
+/* Payment icons */
+.payments {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  gap: 2rem;
+
+  i {
+    background-color: v.$white;
+    color: v.$secondary;
+    padding: 8px;
+    border-radius: 4px;
     font-size: v.$h3-sm;
-    
+  }
+}
 
-    i{
-        cursor: pointer;
-        transition: color 0.3s;
+@media (min-width: 834px) {
+  h3,
+  li {
+    border-bottom: none;
+    padding: 0;
+  }
+  .columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+  .columns-content {
+    width: auto;
+  }
+}
+@media (min-width: 1440px) {
+  .footer-inner-content {
+    max-width: 1141px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    align-items: start;
+  }
+  .columns-content {
+    width: 22%;
+  }
 
-        }
-        
-
-        }
-
-    /* Payment icons */
-.payments{
-    display: flex;
-    justify-content: center;
-    margin-top: 24px;
-    gap: 2rem;
-
-    i{
-        background-color: v.$white;
-        color: v.$secondary;
-        padding: 8px;   
-        border-radius: 4px;
-        font-size: v.$h3-sm;
-    }
-    
-
-    }
-
-    @media (min-width: 834px) {
-        h3, li{
-            border-bottom: none;
-            padding: 0;
-
-        }
-        .columns{
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 50px;
-        }
-        .columns-content{
-            width: auto;
-        }
-        
-    }
-    @media (min-width:1440px) {
-        .footer-inner-content{
-            max-width: 1141px;
-            display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            align-items: start;
-
-        }
-        .columns-content{
-            width: 22%;
-        }
-
-        .logo{
-            text-align: left;
-            font-size: v.$h3-lg; ;
-        }
-        
-    }
+  .logo {
+    text-align: left;
+    font-size: v.$h3-lg;
+  }
+}
