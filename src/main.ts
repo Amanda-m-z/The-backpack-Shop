@@ -1,4 +1,4 @@
-import { loadHeader } from "./loadHeader";
+import { loadHeader } from "./Ts/loadHeader";
 import "./scss/style.scss";
 const heroButton = document.getElementById(
   "hero-cta"
