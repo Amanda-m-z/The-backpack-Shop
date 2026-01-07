@@ -1,8 +1,8 @@
  @use "variables" as v;
  /* Footer styling */
  .footer{
-    background-color: $secondary;
-    color: $white;
+    background-color: v.$secondary;
+    color: v.$white;
     padding: 24px 16px;
  }
 /* Inre wrapper */
@@ -86,8 +86,8 @@
     gap: 2rem;
 
     i{
-        background-color: $white;
-        color: $secondary;
+        background-color: v.$white;
+        color: v.$secondary;
         padding: 8px;   
         border-radius: 4px;
         font-size: 18px;
