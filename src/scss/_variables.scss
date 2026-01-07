@@ -51,5 +51,10 @@ $very-small-text: 0.75rem;
 $button-font-size: 1rem;
 
 // Font family
-$font-primary: Fredoka, sans-serif;
-$font-secondary: Poppins, sans-serif;
+$font-heading: Fredoka, sans-serif;
+$font-body: Poppins, sans-serif;
+
+// Breakpoints
+$breakpoint-md: 567px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
