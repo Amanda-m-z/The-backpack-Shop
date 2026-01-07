@@ -1,5 +1,5 @@
-import type { Backpack } from "./Backpack";
-import { openOneProduct } from "./openOneProduct";
+import type { Backpack } from "./Backpack type/Backpack";
+import { openOneProduct } from "./OneProduct/openOneProduct";
 
 export const createHTML = (allProducts: Backpack[]) => {
 

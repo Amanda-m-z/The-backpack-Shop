@@ -45,3 +45,18 @@
   grid-template-columns: auto auto auto auto;
   }
 }
+
+.oneProductView {
+      border: 2px solid red;
+
+.oneProductImg {
+  height: 400px;
+  width: 400px;
+  
+    img {
+      width: 50%;
+      height: 50%;
+    }
+
+}
+}
