@@ -12,8 +12,7 @@ export const createHTMLOneProduct = () => {
 
     let oneBag:Backpack = JSON.parse(localStorage.getItem("TheBag") || '""');
     console.log("HÄR ÄR VARIABEL" + oneBag);
-
-    //const divOneItem = document.createElement("div"); 
+ 
     const imgContainer = document.createElement("div");
     const img = document.createElement("img");
     const extraInfo = document.createElement("div");

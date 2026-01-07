@@ -3,6 +3,13 @@ main  {
     
     margin: 4%;
 
+    .shoppingBag {
+        display: none;
+    }
+    .showCart {
+        display: block;
+        border: red 2px solid;
+    }
 #oneProductView {
       margin: auto;
       width: 70vw;

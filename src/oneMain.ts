@@ -1,9 +1,12 @@
 import { createHTMLOneProduct } from './OneProduct/productOneView';
+import { createCart } from './Shoppingbag/createCart';
 import './styleOne.scss' 
 
 
 createHTMLOneProduct();
 
 
+const theButtonCart = document.getElementById("temp");
 
-console.log("Hej Hej");
+theButtonCart?.addEventListener("click", createCart);
+
