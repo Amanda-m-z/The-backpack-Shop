@@ -1,9 +1,8 @@
 import { loadHeader } from "./Ts/loadHeader";
 import "./scss/style.scss";
-const heroButton = document.getElementById(
-  "hero-cta"
-) as HTMLButtonElement | null;
+const heroButton = document.getElementById("heroCta");
 
+<<<<<<< HEAD
 if (heroButton) {
   heroButton.addEventListener("click", () => {
     window.location.href = "/oneproduct.html";
@@ -18,3 +17,8 @@ if (header) {
 } else {
   console.error("Header element with the id 'headerContainer' not found");
 }
+=======
+heroButton?.addEventListener("click", () => {
+  window.location.href = "/oneproduct.html";
+});
+>>>>>>> feature-Hero-img
