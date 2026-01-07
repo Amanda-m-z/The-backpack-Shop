@@ -4,19 +4,31 @@ main  {
     margin: 4%;
 
 #oneProductView {
+      margin: auto;
+      width: 70vw;
       border: 2px solid green;
       display: flex;
 
-.oneProductImg {
-  height: 16rem;
-  width: 16rem;
+    .oneProductImg {
+     height: 32em;
+    width: 32em;
+    
   
     img {
       border: purple 2px solid;
       width: 100%;
       height: 100%;
     }
+    }
+    .sideInfo {
 
-}
+    padding: 20px;
+        h2 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 150%;
+        }
+    }
 }
 }
