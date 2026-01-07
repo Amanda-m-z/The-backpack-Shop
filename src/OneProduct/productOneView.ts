@@ -1,4 +1,5 @@
 import type { Backpack } from "../Backpack type/Backpack";
+import { addToCart, shoppingBag } from "../Shoppingbag/shoppingBag";
 
 
 export const createHTMLOneProduct = () => {
@@ -36,7 +37,10 @@ export const createHTMLOneProduct = () => {
     extraInfo.appendChild(color);
     extraInfo.appendChild(buttonBuy);
     oneProductView?.appendChild(extraInfo);
-    //oneProductView?.appendChild(divOneItem);
+    
+    buttonBuy.addEventListener("click", () => {
+    addToCart(oneBag);
+    });
 
     
 

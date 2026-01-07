@@ -1,5 +1,6 @@
 import type { Backpack } from "./Backpack type/Backpack";
 import { openOneProduct } from "./OneProduct/openOneProduct";
+import { addToCart } from "./Shoppingbag/shoppingBag";
 
 export const createHTML = (allProducts: Backpack[]) => {
 
@@ -8,7 +9,7 @@ export const createHTML = (allProducts: Backpack[]) => {
         productsDiv.innerHTML = "";
     }
 
-    allProducts.forEach((item) => {
+    allProducts.forEach((item, i) => {
 
     const productContainer = document.createElement("div");
     const imgContainer = document.createElement("div");
@@ -26,6 +27,10 @@ export const createHTML = (allProducts: Backpack[]) => {
     imgContainer.className = "imgContainer";
     buttonBuy.innerHTML = "BUY"
     buttonBuy.className = "buttonBuy";
+
+    buttonBuy.addEventListener("click", () => {
+    addToCart(item);
+    });
 
     imgContainer.addEventListener("click", () => {
        openOneProduct(item);
