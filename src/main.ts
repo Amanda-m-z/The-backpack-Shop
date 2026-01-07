@@ -16,5 +16,5 @@ const header = document.getElementById("headerContainer");
 if (header) {
   loadHeader();
 } else {
-  console.error("Header element not found");
+  console.error("Header element with the id 'headerContainer' not found");
 }
