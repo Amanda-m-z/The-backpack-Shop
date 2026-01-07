@@ -1,10 +1,6 @@
 import "./scss/style.scss";
-const heroButton = document.getElementById(
-  "hero-cta"
-) as HTMLButtonElement | null;
+const heroButton = document.getElementById("heroCta");
 
-if (heroButton) {
-  heroButton.addEventListener("click", () => {
-    window.location.href = "/oneproduct.html";
-  });
-}
+heroButton?.addEventListener("click", () => {
+  window.location.href = "/oneproduct.html";
+});
