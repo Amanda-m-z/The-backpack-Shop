@@ -28,6 +28,11 @@ a {
   font-weight: 500;
 }
 
+input {
+  font-family: v.$font-body;
+  font-size: v.$small-text;
+}
+
 ul {
   list-style: none;
 }

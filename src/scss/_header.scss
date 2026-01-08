@@ -43,6 +43,10 @@ header {
   .hamburger-menu {
     font-size: 1.2rem;
   }
+
+  h2 {
+    font-size: v.$h4-sm;
+  }
 }
 
 .header-right-side {
@@ -77,6 +81,16 @@ header {
       border-color: v.$grey;
       border-radius: v.$rounded-corner;
     }
+  }
+
+  .header-left-side {
+    h2 {
+      font-size: v.$h4-lg;
+    }
+  }
+
+  .header-right-side {
+    font-size: 1.5rem;
   }
 
   #under-header {
