@@ -1,5 +1,8 @@
 import { Backpack } from "../Backpack type/Backpack";
 import { addToCart } from "./addToCart";
+import { removeFromCart } from "./removeFromCart";
+import { theTotal } from "./theTotal";
+
 
 let shoppingBag: Backpack[] = [];
 
@@ -21,7 +24,6 @@ export const createCart = () => {
         shoppingBag = JSON.parse(theString);
     }
 
-    console.log(shoppingBag);
 
     const myCartHeading = document.createElement("h2");
     myCartHeading.innerHTML = "Min varukorg"
@@ -62,6 +64,10 @@ export const createCart = () => {
      addToCart(product);
     });
 
+    minusButton.addEventListener("click", () => {
+        removeFromCart(product);
+    })
+
     extraInfo.className = "extraInfo"
     img.src = product.img;
     name.innerHTML = product.name;
@@ -77,13 +83,23 @@ export const createCart = () => {
     extraInfo.appendChild(quantity);
     extraInfo.appendChild(plusButton);
     extraInfo.appendChild(minusButton);
+    checkoutContainer.appendChild(imgContainer);
     checkoutContainer.appendChild(extraInfo);
     theCart?.appendChild(checkoutContainer);
 
     });
+    
+    let theTotalPrice = theTotal(shoppingBag);
+    console.log(theTotalPrice);
 
+    const showTheTotal = document.createElement("h2");
+    showTheTotal.innerHTML = "Total: " + theTotalPrice; 
+    theCart?.appendChild(showTheTotal);
+    
+    
 
 }
+
 
 
 
