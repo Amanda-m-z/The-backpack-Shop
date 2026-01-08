@@ -1,4 +1,5 @@
 @use "variables" as v;
+
 .product-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -7,40 +8,45 @@
 
   .product-card-container {
     background-color: v.$white;
-    border: 1px solid v.$light-border;
+    border: 1px solid v.$dark-grey;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
+    height: 100%;
+.product-image {
+  width: 100%;
+  aspect-ratio: 1 / 1; 
+  overflow: hidden;
+  background-color: v.$light-bg; 
 
-    .product-image {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
 
     .product-details {
       padding: 1rem;
       flex-grow: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
 
       h3 {
         font-size: v.$h2-sm;
-        margin: 0 0 0.5rem 0;
+        margin-bottom: 0.5rem;
         color: v.$secondary;
       }
 
       p {
-        font-size: v.$normal-text;
+        font-size: v.$small-text;
         color: v.$text-color;
-        margin: 0 0 1rem 0;
         flex-grow: 1;
+        margin-bottom: 1rem;
       }
-
-
 
       button {
         background-color: v.$primary;
@@ -52,7 +58,7 @@
         cursor: pointer;
 
         &:hover {
-          background-color: darken(v.$primary, 10%);
+          background-color: v.$darker-secondary;
         }
       }
     }
