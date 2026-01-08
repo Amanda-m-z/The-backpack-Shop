@@ -1,4 +1,4 @@
-import '../styleOne.scss'; 
+import '../scss/styleOne.scss'; 
 import { createHTMLOneProduct } from '../OneProduct/createHTMLOneProduct';
 import { createCart } from '../Shoppingbag/createCart';
 

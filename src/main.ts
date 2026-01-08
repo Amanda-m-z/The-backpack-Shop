@@ -1,4 +1,4 @@
-import './style.scss'
+import './scss/style.scss'
 import { createHTML } from "./createHTML";
 import { allProducts } from './Backpack type/allProducts';
 
