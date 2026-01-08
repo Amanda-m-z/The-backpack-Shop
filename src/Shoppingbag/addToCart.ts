@@ -10,20 +10,16 @@ export const addToCart = (theNewBag: Backpack) => {
         shoppingBag = JSON.parse(theCartString);
     }
 
-   const id = theNewBag.id;
+   const existingItem = shoppingBag.find(item => item.id === theNewBag.id)
 
-   if(shoppingBag.find(item => item.id === id)) {
-    console.log("Varan finns redan" + theNewBag.quantity);
-        shoppingBag = shoppingBag.filter(item => item.id !== id);
-        theNewBag.quantity++;
-        shoppingBag.push(theNewBag);
-        localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag));
-        console.log(theNewBag.quantity);
-        createCart();
+   if (existingItem){
+        console.log("Varan finns redan i varukorgen!");
+        existingItem.quantity++;
    }
    else {
     console.log("Varan finns inte än!");
-          shoppingBag.push(theNewBag);
-        localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag));
+    shoppingBag.push(theNewBag);
    }
+    localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag));
+    createCart();
 }

@@ -30,7 +30,7 @@ export const createHTML = (allProducts: Backpack[]) => {
     buttonBuy.className = "buttonBuy";
 
     buttonBuy.addEventListener("click", () => {
-    addToCart(item);
+    addToCart(allProducts[i]);
     });
 
     imgContainer.addEventListener("click", () => {
