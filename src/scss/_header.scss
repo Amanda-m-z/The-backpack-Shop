@@ -120,4 +120,45 @@ header {
     align-items: center;
     gap: 0.25rem;
   }
+
+  .backpack-drop-down {
+    float: left;
+    overflow: hidden;
+  }
+
+  .backpack-drop-down button {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: inherit;
+    margin: 0;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: v.$secondary;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: v.$white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: v.$lighter-secondary;
+  }
+
+  .backpack-drop-down:hover .dropdown-content {
+    display: block;
+  }
 }
