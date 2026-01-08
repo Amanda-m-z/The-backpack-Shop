@@ -96,7 +96,12 @@ export const createCart = () => {
     showTheTotal.innerHTML = "Total: " + theTotalPrice; 
     theCart?.appendChild(showTheTotal);
     
-    
+    const buttonContinueShopping = document.createElement("button");
+    buttonContinueShopping.innerHTML = "Fortsätt Handla";
+
+    const buttonGoToCheckout = document.createElement("button");
+    buttonGoToCheckout.innerHTML = "Gå till kassa";
+
 
 }
 
