@@ -17,6 +17,7 @@ header {
   font-family: v.$font-body;
   color: v.$white;
   background-color: v.$secondary;
+  border-bottom: v.$border;
 }
 
 #header {
@@ -101,8 +102,13 @@ header {
     background-color: v.$darker-primary;
     font-family: v.$font-heading;
     font-size: v.$h6-sm;
-    padding: 1rem 3rem;
+    padding: 0 2rem;
     border-bottom: v.$border;
+    position: relative;
+
+    a {
+      padding: 1rem 1rem;
+    }
   }
 
   .under-header-left-side {
@@ -119,43 +125,37 @@ header {
     display: flex;
     align-items: center;
     gap: 0.25rem;
+
+    a {
+      padding-right: 0 !important;
+    }
   }
 
   .backpack-drop-down {
-    float: left;
     overflow: hidden;
-  }
-
-  .backpack-drop-down button {
-    border: none;
-    outline: none;
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    background-color: inherit;
-    margin: 0;
   }
 
   .dropdown-content {
     display: none;
     position: absolute;
+    top: 100%;
     background-color: v.$secondary;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    min-width: 14rem;
+    box-shadow: 0rem 0.5rem 1rem 0rem rgba(0, 0, 0, 0.2);
     z-index: 1000;
-  }
+    border-radius: v.$rounded-corner;
+    border: v.$border;
 
-  .dropdown-content a {
-    float: none;
-    color: v.$white;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
+    a {
+      color: v.$white;
+      display: block;
+      text-align: left;
+      transition: background-color 0.2s ease;
 
-  .dropdown-content a:hover {
-    background-color: v.$lighter-secondary;
+      &:hover {
+        background-color: v.$lighter-secondary;
+      }
+    }
   }
 
   .backpack-drop-down:hover .dropdown-content {

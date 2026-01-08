@@ -1,9 +1,8 @@
-import { openHamburgerMenu } from "./openMenuOverlay";
+import { openHamburgerMenu } from "./openHamburgerMenu";
 
 export const loadHeader = () => {
   const overlay = document.getElementById("overlay");
   const headerContainer = document.getElementById("headerContainer");
-  const containerBackpacks = document.getElementById("showBackpackCategories");
 
   // SMALL BANNER ABOVE MAIN HEADER
   const aboveHeader = document.createElement("div");
@@ -37,7 +36,7 @@ export const loadHeader = () => {
   const bestsellerLink = document.createElement("a");
 
   const dropDownBackpackContainer = document.createElement("div");
-  const dropdownBackpackBtn = document.createElement("button");
+  const dropdownLink = document.createElement("a");
   const chevronDownIconBackpack = document.createElement("i");
 
   const dropDownContent = document.createElement("div");
@@ -98,7 +97,8 @@ export const loadHeader = () => {
   bestsellerLink.textContent = "Bästsäljare";
 
   dropDownBackpackContainer.className = "backpack-drop-down drop-down-category";
-  dropdownBackpackBtn.innerHTML = "Ryggsäckar";
+  dropdownLink.href = "#";
+  dropdownLink.textContent = "Ryggsäckar";
   chevronDownIconBackpack.className = "fa-solid fa-chevron-down";
 
   dropDownContent.className = "dropdown-content";
@@ -149,8 +149,8 @@ export const loadHeader = () => {
   underHeaderLeftSide.appendChild(dropDownBackpackContainer);
   underHeaderLeftSide.appendChild(dropDownAccessories);
 
-  dropDownBackpackContainer.appendChild(dropdownBackpackBtn);
-  dropdownBackpackBtn.appendChild(chevronDownIconBackpack);
+  dropDownBackpackContainer.appendChild(dropdownLink);
+  dropDownBackpackContainer.appendChild(chevronDownIconBackpack);
   dropDownBackpackContainer.appendChild(dropDownContent);
   dropDownContent.appendChild(allBackpacksLink);
   dropDownContent.appendChild(everydayBackpacksLink);
