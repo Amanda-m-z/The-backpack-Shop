@@ -9,16 +9,21 @@
   justify-content: center;
   overflow: hidden;
 
-  background-image: url(../../images/hero_image.jpg);
+  background-image: url(../../images/mobile_hero_image.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  
+  background-position: center; 
+  background-color: rgba(0, 0, 0, 0.4);
+  background-blend-mode: darken;
 
   .heroContent {
+    display: flex;              
+    flex-direction: column;     
+    align-items: center;        
     text-align: center;
-    color: v.$white;
-    padding: 0 1rem;
+
+  color: v.$white;
+  padding: 0 1rem;
 
     h1 {
       font-size: v.$h1-sm;
@@ -29,22 +34,28 @@
     }
 
     button {
+      margin-top: 0.5rem;  
       display: flex;
       justify-content: center;
       font-family: v.$font-heading;
       background-color: v.$primary;
-      color: #000;
+      color: v.$black;
       padding: 0.75rem 1.25rem;
       font-size: v.$button-font-size;
       border-radius: v.$rounded-corner;
       border: v.$border;
       cursor: pointer;
+
+      &:hover{ 
+        background-color: v.$primary-button-hover;
+      }
     }
   }
 
 
   @media (min-width: 768px) {
     height: 32rem;
+    background-image: url(../../images/hero_image.jpg)
   }
 
   @media (min-width: 1024px) {
