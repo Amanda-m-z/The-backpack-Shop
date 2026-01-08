@@ -25,8 +25,8 @@ export const loadProductCard = () => {
   });
 
   // Append elements to the card container
-  titleCardContainer?.[0]?.appendChild(productTitle);
-  descriptionCardContainer?.[0]?.appendChild(productDescription);
+  titleCardContainer?.appendChild(productTitle);
+  descriptionCardContainer?.appendChild(productDescription);
 };
 
 document.addEventListener("DOMContentLoaded", loadProductCard);
