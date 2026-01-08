@@ -28,6 +28,9 @@ export const openHamburgerMenu = () => {
   topContainer.className = "top-container";
   companyNameOverlay.textContent = "Pac Bac";
   closeOverlayIcon.className = "fa-solid fa-xmark";
+  closeOverlayIcon.addEventListener("click", () => {
+    overlay?.classList.toggle("close-overlay");
+  });
 
   categories.className = "categories-container";
   newProductsLinkOverlay.href = "";

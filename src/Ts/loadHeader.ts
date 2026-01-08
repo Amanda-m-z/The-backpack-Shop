@@ -1,6 +1,7 @@
 import { openHamburgerMenu } from "./openMenuOverlay";
 
 export const loadHeader = () => {
+  const overlay = document.getElementById("overlay");
   const headerContainer = document.getElementById("headerContainer");
 
   // SMALL BANNER ABOVE MAIN HEADER
@@ -58,6 +59,9 @@ export const loadHeader = () => {
   headerLeftSideContainer.className = "header-left-side";
   hamburgerIcon.className = "hamburger-menu fa-solid fa-bars";
   hamburgerIcon.addEventListener("click", openHamburgerMenu);
+  hamburgerIcon.addEventListener("click", () => {
+    overlay?.classList.toggle("close-overlay");
+  });
 
   companyName.textContent = "Pac Bac";
 
