@@ -5,14 +5,20 @@ export class Backpack {
     name: string;
     img: string;
     color: string;
+    id: number;
+    quantity: number;
 
-    constructor(type: string, price: string, purchases: number, name: string, img: string, color: string) {
+    constructor(type: string, price: string, purchases: number, 
+        name: string, img: string, color: string, id: number, quantity: number) {
+
         this.type = type;
         this.price = price;
         this.purchases = purchases;
         this.name = name;
         this.img = img;
         this.color = color;
+        this.id = id;
+        this.quantity = quantity;
 
     }
 }
