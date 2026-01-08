@@ -1,13 +1,11 @@
 export const loadProductCard = () => {
   const productCard = document.getElementById("product-card");
 
-  const titleCardContainer =
-    productCard?.getElementsByClassName("product-info-title");
-  const descriptionCardContainer = productCard?.getElementsByClassName(
-    "product-info-description"
-  );
+  const titleCardContainer = productCard?.getElementsByClassName("product-info-title");
+  const descriptionCardContainer = productCard?.getElementsByClassName("product-info-description" );
   const buttonCard = productCard?.getElementsByClassName("product-card-btn");
 
+ 
   // Title
   const productTitle = document.createElement("h3");
   productTitle.textContent = "Minst 25 % på Laptopryggsäckar";
