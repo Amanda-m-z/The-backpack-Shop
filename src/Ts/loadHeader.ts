@@ -67,6 +67,7 @@ export const loadHeader = () => {
 
   searchContainer.className = "search-container";
   searchInput.className = "search-field";
+  searchInput.id = "search";
   searchInput.type = "search";
   searchInput.placeholder = "Sök produkt";
 
