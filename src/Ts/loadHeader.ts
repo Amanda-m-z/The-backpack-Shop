@@ -1,9 +1,8 @@
-import { openHamburgerMenu } from "./openMenuOverlay";
+import { openHamburgerMenu } from "./openHamburgerMenu";
 
 export const loadHeader = () => {
   const overlay = document.getElementById("overlay");
   const headerContainer = document.getElementById("headerContainer");
-  const containerBackpacks = document.getElementById("showBackpackCategories");
 
   // SMALL BANNER ABOVE MAIN HEADER
   const aboveHeader = document.createElement("div");
