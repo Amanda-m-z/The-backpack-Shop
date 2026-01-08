@@ -9,6 +9,6 @@ export const openOneProduct = (item: Backpack) => {
 
      const theBag = JSON.stringify(item);
      localStorage.setItem("TheBag", theBag);
-     window.location.href = "oneproduct.html";
+     window.location.href = "../pages/oneproduct.html";
      
 }
