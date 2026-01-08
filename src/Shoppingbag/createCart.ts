@@ -1,5 +1,6 @@
 import { Backpack } from "../Backpack type/Backpack";
 import { addToCart } from "./addToCart";
+import { productCount } from "./productCount";
 import { removeFromCart } from "./removeFromCart";
 import { theTotal } from "./theTotal";
 
@@ -25,9 +26,11 @@ export const createCart = () => {
     }
 
 
+    const theHeadingDiv = document.createElement("div"); 
     const myCartHeading = document.createElement("h2");
     myCartHeading.innerHTML = "Min varukorg"
-    theCart?.appendChild(myCartHeading);
+    theHeadingDiv.appendChild(myCartHeading);
+    theCart?.appendChild(theHeadingDiv);
 
 
     
@@ -90,7 +93,6 @@ export const createCart = () => {
     });
     
     let theTotalPrice = theTotal(shoppingBag);
-    console.log(theTotalPrice);
 
     const showTheTotal = document.createElement("h2");
     showTheTotal.innerHTML = "Total: " + theTotalPrice; 
@@ -101,6 +103,13 @@ export const createCart = () => {
 
     const buttonGoToCheckout = document.createElement("button");
     buttonGoToCheckout.innerHTML = "Gå till kassa";
+
+    
+    let productCountInCart = productCount(shoppingBag); 
+    const productCountShow = document.createElement("p");
+    productCountShow.innerHTML = "Total produkter: " +productCountInCart;
+    theHeadingDiv.appendChild(productCountShow);
+
 
 
 }
