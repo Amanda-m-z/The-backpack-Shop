@@ -1,56 +1,10 @@
 import { Backpack } from "../Backpack type/Backpack";
+import { addToCart } from "./addToCart";
 
-
-export let shoppingBag: Backpack[] = [];
-
-
-
-export const addToCart = (theNewBag: Backpack) => {
-
-    const theCartString = localStorage.getItem("ShoppingBag")
-    if (theCartString) {
-        shoppingBag = JSON.parse(theCartString);
-    }
-
-   const id = theNewBag.id;
-
-   if(shoppingBag.find(item => item.id === id)) {
-    console.log("Varan finns redan" + theNewBag.quantity);
-        shoppingBag = shoppingBag.filter(item => item.id !== id);
-         theNewBag.quantity++;
-        shoppingBag.push(theNewBag);
-        localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag));
-        console.log(theNewBag.quantity);
-   }
-   else {
-    console.log("Varan finns inte än!");
-          shoppingBag.push(theNewBag);
-        localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag));
-   }
+let shoppingBag: Backpack[] = [];
 
 
 
-
-    //if (isItem !== null)
-   // {
-    
-    //theNewBag.quantity = theNewBag.quantity + 1;
-       // console.log(theNewBag.quantity);
-    //}
-  //  if (isItem === null) {
-      //  shoppingBag.push(theNewBag);
-     //   localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag));
-
-    //}
-   // else {
-     //       theNewBag.quantity = theNewBag.quantity + 1;
-       // console.log(theNewBag.quantity);
-
-   // }
-
-    
-    
-}
 
 export const createCart = () => {
     let theCart = document.getElementById("shoppingBag");
@@ -94,6 +48,19 @@ export const createCart = () => {
     const extraInfo = document.createElement("div");
     const name = document.createElement("h2");
     const price = document.createElement("p");
+    const quantity = document.createElement("p");
+
+
+    //Plus och minus tecken
+    const plusButton = document.createElement("button");
+    const minusButton = document.createElement("button");
+
+    plusButton.innerHTML = "PLUS"
+    minusButton.innerHTML = "MINUS"
+
+    plusButton.addEventListener("click", () => {
+     addToCart(product);
+    });
 
     extraInfo.className = "extraInfo"
     img.src = product.img;
@@ -101,19 +68,21 @@ export const createCart = () => {
     price.innerHTML = product.price+"kr";
     checkoutContainer.className = "checkoutContainer";
     imgContainer.className = "imgContainerCheckout";
+    quantity.innerHTML = `Antal: ${product.quantity}`;
+
 
     imgContainer.appendChild(img);
-    //checkoutContainer.appendChild(imgContainer);
     extraInfo.appendChild(name);
     extraInfo.appendChild(price);
+    extraInfo.appendChild(quantity);
+    extraInfo.appendChild(plusButton);
+    extraInfo.appendChild(minusButton);
     checkoutContainer.appendChild(extraInfo);
     theCart?.appendChild(checkoutContainer);
 
     });
 
-    
 
-  
 }
 
 

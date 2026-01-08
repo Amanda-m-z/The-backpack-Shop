@@ -1,6 +1,7 @@
 import type { Backpack } from "./Backpack type/Backpack";
 import { openOneProduct } from "./OneProduct/openOneProduct";
-import { addToCart } from "./Shoppingbag/shoppingBag";
+import { addToCart } from "./Shoppingbag/addToCart";
+
 
 export const createHTML = (allProducts: Backpack[]) => {
 
