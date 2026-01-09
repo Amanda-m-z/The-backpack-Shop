@@ -54,11 +54,8 @@ ul {
   list-style: none;
 }
 
-.btn,
-button {
+.btn {
   text-transform: uppercase;
-  background-color: v.$primary;
-  color: v.$text-color;
   border: v.$border;
   border-radius: v.$rounded-corner;
   padding: v.$padding-button;
@@ -67,4 +64,17 @@ button {
   font-weight: 600;
   box-shadow: v.$button-shadow;
   letter-spacing: 0.01rem;
+}
+
+.btn-primary {
+  background-color: v.$primary;
+  color: v.$text-color;
+
+  &:hover,
+  &:focus {
+    background-color: v.$primary-button-hover;
+    color: v.$text-color;
+    border: v.$border;
+    box-shadow: none;
+  }
 }
