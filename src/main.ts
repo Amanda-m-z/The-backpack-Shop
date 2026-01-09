@@ -20,3 +20,10 @@ if (header) {
 document.addEventListener("DOMContentLoaded", () => {
   loadProductCard();
 });
+
+const footer = document.getElementById("Footer");
+if (footer) {
+  loadfooter();
+} else {
+  console.error("Footer element with the id 'Footer' not found");
+}
