@@ -1,6 +1,6 @@
 import type { Backpack } from "./Backpack type/Backpack";
 
-export const createHTMLGeneral = (item: Backpack) => {
+export const createHTMLGeneral = (item: Backpack) => {  //Skapar Basic HTML
 
     const productContainer = document.createElement("div");
     const imgContainer = document.createElement("div");
@@ -11,9 +11,12 @@ export const createHTMLGeneral = (item: Backpack) => {
 
     productContainer.className = "productContainer";
     imgContainer.className = "imgContainer";
+    imgContainer.id = "imgContainerID";
     img.src = item.img;
     extraInfo.className = "extraInfo"
+    extraInfo.id = "extraInfoId"
     name.innerHTML = item.name;
+    name.id = ("nameID");
     price.innerHTML = item.price+"kr";
 
     imgContainer.appendChild(img);

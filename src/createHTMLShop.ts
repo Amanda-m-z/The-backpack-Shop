@@ -14,47 +14,29 @@ export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop 
     allProducts.forEach((item, i) => {
 
 
-    
-    const productContainer = document.createElement("div");
-    const imgContainer = document.createElement("div");
-    const img = document.createElement("img");
-    const extraInfo = document.createElement("div");
-    const name = document.createElement("h2");
-    const price = document.createElement("p");
+    const productContainer = createHTMLGeneral(item);
     const buttonBuy = document.createElement("button");
 
     productContainer.className = "productContainer";
-    imgContainer.className = "imgContainer";
-    img.src = item.img;
-    extraInfo.className = "extraInfo"
-    name.innerHTML = item.name;
-    price.innerHTML = item.price+"kr";
-    
+
     buttonBuy.innerHTML = "BUY"
     buttonBuy.className = "buttonBuy";
 
-    const theDiv = createHTMLGeneral(item);
 
     buttonBuy.addEventListener("click", () => {
     addToCart(allProducts[i]);
     });
 
-    imgContainer.addEventListener("click", () => {
+
+    document.getElementById("imgContainerID")?.addEventListener("click", () => {
        openOneProduct(item);
     });
 
-    name.addEventListener("click", () => {
+    document.getElementById("nameID")?.addEventListener("click", () => {
        openOneProduct(item);
     });
-
-
-    imgContainer.appendChild(img);
-    productContainer.appendChild(imgContainer);
-    extraInfo.appendChild(name);
-    extraInfo.appendChild(price);
-    productContainer.appendChild(extraInfo);
     
-    extraInfo.appendChild(buttonBuy); 
+    document.getElementById("extraInfoId")?.appendChild(buttonBuy); 
 
     productsDiv?.appendChild(productContainer);
     

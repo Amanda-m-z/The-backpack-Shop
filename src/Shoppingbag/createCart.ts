@@ -32,8 +32,6 @@ export const createCart = () => {
     theHeadingDiv.appendChild(myCartHeading);
     theCart?.appendChild(theHeadingDiv);
 
-
-    
     const exitButton = document.createElement("button");
     exitButton.innerHTML = "EXIT"
     theCart?.appendChild(exitButton);
@@ -46,9 +44,7 @@ export const createCart = () => {
 
 
     shoppingBag.forEach((product) => {
-
     const checkoutContainer = createHTMLGeneral(product);
-
     const quantity = document.createElement("p");
 
 
