@@ -1,4 +1,4 @@
-export class Backpack {
+export class ItemCart {
     type: string;
     price: number;
     purchases: number;
@@ -6,10 +6,11 @@ export class Backpack {
     img: string;
     color: string;
     id: number;
+    quantity: number;
 
 
     constructor(type: string, price: number, purchases: number, 
-        name: string, img: string, color: string, id: number) {
+        name: string, img: string, color: string, id: number, quantity: number) {
 
         this.type = type;
         this.price = price;
@@ -18,6 +19,8 @@ export class Backpack {
         this.img = img;
         this.color = color;
         this.id = id;
+        this.quantity = quantity;
+        
 
     }
 }

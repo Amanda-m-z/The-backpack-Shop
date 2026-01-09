@@ -1,9 +1,10 @@
 import type { Backpack } from "../Backpack type/Backpack";
+import type { ItemCart } from "../Backpack type/itemCart";
 import { createCart } from "./createCart";
 
 export const removeFromCart = (theNewBag: Backpack) => {  //Denna funtion tar bort en vara från kundkoren
      
-    let shoppingBag: Backpack[] = [];
+    let shoppingBag: ItemCart[] = [];
 
     const theCartString = localStorage.getItem("ShoppingBag")
     if (theCartString) {

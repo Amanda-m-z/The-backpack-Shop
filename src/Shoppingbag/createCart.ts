@@ -1,13 +1,12 @@
 import { Backpack } from "../Backpack type/Backpack";
+import type { ItemCart } from "../Backpack type/itemCart";
 import { addToCart } from "./addToCart";
 import { productCount } from "./productCount";
 import { removeFromCart } from "./removeFromCart";
 import { theTotal } from "./theTotal";
 
 
-let shoppingBag: Backpack[] = [];
-
-
+let shoppingBag: ItemCart[] = [];
 
 
 export const createCart = () => {
@@ -109,8 +108,6 @@ export const createCart = () => {
     const productCountShow = document.createElement("p");
     productCountShow.innerHTML = "Total produkter: " +productCountInCart;
     theHeadingDiv.appendChild(productCountShow);
-
-
 
 }
 

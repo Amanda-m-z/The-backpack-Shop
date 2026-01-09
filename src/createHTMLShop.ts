@@ -1,5 +1,4 @@
 import type { Backpack } from "./Backpack type/Backpack";
-import { createHTMLGeneral } from "./createHTML";
 import { openOneProduct } from "./OneProduct/openOneProduct";
 import { addToCart } from "./Shoppingbag/addToCart";
 
@@ -13,8 +12,6 @@ export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop 
 
     allProducts.forEach((item, i) => {
 
-    const divTest = createHTMLGeneral(item);  
-    console.log("HÄR" +divTest);
 
     const productContainer = document.createElement("div");
     const imgContainer = document.createElement("div");
