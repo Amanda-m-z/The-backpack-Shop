@@ -5,4 +5,4 @@
   // const footerText = document.createElement("p");
 
 
-
+const  footer = document.getElementById("Footer");
