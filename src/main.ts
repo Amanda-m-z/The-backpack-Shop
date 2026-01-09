@@ -1,6 +1,7 @@
 import { loadHeader } from "./Ts/loadHeader";
 import { loadProductCard } from "./Ts/product_highlight_card";  
 import "./scss/style.scss";
+import { loadFooter } from "./Ts/loadfooter";
 const heroButton = document.getElementById("heroCta");
 
 heroButton?.addEventListener("click", () => {
@@ -21,9 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
   loadProductCard();
 });
 
+
 const footer = document.getElementById("Footer");
 if (footer) {
-  loadfooter();
+  loadFooter();
 } else {
   console.error("Footer element with the id 'Footer' not found");
 }
