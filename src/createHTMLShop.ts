@@ -1,4 +1,5 @@
 import type { Backpack } from "./Backpack type/Backpack";
+import { createHTMLGeneral } from "./createHtmlGeneral";
 import { openOneProduct } from "./OneProduct/openOneProduct";
 import { addToCart } from "./Shoppingbag/addToCart";
 
@@ -13,6 +14,7 @@ export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop 
     allProducts.forEach((item, i) => {
 
 
+    
     const productContainer = document.createElement("div");
     const imgContainer = document.createElement("div");
     const img = document.createElement("img");
@@ -21,14 +23,17 @@ export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop 
     const price = document.createElement("p");
     const buttonBuy = document.createElement("button");
 
-    extraInfo.className = "extraInfo"
-    img.src = item.img;
-    name.innerHTML = item.name;
-    price.innerHTML = item.price+"kr";
     productContainer.className = "productContainer";
     imgContainer.className = "imgContainer";
+    img.src = item.img;
+    extraInfo.className = "extraInfo"
+    name.innerHTML = item.name;
+    price.innerHTML = item.price+"kr";
+    
     buttonBuy.innerHTML = "BUY"
     buttonBuy.className = "buttonBuy";
+
+    const theDiv = createHTMLGeneral(item);
 
     buttonBuy.addEventListener("click", () => {
     addToCart(allProducts[i]);
@@ -47,9 +52,9 @@ export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop 
     productContainer.appendChild(imgContainer);
     extraInfo.appendChild(name);
     extraInfo.appendChild(price);
-    extraInfo.appendChild(buttonBuy);
     productContainer.appendChild(extraInfo);
     
+    extraInfo.appendChild(buttonBuy); 
 
     productsDiv?.appendChild(productContainer);
     

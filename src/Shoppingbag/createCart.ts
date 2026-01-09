@@ -1,5 +1,6 @@
 import { Backpack } from "../Backpack type/Backpack";
 import type { ItemCart } from "../Backpack type/itemCart";
+import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "./addToCart";
 import { productCount } from "./productCount";
 import { removeFromCart } from "./removeFromCart";
@@ -46,12 +47,8 @@ export const createCart = () => {
 
     shoppingBag.forEach((product) => {
 
-    const checkoutContainer = document.createElement("div");
-    const imgContainer = document.createElement("div");
-    const img = document.createElement("img");
-    const extraInfo = document.createElement("div");
-    const name = document.createElement("h2");
-    const price = document.createElement("p");
+    const checkoutContainer = createHTMLGeneral(product);
+
     const quantity = document.createElement("p");
 
 
@@ -70,23 +67,14 @@ export const createCart = () => {
         removeFromCart(product);
     })
 
-    extraInfo.className = "extraInfo"
-    img.src = product.img;
-    name.innerHTML = product.name;
-    price.innerHTML = product.price+"kr";
     checkoutContainer.className = "checkoutContainer";
-    imgContainer.className = "imgContainerCheckout";
     quantity.innerHTML = `Antal: ${product.quantity}`;
 
 
-    imgContainer.appendChild(img);
-    extraInfo.appendChild(name);
-    extraInfo.appendChild(price);
-    extraInfo.appendChild(quantity);
-    extraInfo.appendChild(plusButton);
-    extraInfo.appendChild(minusButton);
-    checkoutContainer.appendChild(imgContainer);
-    checkoutContainer.appendChild(extraInfo);
+    const extraInfo = document.getElementById("extraInfoId");
+    extraInfo?.appendChild(quantity);
+    extraInfo?.appendChild(plusButton);
+    extraInfo?.appendChild(minusButton);
     theCart?.appendChild(checkoutContainer);
 
     });
