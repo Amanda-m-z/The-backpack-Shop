@@ -2,7 +2,6 @@ import type { Backpack } from "../Backpack type/Backpack";
 import { addToCart } from "../Shoppingbag/addToCart";
 
 
-
 export const createHTMLOneProduct = () => {
     
     const oneProductView = document.getElementById("oneProductView");
@@ -12,8 +11,8 @@ export const createHTMLOneProduct = () => {
     }
 
     let oneBag:Backpack = JSON.parse(localStorage.getItem("TheBag") || '""');
-    console.log("HÄR ÄR VARIABEL" + oneBag);
  
+    const productContainer = document.createElement("div");
     const imgContainer = document.createElement("div");
     const img = document.createElement("img");
     const extraInfo = document.createElement("div");
@@ -31,18 +30,16 @@ export const createHTMLOneProduct = () => {
     buttonBuy.innerHTML = "Lägg i varukorgen"
 
     imgContainer.appendChild(img);
-    oneProductView?.appendChild(imgContainer);
+    productContainer.appendChild(imgContainer);
     extraInfo.appendChild(name);
     extraInfo.appendChild(price);
     extraInfo.appendChild(color);
     extraInfo.appendChild(buttonBuy);
-    oneProductView?.appendChild(extraInfo);
+    productContainer.appendChild(extraInfo);
+    oneProductView?.appendChild(productContainer);
     
     buttonBuy.addEventListener("click", () => {
     addToCart(oneBag);
     });
-
-    
-
 
 }

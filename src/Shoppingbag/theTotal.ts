@@ -1,17 +1,13 @@
 import type { Backpack } from "../Backpack type/Backpack";
 
-export const theTotal = (shoppingBag: Backpack[]) => {
+export const theTotal = (shoppingBag: Backpack[]) => {  //Denna funktion räknar ihop den totala summan av alla produkter
 
-    let theTotalForAll = 0;
+    let theTotalForAll = 0;  //Variabel skapas
 
-    shoppingBag.forEach((item) => {
+    shoppingBag.forEach((item) => {   //Loppar igenom alla produkter i kundkorgen 
         
-        const theItem = item.quantity;
-        const thePrice = item.price;
-        
-        const theTotalForOneItem = (theItem*thePrice);
-        theTotalForAll += theTotalForOneItem; 
+        theTotalForAll += (item.quantity * item.price);  //Total är total + antalet och pris av nuvarnade produkt
     });
 
-    return theTotalForAll;
+    return theTotalForAll; //Retuner Total
 }

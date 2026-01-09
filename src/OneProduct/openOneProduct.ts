@@ -1,11 +1,7 @@
 import type { Backpack } from "../Backpack type/Backpack";
 
 
-export const openOneProduct = (item: Backpack) => {
-     console.log(item.color);
-     console.log(item.name);
-     console.log(item.type);
-     console.log(item.purchases);
+export const openOneProduct = (item: Backpack) => {  //Öppnar sidan oneproduct med produkten man klickat på
 
      const theBag = JSON.stringify(item);
      localStorage.setItem("TheBag", theBag);

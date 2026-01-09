@@ -1,5 +1,5 @@
 import './scss/style.scss'
-import { createHTML } from "./createHTML";
+import { createHTML } from "./createHTMLShop";
 import { allProducts } from './Backpack type/allProducts';
 
 

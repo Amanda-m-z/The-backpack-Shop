@@ -1,7 +1,21 @@
 import type { Backpack } from "./Backpack type/Backpack";
+import { createHTMLGeneral } from "./createHTML";
+import { openOneProduct } from "./OneProduct/openOneProduct";
+import { addToCart } from "./Shoppingbag/addToCart";
 
-export const createHTMLGeneral = (item:Backpack) => {
-    
+
+export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop Main 
+
+    const productsDiv = document.getElementById("products-grid");
+    if (productsDiv) {
+        productsDiv.innerHTML = "";
+    }
+
+    allProducts.forEach((item, i) => {
+
+    const divTest = createHTMLGeneral(item);  
+    console.log("HÄR" +divTest);
+
     const productContainer = document.createElement("div");
     const imgContainer = document.createElement("div");
     const img = document.createElement("img");
@@ -19,7 +33,18 @@ export const createHTMLGeneral = (item:Backpack) => {
     buttonBuy.innerHTML = "BUY"
     buttonBuy.className = "buttonBuy";
 
-    
+    buttonBuy.addEventListener("click", () => {
+    addToCart(allProducts[i]);
+    });
+
+    imgContainer.addEventListener("click", () => {
+       openOneProduct(item);
+    });
+
+    name.addEventListener("click", () => {
+       openOneProduct(item);
+    });
+
 
     imgContainer.appendChild(img);
     productContainer.appendChild(imgContainer);
@@ -27,6 +52,10 @@ export const createHTMLGeneral = (item:Backpack) => {
     extraInfo.appendChild(price);
     extraInfo.appendChild(buttonBuy);
     productContainer.appendChild(extraInfo);
+    
 
-    return productContainer;
+    productsDiv?.appendChild(productContainer);
+    
+    });
+
 }
