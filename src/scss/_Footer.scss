@@ -1,6 +1,6 @@
 @use "variables" as v;
 /* Footer styling */
-.footern {
+#footern {
   background-color: v.$secondary;
   color: v.$white;
   padding: 24px 16px;
@@ -119,8 +119,8 @@
     text-align: left;
     font-size: v.$h3-lg;
   }
-.payments {
-      grid-column: 1 / -1;
+  .payments {
+    grid-column: 1 / -1;
     justify-self: center;
   }
 }

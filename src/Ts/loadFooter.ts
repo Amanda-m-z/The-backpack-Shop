@@ -1,11 +1,9 @@
-export const loadFooter = () => { 
- 
+export const loadFooter = () => {
+  const footer = document.getElementById("footern");
+  const footerContainer = document.createElement("div");
+  footerContainer.className = "footer-inner-content";
 
-const  footer = document.getElementById("Footer");
-const footerContainer = document.createElement("div");
-footerContainer.className = "footer-inner-content";
-
-footerContainer.innerHTML = `
+  footerContainer.innerHTML = `
  
     <h3 class="logo">Pac Bac</h3>
 
@@ -60,6 +58,5 @@ footerContainer.innerHTML = `
         <i class="fa-brands fa-cc-apple-pay"></i>
       </div>`;
 
-
-footer?.appendChild(footerContainer);
-}
+  footer?.appendChild(footerContainer);
+};

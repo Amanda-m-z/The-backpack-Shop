@@ -1,7 +1,7 @@
+import { loadFooter } from "./Ts/loadFooter";
 import { loadHeader } from "./Ts/loadHeader";
-import { loadProductCard } from "./Ts/product_highlight_card";  
+import { loadProductCard } from "./Ts/product_highlight_card";
 import "./scss/style.scss";
-import { loadFooter } from "./Ts/loadfooter";
 const heroButton = document.getElementById("heroCta");
 
 heroButton?.addEventListener("click", () => {
@@ -22,8 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadProductCard();
 });
 
-
-const footer = document.getElementById("Footer");
+const footer = document.getElementById("footern");
 if (footer) {
   loadFooter();
 } else {
