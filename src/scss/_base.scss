@@ -53,3 +53,17 @@ input {
 ul {
   list-style: none;
 }
+
+.btn,
+button {
+  text-transform: uppercase;
+  background-color: v.$primary;
+  color: v.$text-color;
+  border: v.$border;
+  border-radius: v.$rounded-corner;
+  padding: v.$padding-button;
+  font-family: v.$font-heading;
+  font-size: v.$button-font-size;
+  font-weight: 500;
+  box-shadow: v.$button-shadow;
+}
