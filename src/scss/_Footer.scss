@@ -1,6 +1,6 @@
 @use "variables" as v;
 /* Footer styling */
-.footern {
+#footer {
   background-color: v.$secondary;
   color: v.$white;
   padding: 24px 16px;
@@ -90,19 +90,20 @@
 }
 
 @media (min-width: 834px) {
-  h3,
-  li {
+  h3, li {
     border-bottom: none;
-    padding: 0;
+    padding: 8px ;
+    color: v.$white;
   }
   .columns {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
+    gap: 75px;
   }
   .columns-content {
     width: auto;
   }
+  
 }
 @media (min-width: 1440px) {
   .footer-inner-content {
@@ -112,15 +113,8 @@
     align-items: start;
   }
   .columns-content {
-    width: 22%;
+    width: auto;
+   
   }
 
-  .logo {
-    text-align: left;
-    font-size: v.$h3-lg;
-  }
-.payments {
-      grid-column: 1 / -1;
-    justify-self: center;
-  }
 }
