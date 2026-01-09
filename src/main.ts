@@ -1,5 +1,6 @@
 import { loadHeader } from "./Ts/loadHeader";
-import { loadProductCard } from "./Ts/product_highlight_card";  
+import { loadNewsletter } from "./Ts/newsletter";
+import { loadProductCard } from "./Ts/product_highlight_card";
 import "./scss/style.scss";
 const heroButton = document.getElementById("heroCta");
 
@@ -20,3 +21,12 @@ if (header) {
 document.addEventListener("DOMContentLoaded", () => {
   loadProductCard();
 });
+
+//Newsletter
+const newsletter = document.getElementById("newsletter");
+
+if (newsletter) {
+  loadNewsletter();
+} else {
+  console.error("Header element with the id 'headerContainer' not found");
+}
