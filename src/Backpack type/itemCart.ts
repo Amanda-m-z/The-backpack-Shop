@@ -1,4 +1,4 @@
-export class ItemCart {
+export class ItemCart {  //ItemCart är för när produkterna ligger i cart
     type: string;
     price: number;
     purchases: number;

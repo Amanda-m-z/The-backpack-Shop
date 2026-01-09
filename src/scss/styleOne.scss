@@ -11,14 +11,21 @@ main  {
         border: red 2px solid;
     }
 #oneProductView {
+
+    .productContainer {
+
       margin: auto;
       width: 70vw;
       border: 2px solid green;
       display: flex;
+    }
 
-    .oneProductImg {
-     height: 32em;
-    width: 32em;
+    
+    .imgContainer {
+
+        width: 26em;
+        //height: 26em;
+   
     
   
     img {
@@ -44,7 +51,7 @@ main  {
 ///////////////////////////////////////////////////
 /// SHOPPING CART///
 
-.imgContainerCheckout {
+.imgContainer {
     img {
         width: 20%;
         height: 20%;

@@ -1,4 +1,3 @@
-import { Backpack } from "../Backpack type/Backpack";
 import type { ItemCart } from "../Backpack type/itemCart";
 import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "./addToCart";
@@ -67,10 +66,10 @@ export const createCart = () => {
     quantity.innerHTML = `Antal: ${product.quantity}`;
 
 
-    const extraInfo = document.getElementById("extraInfoId");
-    extraInfo?.appendChild(quantity);
-    extraInfo?.appendChild(plusButton);
-    extraInfo?.appendChild(minusButton);
+    
+    checkoutContainer.appendChild(quantity);
+    checkoutContainer.appendChild(plusButton);
+    checkoutContainer.appendChild(minusButton);
     theCart?.appendChild(checkoutContainer);
 
     });

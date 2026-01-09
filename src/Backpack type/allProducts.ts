@@ -1,7 +1,6 @@
 import { Backpack } from "./Backpack";
 
-export const allProducts: Backpack[] = [];
-
+export const allProducts: Backpack[] = []; //Lista för alla produkter
 
 //Frilufts-ryggsäckar
 allProducts.push(new Backpack("Friluft", 1099, 20, "Kånken - Mint", "../backpacks/friluft/friluft1.webp", "mint", 1));

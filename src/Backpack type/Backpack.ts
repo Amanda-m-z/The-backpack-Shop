@@ -1,4 +1,4 @@
-export class Backpack {
+export class Backpack { 
     type: string;
     price: number;
     purchases: number;

@@ -1,45 +1,26 @@
 import type { Backpack } from "../Backpack type/Backpack";
+import { createButtonBUY } from "../createButtonBUY";
+import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "../Shoppingbag/addToCart";
 
 
-export const createHTMLOneProduct = () => {
+export const createHTMLOneProduct = () => {  //Detta skapar view för en produkt
     
     const oneProductView = document.getElementById("oneProductView");
-    
     if (oneProductView) {
         oneProductView.innerHTML = "";
     }
 
-    let oneBag:Backpack = JSON.parse(localStorage.getItem("TheBag") || '""');
+    let oneBag:Backpack = JSON.parse(localStorage.getItem("TheBag") || '""'); //Hämtar produkten 
  
-    const productContainer = document.createElement("div");
-    const imgContainer = document.createElement("div");
-    const img = document.createElement("img");
-    const extraInfo = document.createElement("div");
-    const name = document.createElement("h2");
-    const price = document.createElement("p");
-    const color = document.createElement("p");
-    const buttonBuy = document.createElement("button");
+    const productContainer = createHTMLGeneral(oneBag);  //Skapar html och lagrar i productContainer
+    const buttonBuy = createButtonBUY();                   //Skapar buyButton och lagar i buttonBuy
 
-    img.src = oneBag.img;
-    imgContainer.className = "oneProductImg";
-    extraInfo.className = "sideInfo";
-    name.innerHTML = oneBag.name;
-    price.innerHTML = oneBag.price + "kr"
-    color.innerHTML = "Color: " + oneBag.color;
-    buttonBuy.innerHTML = "Lägg i varukorgen"
-
-    imgContainer.appendChild(img);
-    productContainer.appendChild(imgContainer);
-    extraInfo.appendChild(name);
-    extraInfo.appendChild(price);
-    extraInfo.appendChild(color);
-    extraInfo.appendChild(buttonBuy);
-    productContainer.appendChild(extraInfo);
-    oneProductView?.appendChild(productContainer);
+    productContainer.appendChild(buttonBuy);            //Lägg buttonBuy i productContainer
+    oneProductView?.appendChild(productContainer);      //Lägg productContainer i div oneProductView så syns på skärmen
     
-    buttonBuy.addEventListener("click", () => {
+  buttonBuy.addEventListener("click", () => {        //Om du klickar buy så läggs backPack i kundkorg
     addToCart(oneBag);
-    });
+   });
 
 }

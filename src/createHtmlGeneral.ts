@@ -1,4 +1,5 @@
 import type { Backpack } from "./Backpack type/Backpack";
+import { openOneProduct } from "./OneProduct/openOneProduct";
 
 export const createHTMLGeneral = (item: Backpack) => {  //Skapar Basic HTML
 
@@ -14,16 +15,21 @@ export const createHTMLGeneral = (item: Backpack) => {  //Skapar Basic HTML
     imgContainer.id = "imgContainerID";
     img.src = item.img;
     extraInfo.className = "extraInfo"
-    extraInfo.id = "extraInfoId"
     name.innerHTML = item.name;
     name.id = ("nameID");
     price.innerHTML = item.price+"kr";
+
 
     imgContainer.appendChild(img);
     productContainer.appendChild(imgContainer);
     extraInfo.appendChild(name);
     extraInfo.appendChild(price);
     productContainer.appendChild(extraInfo);
+
+    
+    imgContainer.addEventListener("click", () => {
+     openOneProduct(item);
+    });
 
     return productContainer;
     
