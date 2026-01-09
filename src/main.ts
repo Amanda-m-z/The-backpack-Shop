@@ -1,4 +1,4 @@
-import { loadFooter } from "./Ts/loadFooter";
+import { loadFooter } from "./Ts/loadfooter";
 import { loadHeader } from "./Ts/loadHeader";
 import { loadProductCard } from "./Ts/product_highlight_card";
 import "./scss/style.scss";
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadProductCard();
 });
 
-const footer = document.getElementById("footern");
+const footer = document.getElementById("footer");
 if (footer) {
   loadFooter();
 } else {

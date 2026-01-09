@@ -1,5 +1,5 @@
 export const loadFooter = () => {
-  const footer = document.getElementById("footern");
+  const footer = document.getElementById("footer");
   const footerContainer = document.createElement("div");
   footerContainer.className = "footer-inner-content";
 
@@ -40,23 +40,24 @@ export const loadFooter = () => {
           <li><a href="#">Tillgänglighetsredogörelse</a></li>
         </ul>
       </div>
-    
 
-   <div class="social-icons">
-        <i class="fa-brands fa-facebook-f"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-tiktok"></i>
-        <i class="fa-brands fa-linkedin"></i>
-      </div>
-      
-    
-      <div class="payments">
-        <i class="fa-brands fa-cc-visa"></i>
-        <i class="fa-brands fa-cc-mastercard"></i>
-        <i class="fa-brands fa-cc-klarna"></i>
-        <i class="fa-brands fa-cc-paypal"></i>
-        <i class="fa-brands fa-cc-apple-pay"></i>
-      </div>`;
+     <div class="footer-extra-content">
+      <div class="social-icons">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-tiktok"></i>
+            <i class="fa-brands fa-linkedin"></i>
+          </div>
+          
+        
+          <div class="payments">
+            <i class="fa-brands fa-cc-visa"></i>
+            <i class="fa-brands fa-cc-mastercard"></i>
+            <i class="fa-brands fa-cc-klarna"></i>
+            <i class="fa-brands fa-cc-paypal"></i>
+            <i class="fa-brands fa-cc-apple-pay"></i>
+          </div>        
+      </div>  `;
 
   footer?.appendChild(footerContainer);
 };
