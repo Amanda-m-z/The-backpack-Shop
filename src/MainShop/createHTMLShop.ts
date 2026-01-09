@@ -60,8 +60,6 @@ export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop 
     productContainer.appendChild(extraInfo);
     productsDiv?.appendChild(productContainer);
     
-    
-    
     });
 
-}
+};
