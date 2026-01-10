@@ -50,12 +50,19 @@ $very-small-text: 0.75rem;
 
 $button-font-size: 1rem;
 
+// Font weight
+$weight-light-heading: 300;
+$weight-regular-heading: 400;
+$weight-medium-heading: 500;
+$weight-semibold-heading: 600;
+$weight-bold-heading: 700;
+
 // Font family
 $font-heading: Fredoka, sans-serif;
 $font-body: Poppins, sans-serif;
 
 // Breakpoints
-$breakpoint-md: 567px;
+$breakpoint-md: 600px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 

@@ -1,4 +1,4 @@
-import { loadFooter } from "./Ts/loadfooter"; 
+import { loadFooter } from "./Ts/loadFooter";
 import { loadHeader } from "./Ts/loadHeader";
 import { loadProductCard } from "./Ts/product_highlight_card";
 import "./scss/style.scss";

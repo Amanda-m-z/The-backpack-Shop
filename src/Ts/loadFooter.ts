@@ -32,32 +32,61 @@ export const loadFooter = () => {
       </div>
 
       <div class="columns-content">
-        <h3>Rättslig information</h3>
-        <ul>
-          <li><a href="#">Villkor</a></li>
-          <li><a href="#">Företagsinformation</a></li>
-          <li><a href="#">Dataskyddspolicy</a></li>
-          <li><a href="#">Tillgänglighetsredogörelse</a></li>
-        </ul>
-      </div>
+        <div class="content-info">
+          <h3>Rättslig information</h3>
+          <ul>
+            <li><a href="#">Villkor</a></li>
+            <li><a href="#">Företagsinformation</a></li>
+            <li><a href="#">Dataskyddspolicy</a></li>
+            <li><a href="#">Tillgänglighetsredogörelse</a></li>
+          </ul>
+        </div>
 
-     <div class="footer-extra-content">
-      <div class="social-icons">
+        <div class="footer-extra-content">
+          <div class="social-icons">
             <i class="fa-brands fa-facebook-f"></i>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-tiktok"></i>
             <i class="fa-brands fa-linkedin"></i>
           </div>
           
-        
+          <!--
           <div class="payments">
             <i class="fa-brands fa-cc-visa"></i>
             <i class="fa-brands fa-cc-mastercard"></i>
-            <i class="fa-brands fa-cc-klarna"></i>
             <i class="fa-brands fa-cc-paypal"></i>
             <i class="fa-brands fa-cc-apple-pay"></i>
-          </div>        
-      </div>  `;
+          </div> -->     
+
+          <div class="payments">
+            <div class="logo-container">
+              <img src="../images/payments_img/swish_logo.svg" alt="swish logo">
+            </div>
+
+            <div class="logo-container" id="klarna-logo">
+              <img src="../images/payments_img/klarna_logo.png" alt="klarna logo">
+            </div>
+
+            <div class="logo-container">
+              <img src="../images/payments_img/BankID_logo.svg" alt="bank id logo">
+            </div>
+
+            <div class="logo-container">
+              <img src="../images/payments_img/mastercard_logo.svg" alt="mastercard logo">
+            </div>
+
+            <div class="logo-container">
+              <img src="../images/payments_img/google_pay_logo.svg" alt="google pay logo">
+            </div>
+
+            <div class="logo-container">
+              <img src="../images/payments_img/apple_pay_logo.svg" alt="apple pay logo">
+            </div>
+          </div>
+        </div>
+      </div>
+
+       `;
 
   footer?.appendChild(footerContainer);
 };

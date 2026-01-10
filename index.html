@@ -1,56 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Home page</title>
+    <!-- icons from fontawsome -->
+    <script
+      src="https://kit.fontawesome.com/b2d9bcb346.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-  <title>Home page</title>
-  <!-- icons from fontawsome -->
-  <script src="https://kit.fontawesome.com/b2d9bcb346.js" crossorigin="anonymous"></script>
-</head>
+  <body>
+    <!-- Header starts here -->
+    <div class="overlay" id="overlay"></div>
+    <header id="headerContainer"></header>
+    <div class="showBackpackCategories" id="showBackpackCategories"></div>
+    <!-- Header ends here -->
 
-<body>
-  <!-- Header starts here -->
-  <div class="overlay" id="overlay"></div>
-  <header id="headerContainer"></header>
-  <div class="showBackpackCategories" id="showBackpackCategories"></div>
-  <!-- Header ends here -->
-
-  <div id="app">
-    <section class="hero">
-      <div class="heroContent">
-        <h1 class="heroTitle">Bär ditt liv med stil och komfort</h1>
-        <button id="heroCta" class="hero__button">Utforska ryggsäckar</button>
-      </div>
-    </section>
-  </div>
-
-
-  <div class="card" style="width: 18rem;">
-    <img src="images/hiking_backpack_sale.jpg" class="card-img-top" alt="laptop backpack">
-    <div class="card-body">
-      <h5 class="card-title">Minst 25 % på Laptopryggsäckar</h5>
-      <p class="card-text">Förbered inför terminsstarten med en ny ryggsäck som tryggt kan förvara din laptop,
-        anteckningsblock och vattenflaska.</p>
-      <a href="#" class="btn btn-primary">SE LAPTOPRYGGSÄCKAR</a>
+    <div id="app">
+      <section class="hero">
+        <div class="heroContent">
+          <h1 class="heroTitle">Bär ditt liv med stil och komfort</h1>
+          <button id="heroCta" class="hero__button">Utforska ryggsäckar</button>
+        </div>
+      </section>
     </div>
-  </div>
 
-  <!-- Här börjar nyhetsbrev -->
+    <div class="card" style="width: 18rem">
+      <img
+        src="images/hiking_backpack_sale.jpg"
+        class="card-img-top"
+        alt="laptop backpack"
+      />
+      <div class="card-body">
+        <h5 class="card-title">Minst 25 % på Laptopryggsäckar</h5>
+        <p class="card-text">
+          Förbered inför terminsstarten med en ny ryggsäck som tryggt kan
+          förvara din laptop, anteckningsblock och vattenflaska.
+        </p>
+        <a href="#" class="btn btn-primary">SE LAPTOPRYGGSÄCKAR</a>
+      </div>
+    </div>
 
+    <!-- Här börjar nyhetsbrev -->
 
-  <!--  Här slutar nyhetsbrev -->
+    <!--  Här slutar nyhetsbrev -->
 
-  <footer id="footer">
-  </footer>
-  <script type="module" src="./src/main.ts"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-
-</body>
-
+    <footer id="footer"></footer>
+    <script type="module" src="./src/main.ts"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
