@@ -40,12 +40,12 @@
     font-size: v.$h4-sm;
     padding: 0.5rem 0;
     color: v.$white;
-    border-bottom: v.$border;
+    border-bottom: 3px solid v.$divider;
     border-color: v.$divider;
     text-transform: capitalize;
   }
+
   ul {
-    list-style: none;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -60,7 +60,8 @@
 
     &:hover {
       border-bottom: v.$border;
-      border-color: v.$white;
+      border-color: v.$primary;
+      color: v.$primary;
     }
   }
 }
@@ -74,18 +75,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1.5rem;
 }
 
 /* Social icons */
 .social-icons {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  gap: 1rem;
-  font-size: v.$h3-sm;
+  gap: 0.5rem;
+  font-size: v.$h4-sm;
 
   i {
     cursor: pointer;
@@ -93,12 +94,14 @@
   }
 }
 
-/* Payment icons */
+// Container for all the containers with the images
 .payments {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem;
-  gap: 1rem;
+  gap: 0.5rem;
+  height: auto;
+  flex-wrap: wrap;
+  max-width: 25rem; // Icons will wrap when total width exceeds this
 
   // i {
   //   background-color: v.$white;
@@ -109,25 +112,28 @@
   // }
 }
 
+// Container for each image
 .logo-container {
+  flex: 0 0 auto; // Don't grow or shrink
+  width: 2.5rem; // Fixed width
+  height: 2rem; // Fixed height
   display: flex;
-  justify-content: center;
   align-items: center;
-
-  width: 100%;
-  height: auto;
+  justify-content: center;
   background-color: white;
-  padding: 0.25rem 0.8em;
+  padding: 0.25rem 0.25em;
   border-radius: v.$rounded-corner;
+
+  // Brand logos for the payment alternatives
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 }
 
 #klarna-logo {
-  background-color: pink;
-}
-
-img {
-  width: 100%;
-  min-width: 24px;
+  background-color: #ffa8cd; // Klarnas official brand color
 }
 
 @media only screen and (min-width: v.$breakpoint-md) {
@@ -142,6 +148,18 @@ img {
   // .columns-content {
   //   width: auto;
   // }
+
+  .footer-extra-content {
+    align-items: flex-start;
+  }
+
+  .social-icons {
+    justify-content: flex-start;
+  }
+
+  .payments {
+    justify-content: flex-start;
+  }
 
   .columns {
     flex-direction: row;
@@ -170,13 +188,13 @@ img {
   }
 
   .logo {
-    width: 25%;
+    width: 20%;
   }
   .columns {
     flex-direction: row;
     justify-content: center;
     gap: 5rem;
-    width: 75%;
+    width: 80%;
   }
 
   .columns-content {
