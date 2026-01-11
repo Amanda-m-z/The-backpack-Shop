@@ -1,4 +1,4 @@
-import type { Backpack } from "../Backpack type/Backpack";
+import type { Backpack } from "../../public/Backpacktype/Backpack";
 import { createButtonBUY } from "../createButtonBUY";
 import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "../Shoppingbag/addToCart";

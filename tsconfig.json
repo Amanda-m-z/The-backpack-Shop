@@ -22,5 +22,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "oneProducMain.ts"]
+  "include": ["src", "oneProducMain.ts", "public/Backpacktype"]
 }

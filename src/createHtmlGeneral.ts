@@ -1,4 +1,4 @@
-import type { Backpack } from "./Backpack type/Backpack";
+import type { Backpack } from "../public/Backpacktype/Backpack";
 import { openOneProduct } from "./OneProduct/openOneProduct";
 
 export const createHTMLGeneral = (item: Backpack) => {  //Skapar Basic HTML

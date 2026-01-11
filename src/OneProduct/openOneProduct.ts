@@ -1,7 +1,7 @@
-import type { Backpack } from "../Backpack type/Backpack";
+import type { Product } from "../Backpack/ProductType";
 
 
-export const openOneProduct = (item: Backpack) => {  //Öppnar sidan oneproduct med produkten man klickat på
+export const openOneProduct = (item: Product) => {  //Öppnar sidan oneproduct med produkten man klickat på
 
      const theBag = JSON.stringify(item);   //Gör till string
      localStorage.setItem("TheBag", theBag);   //Spara i localStorage

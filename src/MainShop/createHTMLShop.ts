@@ -1,22 +1,16 @@
-import type { Backpack } from "../Backpack type/Backpack";
-import { createButtonBUY } from "../createButtonBUY";
-import { createHTMLGeneral } from "../createHtmlGeneral";
+import type { Product } from "../Backpack/ProductType";
 import { openOneProduct } from "../OneProduct/openOneProduct";
 import { addToCart } from "../Shoppingbag/addToCart";
 
 
-export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop Main 
+export const createHTML = (theProducts: Product[]) => {  //Detta är för shop Main 
 
     const productsDiv = document.getElementById("products-grid");
     if (productsDiv) {
         productsDiv.innerHTML = "";
     }
 
-    allProducts.forEach((item, i) => {
-
-
-    //const productContainer = createHTMLGeneral(item);
-    //const shopButton = createButtonBUY();
+    theProducts.forEach((item, i) => {
 
     const productContainer = document.createElement("div");
     const imgContainer = document.createElement("div");
@@ -39,9 +33,8 @@ export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop 
 
 
 
-
    buttonBuy.addEventListener("click", () => {
-    addToCart(allProducts[i]);
+    addToCart(theProducts[i]);
     });
 
    imgContainer.addEventListener("click", () => {
@@ -61,5 +54,4 @@ export const createHTML = (allProducts: Backpack[]) => {  //Detta är för shop 
     productsDiv?.appendChild(productContainer);
     
     });
-
 };

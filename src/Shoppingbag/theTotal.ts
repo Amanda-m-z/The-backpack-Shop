@@ -1,6 +1,6 @@
-import type { Backpack } from "../Backpack type/Backpack";
+import type { ProductCart } from "../Backpack/ProductCartType";
 
-export const theTotal = (shoppingBag: Backpack[]) => {  //Denna funktion räknar ihop den totala summan av alla produkter
+export const theTotal = (shoppingBag: ProductCart[]) => {  //Denna funktion räknar ihop den totala summan av alla produkter
 
     let theTotalForAll = 0;  //Variabel skapas
 

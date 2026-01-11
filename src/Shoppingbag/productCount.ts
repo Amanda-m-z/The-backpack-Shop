@@ -1,6 +1,6 @@
-import type { ItemCart } from "../Backpack type/itemCart";
+import type { ProductCart } from "../Backpack/ProductCartType";
 
-export const productCount = (shoppingBag: ItemCart[]) => {   //Denna funtion räknar antalet produkter i hela kundkorgen
+export const productCount = (shoppingBag: ProductCart[]) => {   //Denna funtion räknar antalet produkter i hela kundkorgen
     
     let productCount = 0; //Variabel för antal
 

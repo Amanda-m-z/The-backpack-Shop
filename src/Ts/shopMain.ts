@@ -1,12 +1,16 @@
 import '../scss/style.scss';
-import { allProducts } from "../Backpack type/allProducts";
 import { createHTML } from "../MainShop/createHTMLShop";
+import type { Product } from '../Backpack/ProductType';
+import { getProduct } from '../getProduct';
 
 //Detta är för produksidan med alla produkter = shop.html 
 
-//Skapa html för alla backpacks som finns i listan
-createHTML(allProducts);
 
 
+const theProducts: Product[] = await getProduct();
+
+console.log("Detta är resultatet av din fetch", theProducts);
+
+createHTML(theProducts);
 
 

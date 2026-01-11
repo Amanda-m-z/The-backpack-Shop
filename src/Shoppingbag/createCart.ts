@@ -1,4 +1,5 @@
-import type { ItemCart } from "../Backpack type/itemCart";
+import type { ItemCart } from "../../public/Backpacktype/itemCart";
+import type { ProductCart } from "../Backpack/ProductCartType";
 import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "./addToCart";
 import { productCount } from "./productCount";
@@ -6,7 +7,7 @@ import { removeFromCart } from "./removeFromCart";
 import { theTotal } from "./theTotal";
 
 
-let shoppingBag: ItemCart[] = [];
+let shoppingBag: ProductCart[] = [];
 
 
 export const createCart = () => {
