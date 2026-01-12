@@ -1,13 +1,15 @@
 import type { Product } from "./Backpack/ProductType";
+import { createButtonBUY } from "./createButtonBUY";
 import { openOneProduct } from "./OneProduct/openOneProduct";
+import { addToCart } from "./Shoppingbag/addToCart";
 
-export const createHTMLGeneral = (item: Product) => {
+export const createHTMLOneProductPage = (item: Product) => {
   //Skapar Basic HTML
 
   const productContainer = document.createElement("div");
   const imgContainer = document.createElement("div");
   const img = document.createElement("img");
-  const extraInfo = document.createElement("div");
+  const productInfo = document.createElement("div");
   const name = document.createElement("h2");
   const price = document.createElement("p");
   const reviewsContainer = document.createElement("div");
@@ -24,6 +26,12 @@ export const createHTMLGeneral = (item: Product) => {
   const circleStatusIcon = document.createElement("div");
   const inStockText = document.createElement("p");
 
+  const buttonBuy = createButtonBUY(); //Skapar buyButton och lagar i buttonBuy
+  buttonBuy.addEventListener("click", () => {
+    //Om du klickar buy så läggs backPack i kundkorg
+    addToCart(item);
+  });
+
   const shippingOverview = document.createElement("div");
   const freeShippingContainer = document.createElement("div");
   const freeShippingIcon = document.createElement("i");
@@ -39,7 +47,7 @@ export const createHTMLGeneral = (item: Product) => {
   imgContainer.className = "imgContainer";
   imgContainer.id = "imgContainerID";
   img.src = item.img;
-  extraInfo.className = "productInfo";
+  productInfo.className = "productInfo";
   name.innerHTML = item.name;
   name.id = "nameID";
   price.innerHTML = item.price + " kr";
@@ -82,11 +90,12 @@ export const createHTMLGeneral = (item: Product) => {
   workDayContainer.appendChild(workDayIcon);
   workDayContainer.appendChild(workDayText);
 
-  extraInfo.appendChild(name);
-  extraInfo.appendChild(price);
-  extraInfo.appendChild(reviewsContainer);
-  extraInfo.appendChild(inStockStatus);
-  extraInfo.appendChild(shippingOverview);
+  productInfo.appendChild(name);
+  productInfo.appendChild(price);
+  productInfo.appendChild(reviewsContainer);
+  productInfo.appendChild(inStockStatus);
+  productInfo.appendChild(shippingOverview);
+  productInfo.appendChild(buttonBuy);
 
   reviewsContainer.appendChild(starsContainer);
   reviewsContainer.appendChild(reviewDetailsContainer);
@@ -102,7 +111,7 @@ export const createHTMLGeneral = (item: Product) => {
 
   reviewDetailsContainer.appendChild(reviewRating);
 
-  productContainer.appendChild(extraInfo);
+  productContainer.appendChild(productInfo);
 
   imgContainer.addEventListener("click", () => {
     openOneProduct(item);
