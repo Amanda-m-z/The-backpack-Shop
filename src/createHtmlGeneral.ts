@@ -20,6 +20,21 @@ export const createHTMLGeneral = (item: Product) => {
   const reviewDetailsContainer = document.createElement("div");
   const reviewRating = document.createElement("p");
 
+  const inStockStatus = document.createElement("div");
+  const circleStatusIcon = document.createElement("div");
+  const inStockText = document.createElement("p");
+
+  const shippingOverview = document.createElement("div");
+  const freeShippingContainer = document.createElement("div");
+  const freeShippingIcon = document.createElement("i");
+  const freeShippingText = document.createElement("p");
+  const freeReturnContainer = document.createElement("div");
+  const freeReturnIcon = document.createElement("i");
+  const freeReturnText = document.createElement("p");
+  const workDayContainer = document.createElement("div");
+  const workDayIcon = document.createElement("i");
+  const workDayText = document.createElement("p");
+
   productContainer.className = "productContainer";
   imgContainer.className = "imgContainer";
   imgContainer.id = "imgContainerID";
@@ -42,11 +57,36 @@ export const createHTMLGeneral = (item: Product) => {
   reviewDetailsContainer.className = "reviewDetailsContainer";
   reviewRating.textContent = "4.0 (28)";
 
+  inStockStatus.className = "inStockStatus";
+  circleStatusIcon.className = "circleStatusIcon";
+  inStockText.textContent = "Finns i lager";
+
+  shippingOverview.className = "shippingOverview";
+  freeShippingIcon.className = "fa-solid fa-truck-fast";
+  freeShippingText.textContent = "Fri frakt på beställningar över 599 kr";
+  freeReturnIcon.className = "fa-solid fa-truck-arrow-right";
+  freeReturnText.textContent = "Gratis returer i hela Sverige";
+  workDayIcon.className = "fa-solid fa-calendar";
+  workDayText.textContent = "4-6 arbetsdagars leveranstid";
+
   imgContainer.appendChild(img);
   productContainer.appendChild(imgContainer);
+  shippingOverview.appendChild(freeShippingContainer);
+  freeShippingContainer.appendChild(freeShippingIcon);
+  freeShippingContainer.appendChild(freeShippingText);
+
+  shippingOverview.appendChild(freeReturnContainer);
+  freeReturnContainer.appendChild(freeReturnIcon);
+  freeReturnContainer.appendChild(freeReturnText);
+  shippingOverview.appendChild(workDayContainer);
+  workDayContainer.appendChild(workDayIcon);
+  workDayContainer.appendChild(workDayText);
+
   extraInfo.appendChild(name);
   extraInfo.appendChild(price);
   extraInfo.appendChild(reviewsContainer);
+  extraInfo.appendChild(inStockStatus);
+  extraInfo.appendChild(shippingOverview);
 
   reviewsContainer.appendChild(starsContainer);
   reviewsContainer.appendChild(reviewDetailsContainer);
@@ -56,6 +96,9 @@ export const createHTMLGeneral = (item: Product) => {
   starsContainer.appendChild(thirdStar);
   starsContainer.appendChild(fourthStar);
   starsContainer.appendChild(fifthStar);
+
+  inStockStatus.appendChild(circleStatusIcon);
+  inStockStatus.appendChild(inStockText);
 
   reviewDetailsContainer.appendChild(reviewRating);
 
