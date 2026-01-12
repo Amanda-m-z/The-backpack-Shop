@@ -1,33 +1,95 @@
+              // Define the structure of a highlight cardData //
+type highlightCard = {
+  title: string;
+  text: string;
+  buttonText: string;
+  imageUrl: string;
+  imgAlt: string;
+  linkUrl: string;
+};
+
+                // Load Product Highlight Cards //
 export const loadProductCard = () => {
-  const productCard = document.getElementById("product-card");
+  const cardData: highlightCard[] = [
+    {
+      title: "Minst 20 % på VANDRINGSARYGGSÄCKAR",
+      text: "Påbörja en ny resa med våra Vandringsryggsäckar.",
+      buttonText: "SE VANDRINGSARYGGSÄCKAR",
+      imageUrl: "images/hiking_backpack_sale.jpg",
+      imgAlt: "backpack",
+      linkUrl: "",
+    },
+    {
+      title: "Minst 15 % på LAPTOPRYGGSÄCKAR",
+      text: "Skydda din teknik med stil med våra laptopryggsäckar.",
+      buttonText: "SE LAPTOPRYGGSÄCKAR",
+      imageUrl: "images/laptop_backpack_sale.jpg",
+      imgAlt: "laptop backpack",
+      linkUrl: "#",
+    },
+  ];
+            // Get the container for highlight product cards //
+  const highlightProductCards = document.getElementById(
+    "highlight-card-container"
+  );
+  if (!highlightProductCards) {
+    console.error("Element with id 'highlight-card-container' not found");
+    return;
+  }
+  highlightProductCards.innerHTML = "";
 
-  const titleCardContainer = productCard?.getElementsByClassName("product-info-title");
-  const descriptionCardContainer = productCard?.getElementsByClassName("product-info-description" );
-  const buttonCard = productCard?.getElementsByClassName("product-card-btn");
 
+
+
+               /* Create each highlight product card */
+
+
+               
+                    // Create card container //
+  cardData.forEach((card) => {
+    const highlightProductCardContainer = document.createElement("div");
+    highlightProductCardContainer.className = "card";
+
+                      // Create card image //
+    const highlightProductCardimg = document.createElement("img");
+    highlightProductCardimg.className = "card-img-top";
+    highlightProductCardimg.src = card.imageUrl;
+    highlightProductCardimg.alt = card.imgAlt;
+
+                      // Create card body //
+    const highlightProductCardbody = document.createElement("div");
+    highlightProductCardbody.className = "card-body";
+
+                      // Create card title //
+    const highlightProductCardtitle = document.createElement("h3");
+    highlightProductCardtitle.className = "card-title";
+    highlightProductCardtitle.textContent = card.title;
+
+                      // Create card text //
+    const highlightProductCardtext = document.createElement("p");
+    highlightProductCardtext.className = "card-text";
+    highlightProductCardtext.textContent = card.text;
+
+                      // Create card button //
+    const highlightProductCardbtn = document.createElement("a");
+    highlightProductCardbtn.href = card.linkUrl;
+    highlightProductCardbtn.className = "btn btn-primary";
+    highlightProductCardbtn.textContent = card.buttonText;
  
-  // Title
-  const productTitle = document.createElement("h3");
-  productTitle.textContent = "Minst 25 % på Laptopryggsäckar";
+                      // Button click event //
+    highlightProductCardbtn.addEventListener("click", () => {
+      window.location.href = card.linkUrl;
+    });
 
-  // Description
-  const productDescription = document.createElement("p");
-  productDescription.textContent =
-    "Förbered inför terminsstarten med en ny ryggsäck som tryggt kan förvara din laptop, anteckningsblock och vattenflaska.";
-
-  // Button
-  const productButton = document.createElement("button");
-  productButton.textContent = "SE LAPTOPRYGGSÄCKAR";
-
-  // Knapptext och click-event
-  buttonCard?.[0]?.addEventListener("click", () => {
-    window.location.href = "/products.html";
+          // Append elements to build the card structure //
+    highlightProductCards?.appendChild(highlightProductCardContainer);
+    highlightProductCardContainer.appendChild(highlightProductCardimg);
+    highlightProductCardContainer.appendChild(highlightProductCardbody);
+    highlightProductCardbody.appendChild(highlightProductCardtitle);
+    highlightProductCardbody.appendChild(highlightProductCardtext);
+    highlightProductCardbody.appendChild(highlightProductCardbtn);
   });
-
-  // Append elements to the card container
-  titleCardContainer?.[0]?.appendChild(productTitle);
-  descriptionCardContainer?.[0]?.appendChild(productDescription);
 };
  
-
+// Initialize product cards on DOM content loaded //
 document.addEventListener("DOMContentLoaded", loadProductCard);

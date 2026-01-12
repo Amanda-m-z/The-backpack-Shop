@@ -1,4 +1,4 @@
-import type { ItemCart } from "../../public/Backpacktype/itemCart";
+//import type { ItemCart } from "../../public/Backpacktype/itemCart";
 import type { ProductCart } from "../Backpack/ProductCartType";
 import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "./addToCart";
