@@ -1,5 +1,3 @@
-
-
 export const createButtonBUY = () => { //Denna metod skapar en knapp ButtonBuy
 
  const buttonBuy = document.createElement("button");   

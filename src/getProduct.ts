@@ -1,5 +1,6 @@
-import type { Product } from "./Backpack/ProductType";
+
 import axios from "axios";
+import type { Product } from "./Backpack/ProductType";
 
 
 export const getProduct = async ():Promise<Product[]> => {
