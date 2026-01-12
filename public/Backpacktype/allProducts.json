@@ -7,7 +7,8 @@
         "img": "../backpacks/friluft/friluft1.webp" ,
         "color": "mint", 
         "id": 1, 
-        "quantity": 1   
+        "quantity": 1,
+        "freshness": "new"    
     },
     {
         "type": "Friluft",
@@ -17,7 +18,8 @@
         "img": "../backpacks/friluft/friluft2.webp" ,
         "color": "green", 
         "id": 2,  
-        "quantity": 1   
+        "quantity": 1,
+        "freshness": "recent"      
     },
     {
         "type": "Friluft",
@@ -27,7 +29,8 @@
         "img": "../backpacks/friluft/friluft3.webp" ,
         "color": "red", 
         "id": 3,
-        "quantity": 1      
+        "quantity": 1,
+        "freshness": "old"        
     },
     {
         "type": "Friluft",
@@ -37,7 +40,8 @@
         "img": "../backpacks/friluft/friluft4.webp" ,
         "color": "orange", 
         "id": 4, 
-        "quantity": 1      
+        "quantity": 1,
+        "freshness": "new"        
     }, 
     {
         "type": "Friluft",
@@ -47,7 +51,8 @@
         "img": "../backpacks/friluft/friluft5.webp" ,
         "color": "beige", 
         "id": 5, 
-        "quantity": 1      
+        "quantity": 1,
+        "freshness": "new"        
     }, 
     {
         "type": "Friluft",
@@ -57,7 +62,8 @@
         "img": "../backpacks/friluft/friluft6.webp" ,
         "color": "purple", 
         "id": 6, 
-        "quantity": 1      
+        "quantity": 1, 
+        "freshness": "new"         
     },
     {
         "type": "Laptop",
@@ -67,7 +73,8 @@
         "img": "../backpacks/laptop/laptop1.jpg" ,
         "color": "beige", 
         "id": 7, 
-        "quantity": 1      
+        "quantity": 1,
+        "freshness": "old"       
     },
     {
         "type": "Laptop",
@@ -77,7 +84,8 @@
         "img": "../backpacks/laptop/laptop2.jpg" ,
         "color": "green", 
         "id": 8, 
-        "quantity": 1      
+        "quantity": 1,
+        "freshness": "recent"   
     },
     {
         "type": "Laptop",
@@ -87,7 +95,8 @@
         "img": "../backpacks/laptop/laptop3.jpg" ,
         "color": "black", 
         "id": 9, 
-        "quantity": 1      
+        "quantity": 1 ,
+        "freshness": "old"       
     },
     {
         "type": "Laptop",
@@ -97,7 +106,8 @@
         "img": "../backpacks/laptop/laptop4.jpg" ,
         "color": "blue", 
         "id": 10,
-        "quantity": 1      
+        "quantity": 1,
+        "freshness": "recent"        
     },
     {
         "type": "Laptop",
@@ -107,7 +117,8 @@
         "img": "../backpacks/laptop/laptop5.jpg" ,
         "color": "grey", 
         "id": 11, 
-        "quantity": 1      
+        "quantity": 1,
+        "freshness":  "old"     
     },
     {
         "type": "Laptop",
@@ -117,7 +128,8 @@
         "img": "../backpacks/laptop/laptop6.jpg" ,
         "color": "pink", 
         "id": 12,
-        "quantity": 1     
+        "quantity": 1,
+        "freshness": "new"     
     },
     {
         "type": "Everyday",
@@ -127,7 +139,8 @@
         "img": "../backpacks/vardags/everyday1.webp" ,
         "color": "black", 
         "id": 13, 
-        "quantity": 1      
+        "quantity": 1, 
+        "freshness": "old"        
     },
     {
         "type": "Everyday",
@@ -137,7 +150,8 @@
         "img": "../backpacks/vardags/everyday2.webp" ,
         "color": "navy", 
         "id": 14, 
-        "quantity": 1      
+        "quantity": 1,
+        "freshness":  "new"       
     }, 
     {
         "type": "Everyday",
@@ -147,7 +161,8 @@
         "img": "../backpacks/vardags/everyday3.webp" ,
         "color": "white", 
         "id": 15, 
-        "quantity": 1      
+        "quantity": 1,
+        "freshness": "recent"        
     },
     {
         "type": "Everyday",
@@ -157,7 +172,8 @@
         "img": "../backpacks/vardags/everyday4.webp" ,
         "color": "blue", 
         "id": 16, 
-        "quantity": 1      
+        "quantity": 1,
+        "freshness":  "old"       
     },    
     {
         "type": "Everyday",
@@ -167,7 +183,8 @@
         "img": "../backpacks/vardags/everyday5.webp" ,
         "color": "beige", 
         "id": 17,
-        "quantity": 1      
+        "quantity": 1,
+        "freshness": "old"        
     },    
     {
         "type": "Everyday",
@@ -177,6 +194,7 @@
         "img": "../backpacks/vardags/everyday6.webp" ,
         "color": "red", 
         "id": 18, 
-        "quantity": 1      
+        "quantity": 1,
+        "freshness":  "recent"       
     }                             
 ]

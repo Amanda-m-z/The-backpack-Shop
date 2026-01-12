@@ -6,6 +6,7 @@ export type ProductCart = {
     img: string;
     color: string;
     id: number;
-    quantity: number;  
+    quantity: number;
+    freshness: string;  
        
 }
