@@ -1,4 +1,3 @@
-
 import type { Product } from "./Backpack/ProductType";
 import { openOneProduct } from "./OneProduct/openOneProduct";
 

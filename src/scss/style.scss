@@ -11,9 +11,9 @@
 //Mobile first
 
 #products-grid {
-  border: red solid 2px;
   margin: 6%; 
   display: grid;
+  gap: 12px;
   grid-template-columns: auto auto;
 
   .productContainer {
@@ -22,10 +22,10 @@
     align-items: left;
     justify-content: space-between;
     padding: 10px 20px;
-    border: red solid 2px;
+    border: black solid 2px;
+    background-color: whitesmoke;
 
     .imgContainer {
-    border: solid pink 2px; //Provisorisk
     padding: 10px 0;
     img { 
      width: 100%;
