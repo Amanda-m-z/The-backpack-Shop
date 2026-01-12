@@ -1,0 +1,57 @@
+import type { Product } from "../Backpack/ProductType";
+import { openOneProduct } from "../OneProduct/openOneProduct";
+import { addToCart } from "../Shoppingbag/addToCart";
+
+
+export const createHTML = (theProducts: Product[]) => {  //Detta är för shop Main 
+
+    const productsDiv = document.getElementById("products-grid");
+    if (productsDiv) {
+        productsDiv.innerHTML = "";
+    }
+
+    theProducts.forEach((item, i) => {
+
+    const productContainer = document.createElement("div");
+    const imgContainer = document.createElement("div");
+    const img = document.createElement("img");
+    const extraInfo = document.createElement("div");
+    const name = document.createElement("h2");
+    const price = document.createElement("p");
+
+    productContainer.className = "productContainer";
+    imgContainer.className = "imgContainer";
+    imgContainer.id = "imgContainerID";
+    img.src = item.img;
+    extraInfo.className = "extraInfo"
+    name.innerHTML = item.name;
+    price.innerHTML = item.price+"kr";
+
+    const buttonBuy = document.createElement("button");   
+    buttonBuy.innerHTML = "BUY"
+    buttonBuy.className = "buttonBuy";
+
+
+
+   buttonBuy.addEventListener("click", () => {
+    addToCart(theProducts[i]);
+    });
+
+   imgContainer.addEventListener("click", () => {
+     openOneProduct(item);
+    });
+
+    name.addEventListener("click", () => {
+       openOneProduct(item);
+    });
+
+    
+    imgContainer.appendChild(img);
+    productContainer.appendChild(imgContainer);
+    extraInfo.appendChild(name);
+    extraInfo.appendChild(price);
+    productContainer.appendChild(extraInfo);
+    productsDiv?.appendChild(productContainer);
+    
+    });
+};

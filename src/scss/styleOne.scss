@@ -1,0 +1,59 @@
+
+main  { 
+    
+    margin: 4%;
+
+    .shoppingBag {
+        display: none;
+    }
+    .showCart {
+        display: block;
+        border: red 2px solid;
+    }
+#oneProductView {
+
+    .productContainer {
+
+      margin: auto;
+      width: 70vw;
+      border: 2px solid green;
+      display: flex;
+    }
+
+    
+    .imgContainer {
+
+        width: 26em;
+        //height: 26em;
+   
+    
+  
+    img {
+      border: purple 2px solid;
+      width: 100%;
+      height: 100%;
+    }
+    }
+    .sideInfo {
+
+    padding: 20px;
+        h2 {
+            font-size: 3em;
+        }
+        p {
+            font-size: 150%;
+        }
+    }
+}
+}
+
+
+///////////////////////////////////////////////////
+/// SHOPPING CART///
+
+.imgContainer {
+    img {
+        width: 20%;
+        height: 20%;
+    }
+}

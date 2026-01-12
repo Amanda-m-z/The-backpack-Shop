@@ -1,0 +1,182 @@
+[ 
+    {
+        "type": "Friluft",
+        "price": 1099,
+        "purchases": 20,
+        "name": "Kånken - Mint",
+        "img": "../backpacks/friluft/friluft1.webp" ,
+        "color": "mint", 
+        "id": 1, 
+        "quantity": 1   
+    },
+    {
+        "type": "Friluft",
+        "price": 1099,
+        "purchases": 20,
+        "name": "Kånken - Green",
+        "img": "../backpacks/friluft/friluft2.webp" ,
+        "color": "green", 
+        "id": 2,  
+        "quantity": 1   
+    },
+    {
+        "type": "Friluft",
+        "price": 1099,
+        "purchases": 20,
+        "name": "Kånken - Red",
+        "img": "../backpacks/friluft/friluft3.webp" ,
+        "color": "red", 
+        "id": 3,
+        "quantity": 1      
+    },
+    {
+        "type": "Friluft",
+        "price": 1099,
+        "purchases": 20,
+        "name": "Kånken - Orange",
+        "img": "../backpacks/friluft/friluft4.webp" ,
+        "color": "orange", 
+        "id": 4, 
+        "quantity": 1      
+    }, 
+    {
+        "type": "Friluft",
+        "price": 1099,
+        "purchases": 20,
+        "name": "Kånken - Beige" ,
+        "img": "../backpacks/friluft/friluft5.webp" ,
+        "color": "beige", 
+        "id": 5, 
+        "quantity": 1      
+    }, 
+    {
+        "type": "Friluft",
+        "price": 1099,
+        "purchases": 20,
+        "name": "Kånken - Purple",
+        "img": "../backpacks/friluft/friluft6.webp" ,
+        "color": "purple", 
+        "id": 6, 
+        "quantity": 1      
+    },
+    {
+        "type": "Laptop",
+        "price": 999,
+        "purchases": 30,
+        "name": "Nordace Siena - Beige",
+        "img": "../backpacks/laptop/laptop1.jpg" ,
+        "color": "beige", 
+        "id": 7, 
+        "quantity": 1      
+    },
+    {
+        "type": "Laptop",
+        "price": 999,
+        "purchases": 30,
+        "name": "Nordace Siena - Green",
+        "img": "../backpacks/laptop/laptop2.jpg" ,
+        "color": "green", 
+        "id": 8, 
+        "quantity": 1      
+    },
+    {
+        "type": "Laptop",
+        "price": 999,
+        "purchases": 30,
+        "name": "Nordace Siena - Black",
+        "img": "../backpacks/laptop/laptop3.jpg" ,
+        "color": "black", 
+        "id": 9, 
+        "quantity": 1      
+    },
+    {
+        "type": "Laptop",
+        "price": 999,
+        "purchases": 30,
+        "name": "Nordace Siena - Blue",
+        "img": "../backpacks/laptop/laptop4.jpg" ,
+        "color": "blue", 
+        "id": 10,
+        "quantity": 1      
+    },
+    {
+        "type": "Laptop",
+        "price": 999,
+        "purchases": 30,
+        "name": "Nordace Siena - Grey",
+        "img": "../backpacks/laptop/laptop5.jpg" ,
+        "color": "grey", 
+        "id": 11, 
+        "quantity": 1      
+    },
+    {
+        "type": "Laptop",
+        "price": 999,
+        "purchases": 30,
+        "name": "Nordace Siena - Pink",
+        "img": "../backpacks/laptop/laptop6.jpg" ,
+        "color": "pink", 
+        "id": 12,
+        "quantity": 1     
+    },
+    {
+        "type": "Everyday",
+        "price": 899,
+        "purchases": 40,
+        "name": "New Crew Backpack - Black",
+        "img": "../backpacks/vardags/everyday1.webp" ,
+        "color": "black", 
+        "id": 13, 
+        "quantity": 1      
+    },
+    {
+        "type": "Everyday",
+        "price": 899,
+        "purchases": 40,
+        "name": "New Crew Backpack - Navy",
+        "img": "../backpacks/vardags/everyday2.webp" ,
+        "color": "navy", 
+        "id": 14, 
+        "quantity": 1      
+    }, 
+    {
+        "type": "Everyday",
+        "price": 899,
+        "purchases": 40,
+        "name": "New Crew Backpack - White",
+        "img": "../backpacks/vardags/everyday3.webp" ,
+        "color": "white", 
+        "id": 15, 
+        "quantity": 1      
+    },
+    {
+        "type": "Everyday",
+        "price": 899,
+        "purchases": 40,
+        "name": "New Crew Backpack - Blue",
+        "img": "../backpacks/vardags/everyday4.webp" ,
+        "color": "blue", 
+        "id": 16, 
+        "quantity": 1      
+    },    
+    {
+        "type": "Everyday",
+        "price": 899,
+        "purchases": 40,
+        "name": "New Crew Backpack - Beige",
+        "img": "../backpacks/vardags/everyday5.webp" ,
+        "color": "beige", 
+        "id": 17,
+        "quantity": 1      
+    },    
+    {
+        "type": "Everyday",
+        "price": 899,
+        "purchases": 40,
+        "name": "New Crew Backpack - Red",
+        "img": "../backpacks/vardags/everyday6.webp" ,
+        "color": "red", 
+        "id": 18, 
+        "quantity": 1      
+    }                             
+]

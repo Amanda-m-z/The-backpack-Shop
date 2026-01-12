@@ -1,40 +1,10 @@
-import { loadFooter } from "./Ts/loadFooter";
-import { loadHeader } from "./Ts/loadHeader";
-import { loadNewsletter } from "./Ts/newsletter";
-import { loadProductCard } from "./Ts/product_highlight_card";
-import "./scss/style.scss";
-const heroButton = document.getElementById("heroCta");
+import './scss/style.scss'
 
-heroButton?.addEventListener("click", () => {
-  window.location.href = "/oneproduct.html";
-});
 
-// Load main header
-const header = document.getElementById("headerContainer");
 
-if (header) {
-  loadHeader();
-} else {
-  console.error("Header element with the id 'headerContainer' not found");
-}
 
-// Load Product Card
-document.addEventListener("DOMContentLoaded", () => {
-  loadProductCard();
-});
 
-// Load footer
-const footer = document.getElementById("footer");
-if (footer) {
-  loadFooter();
-} else {
-  console.error("Footer element with the id 'Footer' not found");
-}
-//Newsletter
-const newsletter = document.getElementById("newsletter");
 
-if (newsletter) {
-  loadNewsletter();
-} else {
-  console.error("Header element with the id 'headerContainer' not found");
-}
+
+
+
