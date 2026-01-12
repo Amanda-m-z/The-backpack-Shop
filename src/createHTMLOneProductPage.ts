@@ -1,5 +1,6 @@
 import type { Product } from "./Backpack/ProductType";
 import { createButtonBUY } from "./createButtonBUY";
+import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
 import { openOneProduct } from "./OneProduct/openOneProduct";
 import { addToCart } from "./Shoppingbag/addToCart";
 
@@ -7,11 +8,14 @@ export const createHTMLOneProductPage = (item: Product) => {
   //Skapar Basic HTML
 
   const productContainer = document.createElement("div");
+
   const imgContainer = document.createElement("div");
   const img = document.createElement("img");
+
   const productInfo = document.createElement("div");
   const name = document.createElement("h2");
   const price = document.createElement("p");
+
   const reviewsContainer = document.createElement("div");
   const starsContainer = document.createElement("div");
   const firstStar = document.createElement("i");
@@ -42,6 +46,18 @@ export const createHTMLOneProductPage = (item: Product) => {
   const workDayContainer = document.createElement("div");
   const workDayIcon = document.createElement("i");
   const workDayText = document.createElement("p");
+
+  const accordion = document.createElement("div");
+  accordion.id = "accordionContainer";
+  accordion.className = "accordion";
+  const accordionDetails = [
+    {
+      category: "Produktbeskrivning",
+      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec ligula placerat, congue neque vel, dignissim arcu. Donec nec dictum est. Donec venenatis turpis sapien, at facilisis enim ultricies ac. Sed pellentesque interdum nibh, non lobortis urna mollis eu. Nam vel bibendum tellus, a laoreet dui. Integer metus ante, volutpat in nulla eu, cursus porta ex. Pellentesque eu interdum est. Morbi a leo et lorem fringilla lobortis et vitae turpis.",
+    },
+    { category: "Material", text: "Lorem ipsum" },
+  ];
+  createProductDetailsAccordion(accordionDetails, accordion);
 
   productContainer.className = "productContainer";
   imgContainer.className = "imgContainer";
@@ -94,8 +110,9 @@ export const createHTMLOneProductPage = (item: Product) => {
   productInfo.appendChild(price);
   productInfo.appendChild(reviewsContainer);
   productInfo.appendChild(inStockStatus);
-  productInfo.appendChild(shippingOverview);
   productInfo.appendChild(buttonBuy);
+  productInfo.appendChild(shippingOverview);
+  productInfo.appendChild(accordion);
 
   reviewsContainer.appendChild(starsContainer);
   reviewsContainer.appendChild(reviewDetailsContainer);
