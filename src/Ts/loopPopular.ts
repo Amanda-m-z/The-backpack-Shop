@@ -4,7 +4,9 @@ import { openOneProduct } from "../OneProduct/openOneProduct";
 
 
 
+
 export const loopPopular = async (): Promise<void> => {
+
   const listPopular: Product[] = await getProduct();
   const div = document.getElementById("popularDiv");
 
@@ -36,7 +38,10 @@ export const loopPopular = async (): Promise<void> => {
     
         
         imgContainer.addEventListener("click", () => {
-         openOneProduct(item);
+         //openOneProduct(item);
+          const theBag = JSON.stringify(item);   //Gör till string
+          localStorage.setItem("TheBag", theBag);   //Spara i localStorage
+          window.location.href = "src/pages/oneproduct.html"; //Öppna oneproduct sida
         });
   });
 
