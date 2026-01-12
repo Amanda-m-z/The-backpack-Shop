@@ -36,5 +36,5 @@ const newsletter = document.getElementById("newsletter");
 if (newsletter) {
   loadNewsletter();
 } else {
-  console.error("Header element with the id 'headerContainer' not found");
+  console.error("div element with the id 'newsletter' not found");
 }
