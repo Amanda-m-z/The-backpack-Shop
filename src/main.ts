@@ -30,6 +30,7 @@ if (footer) {
 } else {
   console.error("Footer element with the id 'Footer' not found");
 }
+
 //Newsletter
 const newsletter = document.getElementById("newsletter");
 

@@ -8,7 +8,7 @@ import type { Product } from '../Backpack/ProductType';
 
 const theProducts: Product[] = await getProduct();
 
-const GridDiv = document.getElementById("products-grid");
+//const GridDiv = document.getElementById("products-grid");
 
 //console.log("Detta är resultatet av din fetch", theProducts);
 
