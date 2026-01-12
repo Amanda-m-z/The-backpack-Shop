@@ -1,0 +1,21 @@
+#popularDiv {
+    display: flex;
+    border: red 2px solid;
+    margin: 4%;
+    overflow: scroll;
+    scrollbar-color: white;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+
+
+    .imgContainer {
+    height: 300px;
+    width: 300px;
+
+        img {
+             height: 18rem;
+             width: 18rem;
+        }
+    }
+}

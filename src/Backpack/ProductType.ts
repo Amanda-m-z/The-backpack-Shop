@@ -1,7 +1,7 @@
 export type Product = {
     type: string;
     price: number;
-    purchases: number;  //OBS! Ska denna vara med här?
+    purchases: number; 
     name: string;
     img: string;
     color: string;

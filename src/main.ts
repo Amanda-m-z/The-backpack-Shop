@@ -1,5 +1,6 @@
 import { loadFooter } from "./Ts/loadFooter";
 import { loadHeader } from "./Ts/loadHeader";
+import { loopPopular } from "./Ts/loopPopular";
 import { loadNewsletter } from "./Ts/newsletter";
 import { loadProductCard } from "./Ts/product_highlight_card";
 import "./scss/style.scss";
@@ -38,3 +39,6 @@ if (newsletter) {
 } else {
   console.error("div element with the id 'newsletter' not found");
 }
+
+loopPopular();
+
