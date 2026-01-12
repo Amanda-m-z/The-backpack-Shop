@@ -1,4 +1,4 @@
-import type { Backpack } from "../../public/Backpacktype/Backpack";
+import type { Product } from "../Backpack/ProductType";
 import { createButtonBUY } from "../createButtonBUY";
 import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "../Shoppingbag/addToCart";
@@ -11,7 +11,7 @@ export const createHTMLOneProduct = () => {  //Detta skapar view för en produkt
         oneProductView.innerHTML = "";
     }
 
-    let oneBag:Backpack = JSON.parse(localStorage.getItem("TheBag") || '""'); //Hämtar produkten 
+    let oneBag:Product = JSON.parse(localStorage.getItem("TheBag") || '""'); //Hämtar produkten 
  
     const productContainer = createHTMLGeneral(oneBag);  //Skapar html och lagrar i productContainer
     const buttonBuy = createButtonBUY();                   //Skapar buyButton och lagar i buttonBuy
