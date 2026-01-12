@@ -5,5 +5,6 @@ export type Product = {
     name: string;
     img: string;
     color: string;
-    id: number;   
+    id: number;
+    freshness: string;     
 }

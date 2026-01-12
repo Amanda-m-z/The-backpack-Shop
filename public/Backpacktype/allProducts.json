@@ -30,7 +30,7 @@
         "color": "red", 
         "id": 3,
         "quantity": 1,
-        "freshness": "old"        
+        "freshness": "new"        
     },
     {
         "type": "Friluft",
@@ -46,7 +46,7 @@
     {
         "type": "Friluft",
         "price": 1099,
-        "purchases": 23,
+        "purchases": 53,
         "name": "Kånken - Beige" ,
         "img": "../backpacks/friluft/friluft5.webp" ,
         "color": "beige", 
@@ -74,7 +74,7 @@
         "color": "beige", 
         "id": 7, 
         "quantity": 1,
-        "freshness": "old"       
+        "freshness": "new"       
     },
     {
         "type": "Laptop",
@@ -90,7 +90,7 @@
     {
         "type": "Laptop",
         "price": 999,
-        "purchases": 23,
+        "purchases": 43,
         "name": "Nordace Siena - Black",
         "img": "../backpacks/laptop/laptop3.jpg" ,
         "color": "black", 

@@ -1,10 +1,15 @@
 #popularHeading {
     margin: 4% 4% 2% 4%;
 }
+#newHeading {
+    @extend #popularHeading;
+}
 #popularDiv {
     display: flex;
     //border: red 2px solid;  //Provisorisk
     overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
     scrollbar-color: white;
     gap: 10px;
     align-items: center;
@@ -25,4 +30,7 @@
         }
     }
 }
+}
+#newDiv {
+    @extend #popularDiv;
 }

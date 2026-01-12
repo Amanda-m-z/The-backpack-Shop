@@ -1,9 +1,11 @@
 import { loadFooter } from "./Ts/loadFooter";
 import { loadHeader } from "./Ts/loadHeader";
+import { loopNew } from "./Ts/loopNew";
 import { loopPopular } from "./Ts/loopPopular";
 import { loadNewsletter } from "./Ts/newsletter";
 import { loadProductCard } from "./Ts/product_highlight_card";
 import "./scss/style.scss";
+
 const heroButton = document.getElementById("heroCta");
 
 heroButton?.addEventListener("click", () => {
@@ -41,4 +43,5 @@ if (newsletter) {
 }
 
 loopPopular();
+loopNew();
 

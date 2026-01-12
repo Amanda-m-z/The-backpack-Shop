@@ -7,8 +7,10 @@ import { openOneProduct } from "../OneProduct/openOneProduct";
 
 export const loopPopular = async (): Promise<void> => {
 
-  const listPopular: Product[] = await getProduct();
+  let listPopular: Product[] = await getProduct();
   const div = document.getElementById("popularDiv");
+
+  listPopular = listPopular.filter(item => item.purchases > 40);
 
   listPopular.forEach((item) => {
 

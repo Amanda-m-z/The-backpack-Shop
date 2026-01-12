@@ -4,8 +4,13 @@ import { getProduct } from "../getProduct";
 
 export const loopNew = async (): Promise<void> => {
 
-  const listNew: Product[] = await getProduct();
+  let listNew: Product[] = await getProduct();
   const div = document.getElementById("newDiv");
+
+  
+
+  listNew = listNew.filter(item => item.freshness === "new");
+  console.log("Här är new", listNew);
 
   listNew.forEach((item) => {
 
