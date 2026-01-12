@@ -48,14 +48,13 @@ export const createHTMLOneProductPage = (item: Product) => {
   const workDayText = document.createElement("p");
 
   const accordion = document.createElement("div");
-  accordion.id = "accordionContainer";
-  accordion.className = "accordion";
   const accordionDetails = [
     {
       category: "Produktbeskrivning",
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris nec ligula placerat, congue neque vel, dignissim arcu. Donec nec dictum est. Donec venenatis turpis sapien, at facilisis enim ultricies ac. Sed pellentesque interdum nibh, non lobortis urna mollis eu. Nam vel bibendum tellus, a laoreet dui. Integer metus ante, volutpat in nulla eu, cursus porta ex. Pellentesque eu interdum est. Morbi a leo et lorem fringilla lobortis et vitae turpis.",
     },
     { category: "Material", text: "Lorem ipsum" },
+    { category: "Tekniska detaljer", text: "Lorem ipsum" },
   ];
   createProductDetailsAccordion(accordionDetails, accordion);
 

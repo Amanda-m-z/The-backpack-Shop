@@ -5,34 +5,38 @@ export function createProductDetailsAccordion(
   container: HTMLElement
 ) {
   container.innerHTML = "";
+  container.className = "accordion";
+  container.id = "accordionContainer";
 
-  accordionDetails.forEach((detailsItem) => {
+  accordionDetails.forEach((detailsItem, i) => {
+    // Dynamic IDs that corresponds with the items position in the array
+    // Good to have instead of using text that might have special characters or spaces
+    const headingId = `heading-${i}`;
+    const collapseId = `collapse-${i}`;
+
     const accordionItem = document.createElement("div");
     accordionItem.className = "accordion-item";
 
     const accordionItemHeading = document.createElement("h2");
     accordionItemHeading.className = "accordion-header";
-    accordionItemHeading.id = detailsItem.category;
+    accordionItemHeading.id = headingId;
+    accordionItemHeading.addEventListener("click", () => {
+      accordionItemTextContainer.classList.toggle("show");
+    });
 
     const accordionItemButton = document.createElement("button");
     accordionItemButton.textContent = detailsItem.category;
     accordionItemButton.className = "accordion-button collapsed";
     accordionItemButton.type = "button";
     accordionItemButton.dataset.bsToggle = "collapse";
-    accordionItemButton.dataset.bsTarget = "#" + detailsItem.category;
+    accordionItemButton.dataset.bsTarget = `#${collapseId}`;
     accordionItemButton.setAttribute("aria-expanded", "false");
-    accordionItemButton.setAttribute(
-      "aria-controls",
-      "collapse" + detailsItem.category
-    );
+    accordionItemButton.setAttribute("aria-controls", collapseId);
 
     const accordionItemTextContainer = document.createElement("div");
-    accordionItemTextContainer.id = "collapse" + detailsItem.category;
+    accordionItemTextContainer.id = collapseId;
     accordionItemTextContainer.className = "accordion-collapse collapse";
-    accordionItemTextContainer.setAttribute(
-      "aria-labelledby",
-      detailsItem.category
-    );
+    accordionItemTextContainer.setAttribute("aria-labelledby", headingId);
     accordionItemTextContainer.dataset.bsParent = "#accordionContainer";
 
     const accordionItemText = document.createElement("div");
