@@ -1,6 +1,6 @@
-
 import { loadFooter } from "./Ts/loadFooter";
 import { loadHeader } from "./Ts/loadHeader";
+import { loadNewsletter } from "./Ts/newsletter";
 import { loadProductCard } from "./Ts/product_highlight_card";
 import "./scss/style.scss";
 const heroButton = document.getElementById("heroCta");
@@ -29,4 +29,12 @@ if (footer) {
   loadFooter();
 } else {
   console.error("Footer element with the id 'Footer' not found");
+}
+//Newsletter
+const newsletter = document.getElementById("newsletter");
+
+if (newsletter) {
+  loadNewsletter();
+} else {
+  console.error("Header element with the id 'headerContainer' not found");
 }
