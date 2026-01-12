@@ -7,4 +7,4 @@ import { createCart } from '../Shoppingbag/createCart';
 const theButtonCart = document.getElementById("temp");  //Button för öppna cart. Provisorisk
 theButtonCart?.addEventListener("click", createCart);   //Öppna cart genom att starta funktion createCart
 
-createHTMLOneProduct();                                 //Körs i början och skapar html för produkten sparad i local storage
+createHTMLOneProduct();  //AKTIVERA SENARE                                  //Körs i början och skapar html för produkten sparad i local storage
