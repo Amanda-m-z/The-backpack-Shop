@@ -63,6 +63,11 @@ export const createHTMLOneProductPage = (item: Product) => {
   ];
   createProductDetailsAccordion(accordionDetails, accordion);
 
+  const similarProductsContainer = document.createElement("div");
+  similarProductsContainer.id = "similarProductsContainer";
+  const similarProductsHeading = document.createElement("h2");
+  similarProductsHeading.textContent = "Liknande produkter";
+
   productContainer.className = "productContainer";
   imgContainer.className = "imgContainer";
   imgContainer.id = "imgContainerID";
@@ -98,7 +103,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   workDayText.textContent = "4-6 arbetsdagars leveranstid";
 
   imgContainer.appendChild(img);
-  productContainer.appendChild(imgContainer);
+
   shippingOverview.appendChild(freeShippingContainer);
   freeShippingContainer.appendChild(freeShippingIcon);
   freeShippingContainer.appendChild(freeShippingText);
@@ -106,6 +111,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   shippingOverview.appendChild(freeReturnContainer);
   freeReturnContainer.appendChild(freeReturnIcon);
   freeReturnContainer.appendChild(freeReturnText);
+
   shippingOverview.appendChild(workDayContainer);
   workDayContainer.appendChild(workDayIcon);
   workDayContainer.appendChild(workDayText);
@@ -132,7 +138,11 @@ export const createHTMLOneProductPage = (item: Product) => {
 
   reviewDetailsContainer.appendChild(reviewRating);
 
+  similarProductsContainer.appendChild(similarProductsHeading);
+
+  productContainer.appendChild(imgContainer);
   productContainer.appendChild(productInfo);
+  productContainer.appendChild(similarProductsContainer);
 
   imgContainer.addEventListener("click", () => {
     openOneProduct(item);
