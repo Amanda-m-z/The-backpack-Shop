@@ -1,6 +1,7 @@
 import type { Product } from "../Backpack/ProductType";
 import { getProduct } from "../getProduct";
 import { openOneProduct } from "../OneProduct/openOneProduct";
+import { addToCart } from "../Shoppingbag/addToCart";
 
 
 
@@ -18,8 +19,8 @@ export const loopPopular = async (): Promise<void> => {
         const imgContainer = document.createElement("div");
         const img = document.createElement("img");
         const extraInfo = document.createElement("div");
-        const name = document.createElement("h2");
-        const price = document.createElement("p");
+        const name = document.createElement("h4");
+        const price = document.createElement("h5");
     
         productContainer.className = "productContainer";
         imgContainer.className = "imgContainer";
@@ -29,6 +30,14 @@ export const loopPopular = async (): Promise<void> => {
         name.innerHTML = item.name;
         name.id = ("nameID");
         price.innerHTML = item.price+"kr";
+
+          const buttonBuy = document.createElement("button");
+          buttonBuy.innerHTML = "KÖP";
+          buttonBuy.className = "buttonBuy";
+
+         buttonBuy.addEventListener("click", () => {        //Om du klickar buy så läggs backPack i kundkorg
+         addToCart(item);
+         });
     
     
         imgContainer.appendChild(img);
@@ -36,6 +45,7 @@ export const loopPopular = async (): Promise<void> => {
         extraInfo.appendChild(name);
         extraInfo.appendChild(price);
         productContainer.appendChild(extraInfo);
+        extraInfo.appendChild(buttonBuy);
         div?.appendChild(productContainer);
     
         
