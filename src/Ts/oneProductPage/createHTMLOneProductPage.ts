@@ -1,8 +1,8 @@
-import type { Product } from "./Backpack/ProductType";
-import { createButtonBUY } from "./createButtonBUY";
+import type { Product } from "../../Backpack/ProductType";
+import { createButtonBUY } from "../../createButtonBUY";
+import { openOneProduct } from "../../OneProduct/openOneProduct";
+import { addToCart } from "../../Shoppingbag/addToCart";
 import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
-import { openOneProduct } from "./OneProduct/openOneProduct";
-import { addToCart } from "./Shoppingbag/addToCart";
 
 export const createHTMLOneProductPage = (item: Product) => {
   //Skapar Basic HTML

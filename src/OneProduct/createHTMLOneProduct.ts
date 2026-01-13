@@ -1,5 +1,5 @@
 import type { Product } from "../Backpack/ProductType";
-import { createHTMLOneProductPage } from "../createHTMLOneProductPage";
+import { createHTMLOneProductPage } from "../Ts/oneProductPage/createHTMLOneProductPage";
 // import { createButtonBUY } from "../createButtonBUY";
 // import { addToCart } from "../Shoppingbag/addToCart";
 
