@@ -2,6 +2,7 @@
 export const loadNewsletter = () => {
   /* Container */
   const container = document.getElementById("newsletter");
+  /* container?.className = "newsletterContainer"; */
 
   /* H3 Newsletter*/
   const titleNewsletter = document.createElement("h3");
@@ -24,7 +25,7 @@ export const loadNewsletter = () => {
   /* Button */
   const button = document.createElement("button");
   button.type = "submit";
-  button.innerHTML = "->";
+  button.innerHTML = `<i class="fa-solid fa-chevron-right"></i>`;
   button.setAttribute("aria-label", "Prenumerera på nyhetsbrev");
 
   /* message emailadress*/
