@@ -1,26 +1,32 @@
+             /* Product Hero Section */
+
+
+             // Load Product Hero Section //
 export const loadProductHero = () => {
-    const productHero = document.getElementById("product-hero");
+  const productHero = document.getElementById("product-hero");
 
-    const heroSection = document.createElement("section");
-    heroSection.className = "product-hero-section";
+                // Create Hero Section //
+  const heroSection = document.createElement("section");
+  heroSection.className = "product-hero-section";
 
-    const heroImageContainer = document.createElement("div");
-    heroImageContainer.className = "hero-image-container";
-    const heroImage = document.createElement("img");
-    heroImage.src = "/images/product_list_hero.jpg";
-    heroImage.alt = "Hero Image";
+                 // Create Hero Image //
+  const heroImageContainer = document.createElement("div");
+  heroImageContainer.className = "hero-image-container";
 
-    const heroTextContainer = document.createElement("div");
-    heroTextContainer.className = "hero-text-container";
-    const heroTitle = document.createElement("h1");
-    heroTitle.textContent = "Upptäck vår nya kollektion av ryggsäckar";
-    const heroSubtitle = document.createElement("p");
-    heroSubtitle.textContent = "Stil möter funktionalitet i varje design";
+                    // Create Hero Text //
+  const heroTextContainer = document.createElement("div");
+  heroTextContainer.className = "hero-text-container";
+  const heroTitle = document.createElement("h1");
+  heroTitle.textContent = "Upptäck alla våra ryggsäckar";
+  const heroSubtitle = document.createElement("p");
+  heroSubtitle.textContent =
+    "Här hittar du ryggsäckar för alla tillfällen - från vardag till äventyr. Välj bland olika stilar, storlekar och funktioner för att hitta den perfekta ryggsäcken för dig. smarta laptopryggsäckar, hållbara vandringsryggsäckar och mycket mer. vandringsryggsäckar för alla dina äventyr. varje ryggsäck är designad med fokus på komfort, funktionalitet och stil. Börja utforska vårt sortiment idag och hitta din nya favoritryggsäck!";
 
-    heroImageContainer.appendChild(heroImage);
-    heroTextContainer.appendChild(heroTitle);
-    heroTextContainer.appendChild(heroSubtitle);
-    heroSection.appendChild(heroImageContainer);
-    heroSection.appendChild(heroTextContainer);
-    
-}
+
+                    // Append Elements //
+  heroTextContainer.appendChild(heroTitle);
+  heroTextContainer.appendChild(heroSubtitle);
+  heroSection.appendChild(heroImageContainer);
+  heroSection.appendChild(heroTextContainer);
+  productHero?.appendChild(heroSection);
+};

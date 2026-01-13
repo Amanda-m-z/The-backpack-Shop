@@ -1,0 +1,74 @@
+@use "variables" as v;
+
+
+                   /*Product Hero Section Styles */
+
+                   
+ // Container for Product Hero Section //
+#product-hero {
+  margin: 0.5rem;
+}
+ 
+// Product Hero Section // 
+.product-hero-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 400px;
+  background-color: v.$primary;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+// Hero Image //
+.hero-image-container {
+  flex: 1;
+  min-height: 300px;
+  background-image: url("/images/product_list_hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+// Hero Text //
+.hero-text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  h1 {
+    margin: 1rem;
+  }
+  p {
+    font-weight: v.$weight-regular-heading;
+    font-size: v.$paragraph-size;
+  }
+}
+
+
+                      /* Responsive Design */
+
+// Medium Screens //
+@media (min-width: v.$breakpoint-md) {
+  .product-hero-section {
+    flex-direction: row;
+  }
+
+  .hero-image-container,
+  .hero-text-container {
+    flex: 1;
+    min-height: 400px;
+  }
+
+  .hero-text-container {
+    align-items: flex-start;
+    text-align: left;
+    padding: 2rem;
+  }
+}
+
+              // Large Screens //
+@media (min-width: v.$breakpoint-lg) {
+  .hero-text-container {
+    padding: 3rem;
+  }
+}
