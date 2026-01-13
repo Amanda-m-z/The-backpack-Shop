@@ -17,8 +17,8 @@ export const createHTML = (theProducts: Product[]) => {  //Detta är för shop M
     const imgContainer = document.createElement("div");
     const img = document.createElement("img");
     const extraInfo = document.createElement("div");
-    const name = document.createElement("h2");
-    const price = document.createElement("p");
+    const name = document.createElement("h4");
+    const price = document.createElement("h5");
 
     productContainer.className = "productContainer";
     imgContainer.className = "imgContainer";
@@ -29,8 +29,8 @@ export const createHTML = (theProducts: Product[]) => {  //Detta är för shop M
     price.innerHTML = item.price+"kr";
 
     const buttonBuy = document.createElement("button");   
-    buttonBuy.innerHTML = "BUY"
-    buttonBuy.className = "buttonBuy";
+    buttonBuy.innerHTML = "KÖP"
+    buttonBuy.className = "buyButton";
 
 
 
@@ -51,6 +51,7 @@ export const createHTML = (theProducts: Product[]) => {  //Detta är för shop M
     productContainer.appendChild(imgContainer);
     extraInfo.appendChild(name);
     extraInfo.appendChild(price);
+    extraInfo.appendChild(buttonBuy);
     productContainer.appendChild(extraInfo);
     productsDiv?.appendChild(productContainer);
     
