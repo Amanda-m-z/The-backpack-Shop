@@ -13,7 +13,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   const img = document.createElement("img");
 
   const productInfo = document.createElement("div");
-  const name = document.createElement("h2");
+  const name = document.createElement("h1");
   const price = document.createElement("p");
 
   const reviewsContainer = document.createElement("div");
