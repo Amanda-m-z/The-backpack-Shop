@@ -33,7 +33,7 @@ export const loopNew = async (): Promise<void> => {
 
           const buttonBuy = document.createElement("button");
           buttonBuy.innerHTML = "KÖP";
-          buttonBuy.className = "buttonBuy";
+          buttonBuy.className = "buyButton";
     
     
         imgContainer.appendChild(img);

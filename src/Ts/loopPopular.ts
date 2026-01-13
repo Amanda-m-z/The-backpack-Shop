@@ -33,7 +33,7 @@ export const loopPopular = async (): Promise<void> => {
 
           const buttonBuy = document.createElement("button");
           buttonBuy.innerHTML = "KÖP";
-          buttonBuy.className = "buttonBuy";
+          buttonBuy.className = "buyButton";
 
          buttonBuy.addEventListener("click", () => {        //Om du klickar buy så läggs backPack i kundkorg
          addToCart(item);
