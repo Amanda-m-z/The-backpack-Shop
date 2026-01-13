@@ -17,6 +17,14 @@ const header = document.getElementById("headerContainer");
 
 if (header) {
   loadHeader();
+  //allBackpackslink to shop starts here
+  const allBackpacksLink = document.getElementById("allBackpacksLink");
+
+  allBackpacksLink?.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.href = "src/pages/shop.html";
+  });
+  //allBackpackslink to shop ends here
 } else {
   console.error("Header element with the id 'headerContainer' not found");
 }
@@ -45,4 +53,3 @@ if (newsletter) {
 
 loopPopular();
 loopNew();
-

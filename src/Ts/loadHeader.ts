@@ -104,6 +104,7 @@ export const loadHeader = () => {
   dropDownContent.className = "dropdown-content";
   allBackpacksLink.href = "#";
   allBackpacksLink.textContent = "Alla ryggsäckar";
+  allBackpacksLink.id = "allBackpacksLink";
   everydayBackpacksLink.href = "#";
   everydayBackpacksLink.textContent = "Vardagsryggsäckar";
   laptopBackpacksLink.href = "#";
