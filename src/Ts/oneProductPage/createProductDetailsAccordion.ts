@@ -20,9 +20,6 @@ export function createProductDetailsAccordion(
     const accordionItemHeading = document.createElement("h2");
     accordionItemHeading.className = "accordion-header";
     accordionItemHeading.id = headingId;
-    accordionItemHeading.addEventListener("click", () => {
-      accordionItemTextContainer.classList.toggle("show");
-    });
 
     const accordionItemButton = document.createElement("button");
     accordionItemButton.textContent = detailsItem.category;
@@ -42,6 +39,12 @@ export function createProductDetailsAccordion(
     const accordionItemText = document.createElement("div");
     accordionItemText.className = "accordion-body";
     accordionItemText.innerHTML = detailsItem.text;
+
+    accordionItemHeading.addEventListener("click", () => {
+      accordionItemTextContainer.classList.toggle("show");
+      accordionItemButton.classList.toggle("collapsed");
+      accordionItemButton.setAttribute("aria-expanded", "true");
+    });
 
     accordionItem.appendChild(accordionItemHeading);
     accordionItemHeading.appendChild(accordionItemButton);
