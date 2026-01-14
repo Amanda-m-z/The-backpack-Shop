@@ -1,4 +1,4 @@
-import type { ProductCart } from "../Backpack/ProductCartType";
+import type { ProductCart } from "../BackpackType/ProductCartType";
 import { createCart } from "./createCart";
 
 export const removeFromCart = (theNewBag: ProductCart) => {  //Denna funtion tar bort en vara från kundkoren

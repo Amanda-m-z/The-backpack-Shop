@@ -1,4 +1,4 @@
-import type { Product } from "../Backpack/ProductType";
+import type { Product } from "../BackpackType/ProductType";
 import { getProduct } from "../getProduct";
 import { addToCart } from "../Shoppingbag/addToCart";
 

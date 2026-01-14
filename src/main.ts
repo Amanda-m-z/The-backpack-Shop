@@ -57,3 +57,10 @@ loopPopular();
 loopNew();
 const theIconCart = document.getElementById("theCartIcon");
 theIconCart?.addEventListener("click", createCart);
+
+const checkout = document.getElementById("temp")
+
+checkout?.addEventListener("click", 
+  () => {
+  window.location.href = "src/pages/checkout.html";
+});

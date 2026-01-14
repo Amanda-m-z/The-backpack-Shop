@@ -1,4 +1,4 @@
-import type { Product } from "./Backpack/ProductType";
+import type { Product } from "./BackpackType/ProductType";
 import { openOneProduct } from "./OneProduct/openOneProduct";
 
 export const createHTMLGeneral = (item: Product) => {
