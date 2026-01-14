@@ -1,0 +1,33 @@
+@use "variables" as v;
+
+.accordion {
+  border: v.$border;
+  border-radius: v.$rounded-corner;
+  padding: 0;
+}
+
+.accordion-item {
+  background-color: v.$product-card;
+  border: none;
+  border-bottom: v.$border;
+  border-color: v.$grey-cloud;
+}
+
+.accordion-button {
+  font-size: v.$h5-sm;
+  font-family: v.$font-heading;
+  font-weight: v.$weight-medium-heading;
+  background-color: v.$product-card;
+  &:hover {
+    background-color: v.$primary;
+  }
+}
+
+.accordion-button:not(.collapsed) {
+  color: v.$text-color;
+  background-color: v.$primary;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
