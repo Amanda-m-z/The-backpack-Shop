@@ -1,5 +1,6 @@
 import type { ProductCart } from "../Backpack/ProductCartType";
 import { addToCart } from "../Shoppingbag/addToCart";
+import { productCount } from "../Shoppingbag/productCount";
 import { removeFromCart } from "../Shoppingbag/removeFromCart";
 import { theTotal } from "../Shoppingbag/theTotal";
 
@@ -31,16 +32,17 @@ const CheckoutForm = document.createElement("form");
 CheckoutForm.id = "checkoutForm";
 checkoutContainer.appendChild(CheckoutForm);
 
-// Title
+// Title lägg in i HTML
 const checkoutTitle = document.createElement("h1");
 checkoutTitle.innerHTML = "Kassa";
-CheckoutForm.appendChild(checkoutTitle);
+CheckoutForm.appendChild(checkoutTitle); //Lägg in i HTML
 
-const productCount = document.createElement("p");
+/* const productCount = document.createElement("p");
 productCount.innerHTML = "Antal produkter";
-CheckoutForm.appendChild(productCount);
+CheckoutForm.appendChild(productCount); */
 
 // Product
+const checkoutProduct = document.createElement("div");
 const productDiv = document.createElement("div");
 productDiv.className = "CheckoutProduct";
 
@@ -58,11 +60,6 @@ productPrice.innerHTML = "1099 kr"; //kunna hämta function kanske
 
 productInfo.append(productName, productPrice); //lägga till färg med
 
-let theCart = document.getElementById("shoppingBag"); //byta ut ovan till denna typ
-if (theCart) {
-  theCart.innerHTML = "";
-}
-
 const theString = localStorage.getItem("ShoppingBag");
 if (theString) {
   shoppingBag = JSON.parse(theString);
@@ -71,6 +68,7 @@ if (theString) {
 // hämtad kod för varukorgen med lite ändrad info
 shoppingBag.forEach((product) => {
   const productContainer = document.createElement("div");
+  /* const theHeadingDiv = document.createElement("div"); */
   const imgContainer = document.createElement("div");
   const img = document.createElement("img");
   const extraInfo = document.createElement("div");
@@ -117,39 +115,21 @@ shoppingBag.forEach((product) => {
   productContainer.appendChild(quantity);
   productContainer.appendChild(plusButton);
   productContainer.appendChild(minusButton);
-  theCart?.appendChild(productContainer);
+  checkoutProduct.appendChild(productContainer);
 });
+
+checkoutContainer.appendChild(checkoutProduct);
 
 let theTotalPrice = theTotal(shoppingBag);
 
 const showTheTotal = document.createElement("h2");
 showTheTotal.innerHTML = "Total: " + theTotalPrice;
-theCart?.appendChild(showTheTotal);
+checkoutProduct.appendChild(showTheTotal);
 
-let productCountInCart = productCount(shoppingBag);
+let productNumber: number = productCount(shoppingBag);
 const productCountShow = document.createElement("p");
-productCountShow.innerHTML = "Total produkter: " + productCountInCart;
-theHeadingDiv.appendChild(productCountShow);
+productCountShow.innerHTML = "Total produkter: " + productNumber;
 
-// Quantity  Behövs inte om ovan fungerar
-/* const qtyDiv = document.createElement("div");
-qtyDiv.className = "checkoutQty";
-
-const minusBtn = document.createElement("button");
-minusBtn.innerHTML = "-"; // icon
-
-const quantitySpan = document.createElement("span");
-quantitySpan.className = "checkoutQuantity";
-quantitySpan.innerHTML = "1"; 
-
-const plusBtn = document.createElement("button");
-plusBtn.innerHTML = "+"; // icon
-
-qtyDiv.append(minusBtn, quantitySpan, plusBtn);
-
-productDiv.append(productImg, productInfo, qtyDiv);
-CheckoutForm.appendChild(productDiv);
- */
 // Shipping
 const shippingTitle = document.createElement("h3");
 shippingTitle.innerHTML = "Välj frakt";
