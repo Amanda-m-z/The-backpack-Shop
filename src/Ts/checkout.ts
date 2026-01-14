@@ -1,3 +1,5 @@
+import type { ProductCart } from "../Backpack/ProductCartType";
+
 const app = document.getElementById("app");
 
 // Header
@@ -12,12 +14,13 @@ headLogo.src = "";
 headLogo.alt = "";
 
 head.append(backLink, headLogo);
-app.appendChild(head);
+app?.appendChild(head);
 
+let shoppingBag: ProductCart[] = [];
 // Container
 const checkoutContainer = document.createElement("div");
 checkoutContainer.className = "checkoutContainer";
-app.appendChild(checkoutContainer);
+app?.appendChild(checkoutContainer);
 
 // Form
 const CheckoutForm = document.createElement("form");
