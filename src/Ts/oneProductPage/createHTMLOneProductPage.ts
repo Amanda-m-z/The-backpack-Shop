@@ -31,6 +31,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   const inStockText = document.createElement("p");
 
   const buttonBuy = createButtonBUY(); //Skapar buyButton och lagar i buttonBuy
+  buttonBuy.innerHTML = "Lägg till varukorgen";
   buttonBuy.addEventListener("click", () => {
     //Om du klickar buy så läggs backPack i kundkorg
     addToCart(item);
@@ -144,9 +145,9 @@ export const createHTMLOneProductPage = (item: Product) => {
   productContainer.appendChild(productInfo);
   productContainer.appendChild(similarProductsContainer);
 
-  imgContainer.addEventListener("click", () => {
-    openOneProduct(item);
-  });
+  // imgContainer.addEventListener("click", () => {
+  //   openOneProduct(item);
+  // });
 
   return productContainer;
 };

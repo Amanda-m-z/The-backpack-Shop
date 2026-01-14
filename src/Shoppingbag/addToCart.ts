@@ -33,5 +33,5 @@ export const addToCart = (theNewBag: Product) => {
   }
 
   localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag)); //Lagrar ändringen i localstorage
-  createCart(); //Uppdatera cart
+  // createCart(); //Uppdatera cart
 };
