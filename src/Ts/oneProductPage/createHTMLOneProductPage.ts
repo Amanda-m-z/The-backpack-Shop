@@ -2,6 +2,7 @@ import type { Product } from "../../Backpack/ProductType";
 import { createButtonBUY } from "../../createButtonBUY";
 import { addToCart } from "../../Shoppingbag/addToCart";
 import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
+import { showAddedToCartPopUp } from "./showAddedToCartPopUp";
 
 export const createHTMLOneProductPage = (item: Product) => {
   //Skapar Basic HTML
@@ -34,6 +35,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   buttonBuy.addEventListener("click", () => {
     //Om du klickar buy så läggs backPack i kundkorg
     addToCart(item);
+    showAddedToCartPopUp();
   });
 
   const shippingOverview = document.createElement("div");
