@@ -1,6 +1,4 @@
-//import type { ItemCart } from "../../public/Backpacktype/itemCart";
 import type { ProductCart } from "../Backpack/ProductCartType";
-import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "./addToCart";
 import { productCount } from "./productCount";
 import { removeFromCart } from "./removeFromCart";
@@ -44,7 +42,38 @@ export const createCart = () => {
 
 
     shoppingBag.forEach((product) => {
-    const checkoutContainer = createHTMLGeneral(product);
+        const productContainer = document.createElement("div");
+          const imgContainer = document.createElement("div");
+          const img = document.createElement("img");
+          const extraInfo = document.createElement("div");
+          const name = document.createElement("h2");
+          const price = document.createElement("p");
+
+        
+          productContainer.className = "productContainer";
+          imgContainer.className = "imgContainer";
+          imgContainer.id = "imgContainerID";
+          img.src = product.img;
+          extraInfo.className = "productInfo";
+          name.innerHTML = product.name;
+          name.id = "nameID";
+          price.innerHTML = product.price + " kr";
+          price.className = "pricetag";
+    
+
+        
+          imgContainer.appendChild(img);
+          productContainer.appendChild(imgContainer);
+          extraInfo.appendChild(name);
+          extraInfo.appendChild(price);
+
+        
+        
+          productContainer.appendChild(extraInfo);
+    
+
+
+        
     const quantity = document.createElement("p");
 
 
@@ -63,15 +92,15 @@ export const createCart = () => {
         removeFromCart(product);
     })
 
-    checkoutContainer.className = "checkoutContainer";
+    productContainer.className = "checkoutContainer";
     quantity.innerHTML = `Antal: ${product.quantity}`;
 
 
     
-    checkoutContainer.appendChild(quantity);
-    checkoutContainer.appendChild(plusButton);
-    checkoutContainer.appendChild(minusButton);
-    theCart?.appendChild(checkoutContainer);
+    productContainer.appendChild(quantity);
+    productContainer.appendChild(plusButton);
+    productContainer.appendChild(minusButton);
+    theCart?.appendChild(productContainer);
 
     });
     

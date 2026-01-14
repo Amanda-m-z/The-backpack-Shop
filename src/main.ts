@@ -1,3 +1,4 @@
+import { createCart } from "./Shoppingbag/createCart";
 import { loadFooter } from "./Ts/loadFooter";
 import { loadHeader } from "./Ts/loadHeader";
 import { loopNew } from "./Ts/loopNew";
@@ -54,3 +55,5 @@ if (newsletter) {
 
 loopPopular();
 loopNew();
+const theIconCart = document.getElementById("theCartIcon");
+theIconCart?.addEventListener("click", createCart);

@@ -11,6 +11,15 @@
 @use "buyButton";
 @use "filterSortButton";
 @use "productHero";
+@use "cartShow"; //?
+
+.shoppingBag {
+  display: none;
+ }
+ .showCart {
+   display: block;
+   border: red 2px solid;
+ }
 
 //Mobile first
 

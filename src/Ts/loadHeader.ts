@@ -26,6 +26,7 @@ export const loadHeader = () => {
   const userIcon = document.createElement("i");
   const heartIcon = document.createElement("i");
   const shoppingCartIcon = document.createElement("i");
+  shoppingCartIcon.id = "theCartIcon";
   // MAIN HEADER ENDS HERE
 
   // UNDER HEADER STARTS HERE
