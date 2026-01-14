@@ -54,3 +54,8 @@ if (newsletter) {
 
 loopPopular();
 loopNew();
+const checkout = document.getElementById("temp");
+
+checkout?.addEventListener("click", () => {
+  window.location.href = "src/pages/checkout.html";
+});
