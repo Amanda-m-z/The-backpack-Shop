@@ -6,6 +6,7 @@
  .showCart {
    display: block;
    border: red 2px solid;
+   z-index: 1; //On top
  }
 
 #oneProductView {
