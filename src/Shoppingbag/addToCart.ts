@@ -1,6 +1,5 @@
 import type { ProductCart } from "../Backpack/ProductCartType";
 import type { Product } from "../Backpack/ProductType";
-import { createCart } from "./createCart";
 
 export const addToCart = (theNewBag: Product) => {
   //Denna fuktion lägger till ett produkt i kundkorgen

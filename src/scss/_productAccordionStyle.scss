@@ -11,6 +11,9 @@
   border: none;
   border-bottom: v.$border;
   border-color: v.$grey-cloud;
+  &:last-of-type {
+    border-bottom: none;
+  }
 }
 
 .accordion-button {
@@ -18,6 +21,7 @@
   font-family: v.$font-heading;
   font-weight: v.$weight-medium-heading;
   background-color: v.$product-card;
+
   &:hover {
     background-color: v.$primary;
   }
@@ -30,4 +34,14 @@
 
 .accordion-button:focus {
   box-shadow: none;
+}
+
+.accordion-item:first-of-type > .accordion-header .accordion-button {
+  border-top-left-radius: v.$rounded-corner;
+  border-top-right-radius: v.$rounded-corner;
+}
+
+.accordion-item:last-of-type > .accordion-header .accordion-button.collapsed {
+  border-bottom-left-radius: v.$rounded-corner;
+  border-bottom-right-radius: v.$rounded-corner;
 }

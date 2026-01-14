@@ -1,6 +1,5 @@
 import type { Product } from "../../Backpack/ProductType";
 import { createButtonBUY } from "../../createButtonBUY";
-import { openOneProduct } from "../../OneProduct/openOneProduct";
 import { addToCart } from "../../Shoppingbag/addToCart";
 import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
 
