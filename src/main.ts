@@ -1,3 +1,4 @@
+
 import { createCart } from "./Shoppingbag/createCart";
 import { loadFooter } from "./Ts/loadFooter";
 import { loadHeader } from "./Ts/loadHeader";

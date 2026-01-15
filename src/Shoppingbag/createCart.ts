@@ -9,8 +9,13 @@ let shoppingBag: ProductCart[] = [];
 
 //===== main funktion  ===== //
 export const createCart = () => {
+  console.log("DU ÖPPNAR DENNA FUNKTION");
   const cart = document.getElementById("overlay");
   if (!cart) return;
+
+  const textNode = document.createElement("h1");
+  textNode.innerHTML = "TESTA";
+  cart?.appendChild(textNode);
 
   cart.innerHTML = "";
   cart.className = "showCart";
