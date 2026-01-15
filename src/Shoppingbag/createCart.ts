@@ -28,16 +28,6 @@ export const createCart = () => {
   cart.appendChild(createFooter(cart));
 };
 
-productContainer.className = "productContainer";
-imgContainer.className = "imgContainer";
-imgContainer.id = "imgContainerID";
-img.src = product.img;
-extraInfo.className = "productInfo";
-name.innerHTML = product.name;
-name.id = "nameID";
-price.innerHTML = product.price + " kr";
-price.className = "pricetag";
-
 /* ==== Header =====*/
 const createHeader = (cart: HTMLElement) => {
   const header = document.createElement("div");
