@@ -45,8 +45,9 @@ header {
     font-size: 1.2rem;
   }
 
-  h2 {
+  a {
     font-size: v.$h4-sm;
+    font-weight: v.$weight-semibold-heading;
   }
 }
 
@@ -85,7 +86,7 @@ header {
   }
 
   .header-left-side {
-    h2 {
+    a {
       font-size: v.$h4-lg;
     }
   }
@@ -102,13 +103,9 @@ header {
     background-color: v.$darker-primary;
     font-family: v.$font-heading;
     font-size: v.$h6-sm;
-    padding: 0 2rem;
+    padding: 1rem 3rem;
     border-bottom: v.$border;
     position: relative;
-
-    a {
-      padding: 1rem 1rem;
-    }
   }
 
   .under-header-left-side {
