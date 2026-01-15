@@ -7,64 +7,174 @@ import { theTotal } from "./theTotal";
 
 let shoppingBag: ProductCart[] = [];
 
+//===== main funktion  ===== //
 export const createCart = () => {
-  let theCart = document.getElementById("shoppingBag");
-  if (theCart) {
-    theCart.innerHTML = "";
-  }
+  const cart = document.getElementById("overlay");
+  if (!cart) return;
 
-  if (theCart) {
-    theCart.className = "showCart";
-  }
+  cart.innerHTML = "";
+  cart.className = "showCart";
 
   const theString = localStorage.getItem("ShoppingBag");
-  if (theString) {
-    shoppingBag = JSON.parse(theString);
-  }
+  shoppingBag = theString ? JSON.parse(theString) : [];
 
-  const theHeadingDiv = document.createElement("div");
-  const myCartHeading = document.createElement("h2");
-  myCartHeading.innerHTML = "Min varukorg";
-  theHeadingDiv.appendChild(myCartHeading);
-  theCart?.appendChild(theHeadingDiv);
-
-  const exitButton = document.createElement("button");
-  exitButton.innerHTML = "EXIT";
-  theCart?.appendChild(exitButton);
-
-  exitButton.addEventListener("click", () => {
-    if (theCart) {
-      theCart.className = "shoppingBag";
-    }
-  });
+  cart.appendChild(createHeader(cart));
 
   shoppingBag.forEach((product) => {
-    const productContainer = document.createElement("div");
-    const imgContainer = document.createElement("div");
-    const img = document.createElement("img");
-    const extraInfo = document.createElement("div");
-    const name = document.createElement("h2");
-    const price = document.createElement("p");
+    cart.appendChild(createProductRow(product));
+  });
 
-    productContainer.className = "productContainer";
-    imgContainer.className = "imgContainer";
-    imgContainer.id = "imgContainerID";
-    img.src = product.img;
-    extraInfo.className = "productInfo";
-    name.innerHTML = product.name;
-    name.id = "nameID";
-    price.innerHTML = product.price + " kr";
-    price.className = "pricetag";
+  cart.appendChild(createTotal());
+  cart.appendChild(createFooter(cart));
+};
 
-    imgContainer.appendChild(img);
-    productContainer.appendChild(imgContainer);
-    extraInfo.appendChild(name);
-    extraInfo.appendChild(price);
+productContainer.className = "productContainer";
+imgContainer.className = "imgContainer";
+imgContainer.id = "imgContainerID";
+img.src = product.img;
+extraInfo.className = "productInfo";
+name.innerHTML = product.name;
+name.id = "nameID";
+price.innerHTML = product.price + " kr";
+price.className = "pricetag";
 
-    productContainer.appendChild(extraInfo);
+/* ==== Header =====*/
+const createHeader = (cart: HTMLElement) => {
+  const header = document.createElement("div");
 
-    // shoppingBag.forEach((product) => {
-    //   const checkoutContainer = createHtmlProductInCart(product);
+  const title = document.createElement("h2");
+  title.innerHTML = "TESTA";
+
+  const count = document.createElement("p");
+  count.textContent = "Total produkter: " + productCount(shoppingBag);
+
+  const exitButton = document.createElement("button");
+  exitButton.textContent = "X";
+  exitButton.onclick = () => {
+    cart.className = "shoppingBag";
+  };
+  header.append(title, count, exitButton);
+  return header;
+};
+
+/* ==== Produkt row ===== */
+const createProductRow = (product: ProductCart) => {
+  const productContainer = document.createElement("div");
+  productContainer.className = "productContainer";
+
+  // Container//
+  const imgContainer = document.createElement("div");
+  imgContainer.className = "imgContainer";
+
+  // Img //
+  const img = document.createElement("img");
+  img.src = product.img;
+  img.alt = product.name;
+  imgContainer.appendChild(img);
+
+  // Info about product //
+  const info = document.createElement("div");
+  info.className = "productInfo";
+
+  const name = document.createElement("h2");
+  name.className = "productname";
+  name.textContent = product.name;
+
+  const price = document.createElement("p");
+  price.className = "productprice";
+  price.textContent = product.price + " kr";
+
+  info.append(name, price);
+
+  // -btn quantity +btn//
+  const minus = document.createElement("button");
+  minus.textContent = "-";
+  minus.onclick = () => removeFromCart(product);
+
+  const quantity = document.createElement("p");
+  quantity.textContent = `${product.quantity}`;
+
+  const plus = document.createElement("button");
+  plus.textContent = "+";
+  plus.onclick = () => addToCart(product);
+
+  productContainer.append(imgContainer, info, minus, quantity, plus);
+  return productContainer;
+};
+
+// Total sum //
+const createTotal = () => {
+  const total = document.createElement("h2");
+  total.className = "totalprice";
+  total.textContent = "Total: " + theTotal(shoppingBag) + " kr";
+  return total;
+};
+
+/*===== Footer with btn ====== */
+
+const createFooter = (cart: HTMLElement) => {
+  const footer = document.createElement("div");
+  footer.className = "cartFooter";
+
+  const continueBtn = document.createElement("button");
+  continueBtn.id = "continueBtn";
+  continueBtn.textContent = "Fortsätt handla";
+  continueBtn.onclick = () => {
+    cart.className = "shoppingBag";
+  };
+
+  const checkoutBtn = document.createElement("button");
+  checkoutBtn.id = "checkoutBtn";
+  checkoutBtn.textContent = "Gå till kassa";
+  checkoutBtn.onclick = () => {
+    window.location.href = "src/pages/checkout.html";
+  };
+
+  footer.append(continueBtn, checkoutBtn);
+  return footer;
+};
+
+/*
+    exitButton.addEventListener("click", () => {
+        if (theCart) {
+            theCart.className = "shoppingBag";
+        }
+    })
+
+
+    shoppingBag.forEach((product) => {
+        const productContainer = document.createElement("div");
+          const imgContainer = document.createElement("div");
+          const img = document.createElement("img");
+          const extraInfo = document.createElement("div");
+          const name = document.createElement("h2");
+          const price = document.createElement("p");
+
+        
+          productContainer.className = "productContainer";
+          imgContainer.className = "imgContainer";
+          imgContainer.id = "imgContainerID";
+          img.src = product.img;
+          extraInfo.className = "productInfo";
+          name.innerHTML = product.name;
+          name.id = "nameID";
+          price.innerHTML = product.price + " kr";
+          price.className = "pricetag";
+    
+
+        
+          imgContainer.appendChild(img);
+          productContainer.appendChild(imgContainer);
+          extraInfo.appendChild(name);
+          extraInfo.appendChild(price);
+
+        
+        
+          productContainer.appendChild(extraInfo);
+    
+
+
+        
     const quantity = document.createElement("p");
 
     //Plus och minus tecken
@@ -106,5 +216,5 @@ export const createCart = () => {
     const productCountShow = document.createElement("p");
     productCountShow.innerHTML = "Total produkter: " + productCountInCart;
     theHeadingDiv.appendChild(productCountShow);
-  });
-};
+}
+*/

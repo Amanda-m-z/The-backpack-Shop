@@ -1,7 +1,7 @@
 import { loadHeader } from "../Ts/loadHeader";
 
 
-const loadoverlay = async () => {
+/*const loadoverlay = async () => {
     const overlayContainer = document.getElementById("varukorg-overlay");
     if (!overlayContainer) return;
     const overlayHTML = await fetch("/Shoppingbag/varuKorgOverlay.html").then(res => res.text());
