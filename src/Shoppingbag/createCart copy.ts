@@ -11,7 +11,7 @@ let shoppingBag: ProductCart[] = [];
                   //===== main funktion  ===== //
 export const createCart = () => {
 
-  const cart = document.getElementById("shoppingBag");
+  const cart = document.getElementById("overlay");
   if (!cart) return;
 
   cart.innerHTML = "";
@@ -38,12 +38,12 @@ const createHeader = (cart: HTMLElement) => {
   
 
   const title = document.createElement("h2");
-  title.textContent = "Min varukorg";
+  title.innerHTML = "TESTA";
 
   const count = document.createElement("p");
   count.textContent = "Total produkter: " + productCount(shoppingBag);
 
-  const exitButton = document.createElement("button");
+    const exitButton = document.createElement("button");
   exitButton.textContent = "X";
   exitButton.onclick = () => {
     cart.className = "shoppingBag"; 
@@ -201,7 +201,7 @@ const createFooter = (cart: HTMLElement) => {
     productContainer.className = "checkoutContainer";
     quantity.innerHTML = `Antal: ${product.quantity}`;
 
-
+    
     
     productContainer.appendChild(quantity);
     productContainer.appendChild(plusButton);
@@ -227,7 +227,7 @@ const createFooter = (cart: HTMLElement) => {
     const productCountShow = document.createElement("p");
     productCountShow.innerHTML = "Total produkter: " +productCountInCart;
     theHeadingDiv.appendChild(productCountShow);
-    }
+}
 */
 
 

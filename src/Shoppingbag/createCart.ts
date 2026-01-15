@@ -8,32 +8,138 @@ import { theTotal } from "./theTotal";
 let shoppingBag: ProductCart[] = [];
 
 
+                  //===== main funktion  ===== //
 export const createCart = () => {
-    let theCart = document.getElementById("shoppingBag");
-    if(theCart){
-        theCart.innerHTML = "";
-    }
-   
-    if (theCart){
-        theCart.className = "showCart";
-    }
 
-    const theString = localStorage.getItem("ShoppingBag");
-    if (theString){
-        shoppingBag = JSON.parse(theString);
-    }
+  const cart = document.getElementById("overlay");
+  if (!cart) return;
+
+  cart.innerHTML = "";
+  cart.className = "showCart";
+
+  const theString = localStorage.getItem("ShoppingBag");
+  shoppingBag = theString ? JSON.parse(theString) : [];
+
+  cart.appendChild(createHeader(cart));
+
+  shoppingBag.forEach((product) => {
+    cart.appendChild(createProductRow(product));
+  });
+
+  cart.appendChild(createTotal());    
+  cart.appendChild(createFooter(cart));
+};
 
 
-    const theHeadingDiv = document.createElement("div"); 
-    const myCartHeading = document.createElement("h2");
-    myCartHeading.innerHTML = "Min varukorg"
-    theHeadingDiv.appendChild(myCartHeading);
-    theCart?.appendChild(theHeadingDiv);
+
+                      /* ==== Header =====*/
+const createHeader = (cart: HTMLElement) => {
+  const header = document.createElement("div");
+  
+
+  const title = document.createElement("h2");
+  title.innerHTML = "TESTA";
+
+  const count = document.createElement("p");
+  count.textContent = "Total produkter: " + productCount(shoppingBag);
 
     const exitButton = document.createElement("button");
-    exitButton.innerHTML = "EXIT"
-    theCart?.appendChild(exitButton);
+  exitButton.textContent = "X";
+  exitButton.onclick = () => {
+    cart.className = "shoppingBag"; 
+  };
+  header.append(title, count, exitButton);
+  return header;
+};
 
+                    /* ==== Produkt row ===== */
+const createProductRow = (product: ProductCart) => {
+  const productContainer = document.createElement("div");
+  productContainer.className = "productContainer";
+
+
+  // Container//
+  const imgContainer = document.createElement("div");
+  imgContainer.className = "imgContainer";
+
+
+// Img //
+  const img = document.createElement("img");
+  img.src = product.img;
+  img.alt = product.name;
+  imgContainer.appendChild(img);
+
+// Info about product //
+  const info = document.createElement("div");
+  info.className = "productInfo";
+
+  const name = document.createElement("h2");
+  name.className = "productname";
+  name.textContent = product.name;
+
+  const price = document.createElement("p");
+  price.className = "productprice";
+  price.textContent = product.price + " kr";
+
+  info.append(name, price);
+
+
+  // -btn quantity +btn//
+  const minus = document.createElement("button");
+  minus.textContent = "-";
+  minus.onclick = () => removeFromCart(product);
+
+  const quantity = document.createElement("p");
+  quantity.textContent = `${product.quantity}`;
+
+  const plus = document.createElement("button");
+  plus.textContent = "+";
+  plus.onclick = () => addToCart(product);
+
+
+  productContainer.append(imgContainer, info, minus, quantity, plus);
+  return productContainer;
+};
+
+// Total sum //
+const createTotal = () => {
+  const total = document.createElement("h2");
+  total.className = "totalprice";
+  total.textContent = "Total: " + theTotal(shoppingBag) + " kr";
+  return total;
+};
+
+                    /*===== Footer with btn ====== */
+
+const createFooter = (cart: HTMLElement) => {
+  const footer = document.createElement("div");
+  footer.className = "cartFooter";
+
+  const continueBtn = document.createElement("button");
+  continueBtn.id = "continueBtn";
+  continueBtn.textContent = "Fortsätt handla";
+  continueBtn.onclick = () => {
+    cart.className = "shoppingBag"; 
+  };
+
+  const checkoutBtn = document.createElement("button");
+  checkoutBtn.id = "checkoutBtn";
+  checkoutBtn.textContent = "Gå till kassa";
+  checkoutBtn.onclick = () => {
+    window.location.href = "src/pages/checkout.html";
+  };
+
+  footer.append(continueBtn, checkoutBtn);
+  return footer;
+};
+
+
+
+
+
+
+            
+/*
     exitButton.addEventListener("click", () => {
         if (theCart) {
             theCart.className = "shoppingBag";
@@ -95,7 +201,7 @@ export const createCart = () => {
     productContainer.className = "checkoutContainer";
     quantity.innerHTML = `Antal: ${product.quantity}`;
 
-
+    
     
     productContainer.appendChild(quantity);
     productContainer.appendChild(plusButton);
@@ -121,8 +227,8 @@ export const createCart = () => {
     const productCountShow = document.createElement("p");
     productCountShow.innerHTML = "Total produkter: " +productCountInCart;
     theHeadingDiv.appendChild(productCountShow);
-
 }
+*/
 
 
 

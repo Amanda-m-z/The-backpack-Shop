@@ -3,7 +3,7 @@ import type { Product } from "../BackpackType/ProductType";
 import { createCart } from "./createCart";
 
 export const addToCart = (theNewBag: Product | ProductCart) => {  //Denna fuktion lägger till ett produkt i kundkorgen
-     
+   
     let shoppingBag: ProductCart [] = [];
 
     const theCartString = localStorage.getItem("ShoppingBag")
