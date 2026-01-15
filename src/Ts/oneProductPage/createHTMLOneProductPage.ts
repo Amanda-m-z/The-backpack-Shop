@@ -109,47 +109,48 @@ export const createHTMLOneProductPage = (item: Product) => {
   workDayIcon.className = "fa-solid fa-calendar";
   workDayText.textContent = "4-6 arbetsdagars leveranstid";
 
+  // Append elements
+  oneProductContainer.append(
+    oneProductImageContainer,
+    productDetails,
+    similarProductsContainer
+  );
+
   oneProductImageContainer.appendChild(oneProductImg);
 
-  shippingOverview.appendChild(freeShippingContainer);
-  freeShippingContainer.appendChild(freeShippingIcon);
-  freeShippingContainer.appendChild(freeShippingText);
+  productDetails.append(
+    productTitle,
+    productPrice,
+    reviewsContainer,
+    inStockStatus,
+    addToCartBtn,
+    shippingOverview,
+    accordion
+  );
 
-  shippingOverview.appendChild(freeReturnContainer);
-  freeReturnContainer.appendChild(freeReturnIcon);
-  freeReturnContainer.appendChild(freeReturnText);
+  reviewsContainer.append(starsContainer, reviewDetailsContainer);
 
-  shippingOverview.appendChild(workDayContainer);
-  workDayContainer.appendChild(workDayIcon);
-  workDayContainer.appendChild(workDayText);
-
-  productDetails.appendChild(productTitle);
-  productDetails.appendChild(productPrice);
-  productDetails.appendChild(reviewsContainer);
-  productDetails.appendChild(inStockStatus);
-  productDetails.appendChild(addToCartBtn);
-  productDetails.appendChild(shippingOverview);
-  productDetails.appendChild(accordion);
-
-  reviewsContainer.appendChild(starsContainer);
-  reviewsContainer.appendChild(reviewDetailsContainer);
-
-  starsContainer.appendChild(firstStar);
-  starsContainer.appendChild(secondStar);
-  starsContainer.appendChild(thirdStar);
-  starsContainer.appendChild(fourthStar);
-  starsContainer.appendChild(fifthStar);
-
-  inStockStatus.appendChild(circleStatusIcon);
-  inStockStatus.appendChild(inStockText);
+  starsContainer.append(
+    firstStar,
+    secondStar,
+    thirdStar,
+    fourthStar,
+    fifthStar
+  );
 
   reviewDetailsContainer.appendChild(reviewRating);
+  inStockStatus.append(circleStatusIcon, inStockText);
+
+  shippingOverview.append(
+    freeShippingContainer,
+    freeReturnContainer,
+    workDayContainer
+  );
+  workDayContainer.append(workDayIcon, workDayText);
+  freeReturnContainer.append(freeReturnIcon, freeReturnText);
+  freeShippingContainer.append(freeShippingIcon, freeShippingText);
 
   similarProductsContainer.appendChild(similarProductsHeading);
-
-  oneProductContainer.appendChild(oneProductImageContainer);
-  oneProductContainer.appendChild(productDetails);
-  oneProductContainer.appendChild(similarProductsContainer);
 
   // oneProductImageContainer.addEventListener("click", () => {
   //   openOneProduct(item);
