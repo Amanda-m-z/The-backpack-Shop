@@ -57,6 +57,16 @@
       flex-direction: column;
       align-items: center;
 
+<<<<<<< HEAD
+        img {
+             border:grey 2px solid;
+             height: 17rem;
+            width: 17rem;
+             border-radius: 4px;
+               max-width: 100%;
+             object-fit: cover;
+        }
+=======
       img {
         border: grey 2px solid;
         height: 17rem;
@@ -65,6 +75,7 @@
         max-width: 100%;
         object-fit: cover;
       }
+>>>>>>> 029f176d04b5e5ab47cec753dd1be85f1d2da232
     }
     .extraInfo {
       margin: 0% 2%;
