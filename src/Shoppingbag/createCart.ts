@@ -13,9 +13,6 @@ export const createCart = () => {
   const cart = document.getElementById("overlay");
   if (!cart) return;
 
-  const textNode = document.createElement("h1");
-  textNode.innerHTML = "TESTA";
-  cart?.appendChild(textNode);
 
   cart.innerHTML = "";
   cart.className = "showCart";
@@ -38,7 +35,7 @@ const createHeader = (cart: HTMLElement) => {
   const header = document.createElement("div");
 
   const title = document.createElement("h2");
-  title.innerHTML = "TESTA";
+  title.innerHTML = "VARUKORG";
 
   const count = document.createElement("p");
   count.textContent = "Total produkter: " + productCount(shoppingBag);
@@ -71,7 +68,7 @@ const createProductRow = (product: ProductCart) => {
   const info = document.createElement("div");
   info.className = "productInfo";
 
-  const name = document.createElement("h2");
+  const name = document.createElement("h5");
   name.className = "productname";
   name.textContent = product.name;
 

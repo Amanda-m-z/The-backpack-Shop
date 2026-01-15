@@ -16,15 +16,15 @@
 @use "productAccordionStyle";
 @use "popUpAddedToCart";
 
-.shoppingBag {
-  display: none;
-}
-.showCart {
-  display: block;
-  border: red 2px solid;
-  position: fixed;
-  z-index: 100;
-}
+//.shoppingBag {
+ // display: none;
+//}
+//.showCart {
+ // display: block;
+  //border: red 2px solid;
+  //position: fixed;
+ // z-index: 100;
+//}
 
 //Mobile first
 #filterSortera {
