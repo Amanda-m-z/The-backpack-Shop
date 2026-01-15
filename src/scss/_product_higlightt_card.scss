@@ -25,13 +25,14 @@
   object-fit: cover;
   object-position: center center;
   display: block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 // Card Body //
 .card-body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-color: v.$light-bg;
+  background-color: v.$darker-primary;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -47,6 +48,7 @@
   .card {
     flex-direction: row;
     max-width: 800px;
+    max-height: 300px;
   }
 
   .card:nth-child(odd) .card-img-top {
