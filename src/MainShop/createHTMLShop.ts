@@ -2,17 +2,15 @@ import type { Product } from "../BackpackType/ProductType";
 import { openOneProduct } from "../OneProduct/openOneProduct";
 import { addToCart } from "../Shoppingbag/addToCart";
 
+export const createHTML = (theProducts: Product[]) => {
+  //Detta är för shop Main
 
+  const productsDiv = document.getElementById("products-grid");
+  if (productsDiv) {
+    productsDiv.innerHTML = "";
+  }
 
-export const createHTML = (theProducts: Product[]) => {  //Detta är för shop Main 
-
-    const productsDiv = document.getElementById("products-grid");
-    if (productsDiv) {
-        productsDiv.innerHTML = "";
-    }
-
-    theProducts.forEach((item, i) => {
-
+  theProducts.forEach((item, i) => {
     const productContainer = document.createElement("div");
     const imgContainer = document.createElement("div");
     const img = document.createElement("img");
@@ -24,29 +22,26 @@ export const createHTML = (theProducts: Product[]) => {  //Detta är för shop M
     imgContainer.className = "imgContainer";
     imgContainer.id = "imgContainerID";
     img.src = item.img;
-    extraInfo.className = "extraInfo"
+    extraInfo.className = "extraInfo";
     name.innerHTML = item.name;
-    price.innerHTML = item.price+"kr";
+    price.innerHTML = item.price + " kr";
 
-    const buttonBuy = document.createElement("button");   
-    buttonBuy.innerHTML = "KÖP"
-    buttonBuy.className = "buyButton";
+    const buttonBuy = document.createElement("button");
+    buttonBuy.innerHTML = "KÖP";
+    buttonBuy.className = "buyButton btn btn-primary";
 
-
-
-   buttonBuy.addEventListener("click", () => {
-    addToCart(theProducts[i]);
+    buttonBuy.addEventListener("click", () => {
+      addToCart(theProducts[i]);
     });
 
-   imgContainer.addEventListener("click", () => {
-     openOneProduct(item);
+    imgContainer.addEventListener("click", () => {
+      openOneProduct(item);
     });
 
     name.addEventListener("click", () => {
-       openOneProduct(item);
+      openOneProduct(item);
     });
 
-    
     imgContainer.appendChild(img);
     productContainer.appendChild(imgContainer);
     extraInfo.appendChild(name);
@@ -54,6 +49,5 @@ export const createHTML = (theProducts: Product[]) => {  //Detta är för shop M
     extraInfo.appendChild(buttonBuy);
     productContainer.appendChild(extraInfo);
     productsDiv?.appendChild(productContainer);
-    
-    });
+  });
 };
