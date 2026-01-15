@@ -74,11 +74,11 @@ const createProductRow = (product: ProductCart) => {
   info.className = "productInfo";
 
   const name = document.createElement("h2");
-  name.className = "productname"
+  name.className = "productname";
   name.textContent = product.name;
 
   const price = document.createElement("p");
-  price.className = "productprice"
+  price.className = "productprice";
   price.textContent = product.price + " kr";
 
   info.append(name, price);
@@ -104,7 +104,7 @@ const createProductRow = (product: ProductCart) => {
 // Total sum //
 const createTotal = () => {
   const total = document.createElement("h2");
-  total.className = "totalprice"
+  total.className = "totalprice";
   total.textContent = "Total: " + theTotal(shoppingBag) + " kr";
   return total;
 };
@@ -116,14 +116,14 @@ const createFooter = (cart: HTMLElement) => {
   footer.className = "cartFooter";
 
   const continueBtn = document.createElement("button");
-  continueBtn.id = "continueBtn"
+  continueBtn.id = "continueBtn";
   continueBtn.textContent = "Fortsätt handla";
   continueBtn.onclick = () => {
     cart.className = "shoppingBag"; 
   };
 
   const checkoutBtn = document.createElement("button");
-  checkoutBtn.id = "checkoutBtn"
+  checkoutBtn.id = "checkoutBtn";
   checkoutBtn.textContent = "Gå till kassa";
   checkoutBtn.onclick = () => {
     window.location.href = "src/pages/checkout.html";
