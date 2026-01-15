@@ -14,8 +14,8 @@ export const loadHeader = () => {
   // Left side
   const headerLeftSideContainer = document.createElement("div");
   const hamburgerIcon = document.createElement("i");
-  const companyName = document.createElement("h2");
-
+  const companyName = document.createElement("a");
+  companyName.href = "http://localhost:5173/";
   // Search container will be shown on larger screens
   const searchContainer = document.createElement("div");
   const searchInput = document.createElement("input");
