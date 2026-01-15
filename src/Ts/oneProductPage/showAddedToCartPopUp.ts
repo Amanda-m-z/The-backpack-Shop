@@ -1,5 +1,17 @@
 export function showAddedToCartPopUp() {
   const container = document.getElementById("addedToCartPopUpSection");
+
+  const popUpExists = document.getElementById("popUpContainer");
+  const isPopUpClosed = container?.classList.contains("close-overlay");
+
+  if (popUpExists && !isPopUpClosed) {
+    return;
+  }
+
+  if (popUpExists && isPopUpClosed) {
+    popUpExists.remove();
+  }
+
   const popUpContainer = document.createElement("div");
   const textContainer = document.createElement("div");
   const popUpIcon = document.createElement("i");
@@ -20,13 +32,19 @@ export function showAddedToCartPopUp() {
   });
   showShoppingCartBtn.textContent = "Gå till kassan";
   showShoppingCartBtn.className = "btn btn-primary";
+  showShoppingCartBtn.addEventListener("click", () => {
+    container?.classList.add("close-overlay");
+    window.location.href = "../../pages/checkout.html";
+  });
 
   textContainer.append(popUpIcon, popUpText);
   buttonsContainer.append(continueShoppingBtn, showShoppingCartBtn);
   popUpContainer.append(textContainer, buttonsContainer);
+  // Remove close-overlay class to show the popup
+  container?.classList.remove("close-overlay");
   container?.appendChild(popUpContainer);
 
   setTimeout(() => {
     container?.classList.add("close-overlay");
-  }, 4000);
+  }, 3000);
 }
