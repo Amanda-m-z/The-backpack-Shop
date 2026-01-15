@@ -1,0 +1,151 @@
+@use "variables" as v;
+
+// .shoppingBag {
+//   display: none;
+// }
+// .showCart {
+//   display: block;
+//   border: red 2px solid;
+// }
+
+// #oneProductView {
+//   display: grid;
+//   grid-template-columns: repeat(12, [col-start] 1fr);
+//   gap: 1rem;
+// }
+
+.oneProductContainer {
+  display: grid;
+  grid-template-columns: repeat(12, [col-start] 1fr);
+  gap: 1.5rem;
+}
+
+.oneProductContainer > * {
+  grid-column: col-start / span 12;
+}
+
+.oneProductImageContainer {
+  width: 100%;
+
+  img {
+    border: v.$border;
+    border-radius: v.$rounded-corner;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+  h1 {
+    font-size: v.$h1-sm;
+    color: v.$black;
+  }
+
+  button {
+    width: 100%;
+  }
+  .pricetag {
+    font-size: v.$h2-sm;
+    font-family: v.$font-heading;
+    font-weight: 600;
+  }
+}
+
+.reviewsContainer {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.inStockStatus {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.circleStatusIcon {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #59e052;
+  border: 1px solid v.$text-color;
+  border-radius: 100%;
+}
+
+.shippingOverview {
+  background-color: v.$lighter-primary;
+  border: v.$border;
+  border-radius: v.$rounded-corner;
+  padding: 1.75rem 1.5rem;
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  p {
+    font-size: v.$small-text;
+  }
+}
+
+#accordionContainer {
+  margin-top: 0.5rem;
+}
+
+#similarProductsContainer {
+  h2 {
+    text-align: center;
+    font-size: v.$h2-sm;
+  }
+}
+
+@media only screen and (min-width: v.$breakpoint-md) {
+  .oneProductContainer {
+    grid-auto-rows: min-content;
+    align-items: start;
+  }
+
+  .oneProductImageContainer {
+    grid-column: col-start / span 6;
+    grid-row: 1;
+  }
+
+  .productDetails {
+    grid-column: col-start 7 / span 6;
+    grid-row: 1 / span 3;
+    height: min-content;
+    align-self: start;
+  }
+
+  #similarProductsContainer {
+    grid-column: col-start / span 6;
+    grid-row: 2;
+  }
+}
+
+@media only screen and (min-width: v.$breakpoint-lg) {
+  .oneProductImageContainer {
+    grid-column: col-start 3 / span 4;
+    grid-row: 1;
+  }
+
+  .productDetails {
+    grid-column: col-start 7 / span 4;
+    grid-row: 1 / span 3;
+    height: min-content;
+    align-self: start;
+  }
+
+  #similarProductsContainer {
+    grid-column: col-start 3 / span 4;
+    grid-row: 2;
+  }
+}

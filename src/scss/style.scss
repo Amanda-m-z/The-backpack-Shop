@@ -13,17 +13,18 @@
 @use "productHero";
 @use "cartShow"; //?
 @use "varukorgOverlay";
+@use "productAccordionStyle";
+@use "popUpAddedToCart";
 
 .shoppingBag {
-  display: none; 
-
- }
- .showCart {
-   display: block;
-   border: red 2px solid;
-   position: fixed;
-   z-index: 100; 
- } 
+  display: none;
+}
+.showCart {
+  display: block;
+  border: red 2px solid;
+  position: fixed;
+  z-index: 100;
+}
 
 //Mobile first
 
@@ -33,7 +34,7 @@
   justify-content: space-between;
 }
 #products-grid {
-  margin: 6%; 
+  margin: 6%;
   display: grid;
   gap: 2px;
   grid-template-columns: auto auto;
@@ -44,19 +45,19 @@
     align-items: left;
     justify-content: space-between;
     position: static;
-   
+
     padding: 20px 0px;
     //min-height: 433px;
     background-color: whitesmoke;
     border-radius: 10px;
-    border:  grey 2px solid;
+    border: grey 2px solid;
 
-    
     .imgContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
 
+<<<<<<< HEAD
         img {
              border:grey 2px solid;
              height: 17rem;
@@ -65,39 +66,48 @@
                max-width: 100%;
              object-fit: cover;
         }
+=======
+      img {
+        border: grey 2px solid;
+        height: 17rem;
+        // width: 17rem;
+        border-radius: 4px;
+        max-width: 100%;
+        object-fit: cover;
+      }
+>>>>>>> 029f176d04b5e5ab47cec753dd1be85f1d2da232
     }
     .extraInfo {
-    margin: 0% 2%;
-    padding-left: 10px;
-    display: flex;
-    flex-direction: column;
+      margin: 0% 2%;
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
 
-    button {
+      button {
         width: 4em;
         align-self: flex-end;
+      }
+      // .buttonBuy {
+      //   margin-right: auto;
+      // }
     }
-    }
-}
+  }
 }
 
 //Tablet version
 @media (min-width: 768px) {
-
   #products-grid {
-  grid-template-columns: auto auto auto;
-  gap: 8px;
+    grid-template-columns: auto auto auto;
+    gap: 8px;
   }
-
 }
 //Desktop version
 @media (min-width: 1024px) {
-
   #products-grid {
-  margin: 2% 10%; 
-  grid-template-columns: auto auto auto auto;
+    margin: 2% 10%;
+    grid-template-columns: auto auto auto auto;
   }
-  #filterSortera{
+  #filterSortera {
     margin: 1% 10%;
   }
 }
-

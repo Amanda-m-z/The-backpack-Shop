@@ -1,0 +1,61 @@
+@use "variables" as v;
+
+#popUpContainer {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: v.$secondary;
+  color: v.$white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+  border: 0.125rem solid v.$divider;
+  border-radius: v.$rounded-corner;
+  width: 80%;
+  box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+}
+
+.textContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: v.$paragraph-size;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  button {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: v.$breakpoint-md) {
+  #popUpContainer {
+    width: 70%;
+  }
+
+  .buttonsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+
+@media only screen and (min-width: v.$breakpoint-lg) {
+  #popUpContainer {
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width: v.$breakpoint-xl) {
+  #popUpContainer {
+    max-width: 31.25rem;
+  }
+}

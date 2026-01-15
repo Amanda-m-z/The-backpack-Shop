@@ -1,16 +1,14 @@
 import type { ProductCart } from "../BackpackType/ProductCartType";
+// import { createHtmlProductInCart } from "../createHtmlProductInCart";
 import { addToCart } from "./addToCart";
 import { productCount } from "./productCount";
 import { removeFromCart } from "./removeFromCart";
 import { theTotal } from "./theTotal";
 
-
 let shoppingBag: ProductCart[] = [];
 
-
-                  //===== main funktion  ===== //
+//===== main funktion  ===== //
 export const createCart = () => {
-
   const cart = document.getElementById("overlay");
   if (!cart) return;
 
@@ -26,16 +24,23 @@ export const createCart = () => {
     cart.appendChild(createProductRow(product));
   });
 
-  cart.appendChild(createTotal());    
+  cart.appendChild(createTotal());
   cart.appendChild(createFooter(cart));
 };
 
+productContainer.className = "productContainer";
+imgContainer.className = "imgContainer";
+imgContainer.id = "imgContainerID";
+img.src = product.img;
+extraInfo.className = "productInfo";
+name.innerHTML = product.name;
+name.id = "nameID";
+price.innerHTML = product.price + " kr";
+price.className = "pricetag";
 
-
-                      /* ==== Header =====*/
+/* ==== Header =====*/
 const createHeader = (cart: HTMLElement) => {
   const header = document.createElement("div");
-  
 
   const title = document.createElement("h2");
   title.innerHTML = "TESTA";
@@ -43,33 +48,31 @@ const createHeader = (cart: HTMLElement) => {
   const count = document.createElement("p");
   count.textContent = "Total produkter: " + productCount(shoppingBag);
 
-    const exitButton = document.createElement("button");
+  const exitButton = document.createElement("button");
   exitButton.textContent = "X";
   exitButton.onclick = () => {
-    cart.className = "shoppingBag"; 
+    cart.className = "shoppingBag";
   };
   header.append(title, count, exitButton);
   return header;
 };
 
-                    /* ==== Produkt row ===== */
+/* ==== Produkt row ===== */
 const createProductRow = (product: ProductCart) => {
   const productContainer = document.createElement("div");
   productContainer.className = "productContainer";
-
 
   // Container//
   const imgContainer = document.createElement("div");
   imgContainer.className = "imgContainer";
 
-
-// Img //
+  // Img //
   const img = document.createElement("img");
   img.src = product.img;
   img.alt = product.name;
   imgContainer.appendChild(img);
 
-// Info about product //
+  // Info about product //
   const info = document.createElement("div");
   info.className = "productInfo";
 
@@ -83,7 +86,6 @@ const createProductRow = (product: ProductCart) => {
 
   info.append(name, price);
 
-
   // -btn quantity +btn//
   const minus = document.createElement("button");
   minus.textContent = "-";
@@ -95,7 +97,6 @@ const createProductRow = (product: ProductCart) => {
   const plus = document.createElement("button");
   plus.textContent = "+";
   plus.onclick = () => addToCart(product);
-
 
   productContainer.append(imgContainer, info, minus, quantity, plus);
   return productContainer;
@@ -109,7 +110,7 @@ const createTotal = () => {
   return total;
 };
 
-                    /*===== Footer with btn ====== */
+/*===== Footer with btn ====== */
 
 const createFooter = (cart: HTMLElement) => {
   const footer = document.createElement("div");
@@ -119,7 +120,7 @@ const createFooter = (cart: HTMLElement) => {
   continueBtn.id = "continueBtn";
   continueBtn.textContent = "Fortsätt handla";
   continueBtn.onclick = () => {
-    cart.className = "shoppingBag"; 
+    cart.className = "shoppingBag";
   };
 
   const checkoutBtn = document.createElement("button");
@@ -133,12 +134,6 @@ const createFooter = (cart: HTMLElement) => {
   return footer;
 };
 
-
-
-
-
-
-            
 /*
     exitButton.addEventListener("click", () => {
         if (theCart) {
@@ -182,54 +177,44 @@ const createFooter = (cart: HTMLElement) => {
         
     const quantity = document.createElement("p");
 
-
     //Plus och minus tecken
     const plusButton = document.createElement("button");
     const minusButton = document.createElement("button");
 
-    plusButton.innerHTML = "PLUS"
-    minusButton.innerHTML = "MINUS"
+    plusButton.innerHTML = "PLUS";
+    minusButton.innerHTML = "MINUS";
 
     plusButton.addEventListener("click", () => {
-     addToCart(product);
+      addToCart(product);
     });
 
     minusButton.addEventListener("click", () => {
-        removeFromCart(product);
-    })
+      removeFromCart(product);
+    });
 
     productContainer.className = "checkoutContainer";
     quantity.innerHTML = `Antal: ${product.quantity}`;
 
-    
-    
     productContainer.appendChild(quantity);
     productContainer.appendChild(plusButton);
     productContainer.appendChild(minusButton);
     theCart?.appendChild(productContainer);
 
-    });
-    
     let theTotalPrice = theTotal(shoppingBag);
 
     const showTheTotal = document.createElement("h2");
-    showTheTotal.innerHTML = "Total: " + theTotalPrice; 
+    showTheTotal.innerHTML = "Total: " + theTotalPrice;
     theCart?.appendChild(showTheTotal);
-    
+
     const buttonContinueShopping = document.createElement("button");
     buttonContinueShopping.innerHTML = "Fortsätt Handla";
 
     const buttonGoToCheckout = document.createElement("button");
     buttonGoToCheckout.innerHTML = "Gå till kassa";
 
-    
-    let productCountInCart = productCount(shoppingBag); 
+    let productCountInCart = productCount(shoppingBag);
     const productCountShow = document.createElement("p");
-    productCountShow.innerHTML = "Total produkter: " +productCountInCart;
+    productCountShow.innerHTML = "Total produkter: " + productCountInCart;
     theHeadingDiv.appendChild(productCountShow);
 }
 */
-
-
-
-
