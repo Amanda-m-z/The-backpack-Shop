@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+=======
+import type { ProductCart } from "../Backpack/ProductCartType";
+import { addToCart } from "../Shoppingbag/addToCart";
+import { productCount } from "../Shoppingbag/productCount";
+import { removeFromCart } from "../Shoppingbag/removeFromCart";
+import { theTotal } from "../Shoppingbag/theTotal";
+
+let shoppingBag: ProductCart[] = [];
+
+>>>>>>> 4c458955d9ab5a7db192c3c7ae84a4b4fe36a307
 const app = document.getElementById("app");
 
 // Header
@@ -12,8 +23,12 @@ headLogo.src = "";
 headLogo.alt = "";
 
 head.append(backLink, headLogo);
+<<<<<<< HEAD
 app.appendChild(head);
 
+=======
+app?.appendChild(head);
+>>>>>>> 4c458955d9ab5a7db192c3c7ae84a4b4fe36a307
 // Container
 const checkoutContainer = document.createElement("div");
 checkoutContainer.className = "checkoutContainer";
@@ -24,16 +39,17 @@ const CheckoutForm = document.createElement("form");
 CheckoutForm.id = "checkoutForm";
 checkoutContainer.appendChild(CheckoutForm);
 
-// Title
+// Title lägg in i HTML
 const checkoutTitle = document.createElement("h1");
 checkoutTitle.innerHTML = "Kassa";
-CheckoutForm.appendChild(checkoutTitle);
+CheckoutForm.appendChild(checkoutTitle); //Lägg in i HTML
 
-const productCount = document.createElement("p");
+/* const productCount = document.createElement("p");
 productCount.innerHTML = "Antal produkter";
-CheckoutForm.appendChild(productCount);
+CheckoutForm.appendChild(productCount); */
 
 // Product
+const checkoutProduct = document.createElement("div");
 const productDiv = document.createElement("div");
 productDiv.className = "CheckoutProduct";
 
@@ -50,11 +66,6 @@ const productPrice = document.createElement("div");
 productPrice.innerHTML = "1099 kr"; //kunna hämta function kanske
 
 productInfo.append(productName, productPrice); //lägga till färg med
-
-let theCart = document.getElementById("shoppingBag"); //byta ut ovan till denna typ
-if (theCart) {
-  theCart.innerHTML = "";
-}
 
 const theString = localStorage.getItem("ShoppingBag");
 if (theString) {
@@ -79,6 +90,70 @@ qtyDiv.append(minusBtn, quantitySpan, plusBtn);
 
 productDiv.append(productImg, productInfo, qtyDiv);
 CheckoutForm.appendChild(productDiv);
+// hämtad kod för varukorgen med lite ändrad info
+shoppingBag.forEach((product) => {
+  const productContainer = document.createElement("div");
+  /* const theHeadingDiv = document.createElement("div"); */
+  const imgContainer = document.createElement("div");
+  const img = document.createElement("img");
+  const extraInfo = document.createElement("div");
+  const name = document.createElement("h2");
+  const price = document.createElement("p");
+
+  productContainer.className = "productContainer";
+  imgContainer.className = "imgContainer";
+  imgContainer.id = "imgContainerID";
+  img.src = product.img;
+  extraInfo.className = "productInfo";
+  name.innerHTML = product.name;
+  name.id = "nameID";
+  price.innerHTML = product.price + " kr";
+  price.className = "pricetag";
+
+  imgContainer.appendChild(img);
+  productContainer.appendChild(imgContainer);
+  extraInfo.appendChild(name);
+  extraInfo.appendChild(price);
+
+  productContainer.appendChild(extraInfo);
+
+  const quantity = document.createElement("p");
+
+  //Plus och minus tecken
+  const plusButton = document.createElement("button");
+  const minusButton = document.createElement("button");
+
+  plusButton.innerHTML = "PLUS";
+  minusButton.innerHTML = "MINUS";
+
+  plusButton.addEventListener("click", () => {
+    addToCart(product);
+  });
+
+  minusButton.addEventListener("click", () => {
+    removeFromCart(product);
+  });
+
+  productContainer.className = "checkoutContainer";
+  quantity.innerHTML = `Antal: ${product.quantity}`;
+
+  productContainer.appendChild(quantity);
+  productContainer.appendChild(plusButton);
+  productContainer.appendChild(minusButton);
+  checkoutProduct.appendChild(productContainer);
+});
+
+checkoutContainer.appendChild(checkoutProduct);
+
+let theTotalPrice = theTotal(shoppingBag);
+
+const showTheTotal = document.createElement("h2");
+showTheTotal.innerHTML = "Total: " + theTotalPrice;
+checkoutProduct.appendChild(showTheTotal);
+
+let productNumber: number = productCount(shoppingBag);
+const productCountShow = document.createElement("p");
+productCountShow.innerHTML = "Total produkter: " + productNumber;
 
 // Shipping
 const shippingTitle = document.createElement("h3");
