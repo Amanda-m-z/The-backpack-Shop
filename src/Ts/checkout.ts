@@ -12,7 +12,7 @@ const app = document.getElementById("app");
 const head = document.createElement("div");
 
 const backLink = document.createElement("a");
-backLink.href = "#";
+backLink.href = "javascript:history.go(-1)";
 backLink.innerHTML = "Tillbaka";
 
 const headLogo = document.createElement("img"); //ändra till text
