@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import type { ProductCart } from "../Backpack/ProductCartType";
 import { addToCart } from "../Shoppingbag/addToCart";
 import { productCount } from "../Shoppingbag/productCount";
@@ -6,6 +8,7 @@ import { theTotal } from "../Shoppingbag/theTotal";
 
 let shoppingBag: ProductCart[] = [];
 
+>>>>>>> 4c458955d9ab5a7db192c3c7ae84a4b4fe36a307
 const app = document.getElementById("app");
 
 // Header
@@ -15,16 +18,21 @@ const backLink = document.createElement("a");
 backLink.href = "javascript:history.go(-1)";
 backLink.innerHTML = "Tillbaka";
 
-const headLogo = document.createElement("img"); //ändra till text
+const headLogo = document.createElement("img");
 headLogo.src = "";
 headLogo.alt = "";
 
 head.append(backLink, headLogo);
+<<<<<<< HEAD
+app.appendChild(head);
+
+=======
 app?.appendChild(head);
+>>>>>>> 4c458955d9ab5a7db192c3c7ae84a4b4fe36a307
 // Container
 const checkoutContainer = document.createElement("div");
 checkoutContainer.className = "checkoutContainer";
-app?.appendChild(checkoutContainer);
+app.appendChild(checkoutContainer);
 
 // Form
 const CheckoutForm = document.createElement("form");
@@ -64,6 +72,24 @@ if (theString) {
   shoppingBag = JSON.parse(theString);
 }
 
+// Quantity
+const qtyDiv = document.createElement("div");
+qtyDiv.className = "checkoutQty";
+
+const minusBtn = document.createElement("button");
+minusBtn.innerHTML = "-"; // icon
+
+const quantitySpan = document.createElement("span");
+quantitySpan.className = "checkoutQuantity";
+quantitySpan.innerHTML = "1"; //kunna ändra
+
+const plusBtn = document.createElement("button");
+plusBtn.innerHTML = "+"; // icon
+
+qtyDiv.append(minusBtn, quantitySpan, plusBtn);
+
+productDiv.append(productImg, productInfo, qtyDiv);
+CheckoutForm.appendChild(productDiv);
 // hämtad kod för varukorgen med lite ändrad info
 shoppingBag.forEach((product) => {
   const productContainer = document.createElement("div");
@@ -215,23 +241,4 @@ payments.forEach((method) => {
   paymentOptions.appendChild(label);
 });
 
-//Button submit
-const submitButton: HTMLButtonElement = document.createElement("button");
-submitButton.type = "submit";
-submitButton.innerHTML = "Betala köpet";
-submitButton.className = "submitButton";
-
-CheckoutForm.addEventListener("submit", (e: SubmitEvent) => {
-  e.preventDefault();
-
-  if (shoppingBag.length === 0) {
-    alert("Varukorgen är tom");
-    return;
-  }
-
-  alert("Tack för ditt köp!");
-});
-
-//Append
 CheckoutForm.appendChild(paymentOptions);
-CheckoutForm.appendChild(submitButton);

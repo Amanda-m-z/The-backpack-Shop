@@ -1,4 +1,3 @@
-//import type { ItemCart } from "../../public/Backpacktype/itemCart";
 import type { ProductCart } from "../Backpack/ProductCartType";
 import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "./addToCart";
@@ -16,10 +15,6 @@ export const createCart = () => {
         theCart.innerHTML = "";
     }
    
-    if (theCart){
-        theCart.className = "showCart";
-    }
-
     const theString = localStorage.getItem("ShoppingBag");
     if (theString){
         shoppingBag = JSON.parse(theString);
@@ -41,7 +36,6 @@ export const createCart = () => {
             theCart.className = "shoppingBag";
         }
     })
-
 
     shoppingBag.forEach((product) => {
     const checkoutContainer = createHTMLGeneral(product);
