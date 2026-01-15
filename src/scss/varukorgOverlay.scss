@@ -23,11 +23,8 @@
 }
 
 /* Header */
-#shoppingBag > div:first-child {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
+header{
+    display: flex;
 }
 
 #shoppingBag h2 {
