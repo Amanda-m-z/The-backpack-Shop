@@ -67,14 +67,13 @@ export const createHTMLOneProductPage = (item: Product) => {
   createProductDetailsAccordion(accordionDetails, accordion);
 
   const similarProductsContainer = document.createElement("div");
-  similarProductsContainer.id = "similarProductsContainer";
   const similarProductsHeading = document.createElement("h2");
   similarProductsHeading.textContent = "Liknande produkter";
 
   // Get the product category
   const category = item.type;
   // Create product cards with similar category
-  createSimilarProductsSection(category);
+  createSimilarProductsSection(category, similarProductsContainer);
 
   oneProductContainer.className = "oneProductContainer";
   oneProductImageContainer.className = "oneProductImageContainer";
