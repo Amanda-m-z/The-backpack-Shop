@@ -18,7 +18,9 @@ export async function createSimilarProductsSection(
 
   console.log(similarCategory);
 
+  const similarProducts = document.createElement("div");
+
   similarCategory.forEach((product) => {
-    createProductItemCard(product, similarProductsContainer);
+    createProductItemCard(product, similarProductsContainer, similarProducts);
   });
 }

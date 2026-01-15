@@ -3,8 +3,11 @@ import { addToCart } from "../../Shoppingbag/addToCart";
 
 export function createProductItemCard(
   product: Product,
-  similarProductsContainer: HTMLElement
+  similarProductsContainer: HTMLElement,
+  similarProducts: HTMLElement
 ) {
+  similarProducts.id = "similarProducts";
+
   const productContainer = document.createElement("div");
   const imgContainer = document.createElement("div");
   const img = document.createElement("img");
@@ -12,16 +15,18 @@ export function createProductItemCard(
   const name = document.createElement("h4");
   const price = document.createElement("h5");
 
-  productContainer.className = "productContainer";
-  imgContainer.className = "imgContainer";
+  productContainer.className = "similarProductContainer";
+  imgContainer.className = "similarProductImgContainer";
   img.src = product.img;
-  extraInfo.className = "extraInfo";
+  extraInfo.className = "similarProductExtraInfo";
   name.innerHTML = product.name;
+  name.className = "similarProductTitle";
   price.innerHTML = product.price + " kr";
+  price.className = "similarProductPrice";
 
   const buttonBuy = document.createElement("button");
   buttonBuy.innerHTML = "KÖP";
-  buttonBuy.className = "btn btn-primary";
+  buttonBuy.className = "similarProductBuyButton btn btn-primary";
 
   buttonBuy.addEventListener("click", () => {
     //Om du klickar buy så läggs backPack i kundkorg
@@ -38,5 +43,6 @@ export function createProductItemCard(
   extraInfo.append(name, price, buttonBuy);
   imgContainer.appendChild(img);
   productContainer.append(imgContainer, extraInfo);
-  similarProductsContainer?.appendChild(productContainer);
+  similarProducts.appendChild(productContainer);
+  similarProductsContainer?.appendChild(similarProducts);
 }

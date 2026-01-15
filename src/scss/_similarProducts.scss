@@ -1,0 +1,59 @@
+@use "variables" as v;
+
+#similarProductsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+}
+
+#similarProducts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.similarProductContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: v.$product-card;
+  border: v.$border;
+  border-color: v.$dark-grey;
+  border-radius: v.$rounded-corner;
+  width: 40%;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.similarProductImgContainer {
+  width: 100%;
+  border: v.$border;
+  border-color: v.$dark-grey;
+  border-radius: v.$rounded-corner;
+  img {
+    width: 100%;
+  }
+}
+
+.similarProductExtraInfo {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.similarProductTitle {
+  font-size: v.$h5-sm;
+}
+
+.similarProductPrice {
+  font-size: v.$h4-sm;
+  font-weight: 600;
+}
+
+.similarProductBuyButton {
+  padding: 0.25rem 1rem;
+  box-shadow: none;
+  align-items: flex-end;
+}
