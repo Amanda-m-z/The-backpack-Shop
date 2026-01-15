@@ -1,0 +1,36 @@
+@use "variables" as v;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+//Header
+#app > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  border-bottom: 1px solid v.$border;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    height: 28px;
+    width: auto;
+  }
+}
+.checkoutContainer {
+  padding: 1rem;
+}

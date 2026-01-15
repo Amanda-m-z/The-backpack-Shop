@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 import type { ProductCart } from "../Backpack/ProductCartType";
 import { addToCart } from "../Shoppingbag/addToCart";
 import { productCount } from "../Shoppingbag/productCount";
@@ -8,7 +6,6 @@ import { theTotal } from "../Shoppingbag/theTotal";
 
 let shoppingBag: ProductCart[] = [];
 
->>>>>>> 4c458955d9ab5a7db192c3c7ae84a4b4fe36a307
 const app = document.getElementById("app");
 
 // Header
@@ -23,16 +20,11 @@ headLogo.src = "";
 headLogo.alt = "";
 
 head.append(backLink, headLogo);
-<<<<<<< HEAD
-app.appendChild(head);
-
-=======
 app?.appendChild(head);
->>>>>>> 4c458955d9ab5a7db192c3c7ae84a4b4fe36a307
 // Container
 const checkoutContainer = document.createElement("div");
 checkoutContainer.className = "checkoutContainer";
-app.appendChild(checkoutContainer);
+app?.appendChild(checkoutContainer);
 
 // Form
 const CheckoutForm = document.createElement("form");

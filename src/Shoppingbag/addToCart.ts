@@ -2,14 +2,8 @@ import type { ProductCart } from "../Backpack/ProductCartType";
 import type { Product } from "../Backpack/ProductType";
 import { createCart } from "./createCart";
 
-<<<<<<< HEAD
-export const addToCart = (theNewBag: Product | ProductCart) => {  //Denna fuktion lägger till ett produkt i kundkorgen
-     
-    let shoppingBag: ProductCart [] = [];
-=======
 export const addToCart = (theNewBag: Product | ProductCart) => {
   //Denna fuktion lägger till ett produkt i kundkorgen
->>>>>>> 4c458955d9ab5a7db192c3c7ae84a4b4fe36a307
 
   let shoppingBag: ProductCart[] = [];
 

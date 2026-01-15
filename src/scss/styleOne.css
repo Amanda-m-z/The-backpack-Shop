@@ -1,0 +1,51 @@
+#oneProductView {
+  padding: 2rem 1rem;
+}
+
+.productContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.imgContainer {
+  width: 100%;
+}
+.imgContainer img {
+  border: 0.125rem solid #1e1e1e;
+  border-radius: 0.25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+.productInfo h2 {
+  font-size: 2rem;
+  color: #000000;
+}
+
+.pricetag {
+  font-size: 2rem;
+  font-family: Fredoka, sans-serif;
+  font-weight: 600;
+}
+
+.reviewsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.starsContainer {
+  display: flex;
+  align-items: center;
+}
+
+.reviewDetailsContainer {
+  display: flex;
+  align-items: center;
+}/*# sourceMappingURL=styleOne.css.map */
