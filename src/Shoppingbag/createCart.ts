@@ -1,5 +1,5 @@
 import type { ProductCart } from "../BackpackType/ProductCartType";
-// import { createHtmlProductInCart } from "../createHtmlProductInCart";
+import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "./addToCart";
 import { productCount } from "./productCount";
 import { removeFromCart } from "./removeFromCart";
@@ -12,7 +12,6 @@ export const createCart = () => {
   console.log("DU ÖPPNAR DENNA FUNKTION");
   const cart = document.getElementById("overlay");
   if (!cart) return;
-
 
   cart.innerHTML = "";
   cart.className = "showCart";
@@ -132,7 +131,6 @@ const createFooter = (cart: HTMLElement) => {
             theCart.className = "shoppingBag";
         }
     })
-
 
     shoppingBag.forEach((product) => {
         const productContainer = document.createElement("div");

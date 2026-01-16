@@ -1,5 +1,6 @@
 import type { ProductCart } from "../BackpackType/ProductCartType";
 import type { Product } from "../BackpackType/ProductType";
+import { createCart } from "./createCart";
 
 export const addToCart = (theNewBag: Product | ProductCart) => {
   //Denna fuktion lägger till ett produkt i kundkorgen
@@ -31,5 +32,5 @@ export const addToCart = (theNewBag: Product | ProductCart) => {
   }
 
   localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag)); //Lagrar ändringen i localstorage
-  // createCart(); //Uppdatera cart
+  createCart(); //Uppdatera cart
 };

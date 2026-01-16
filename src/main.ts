@@ -1,5 +1,5 @@
-
 import { createCart } from "./Shoppingbag/createCart";
+import { createHtmlCheckout } from "./Ts/checkout";
 import { loadFooter } from "./Ts/loadFooter";
 import { loadHeader } from "./Ts/loadHeader";
 import { loopNew } from "./Ts/loopNew";
@@ -60,9 +60,15 @@ loopNew();
 const theIconCart = document.getElementById("theCartIcon");
 theIconCart?.addEventListener("click", createCart);
 
-const checkout = document.getElementById("temp")
+//Checkout starts here
+const checkout = document.getElementById("temp");
 
-checkout?.addEventListener("click", 
-  () => {
+checkout?.addEventListener("click", () => {
   window.location.href = "src/pages/checkout.html";
 });
+
+const checkoutHtml = document.getElementById("checkout");
+if (checkoutHtml) {
+  createHtmlCheckout();
+}
+//Checkout ends here
