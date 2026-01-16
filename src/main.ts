@@ -57,6 +57,7 @@ if (newsletter) {
 loopPopular();
 loopNew();
 
+// cartIcon 
 const theIconCart = document.getElementById("theCartIcon");
 theIconCart?.addEventListener("click", createCart);
 

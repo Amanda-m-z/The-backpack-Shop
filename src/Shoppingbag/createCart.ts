@@ -1,5 +1,4 @@
 import type { ProductCart } from "../BackpackType/ProductCartType";
-import { createHTMLGeneral } from "../createHtmlGeneral";
 import { addToCart } from "./addToCart";
 import { productCount } from "./productCount";
 import { removeFromCart } from "./removeFromCart";

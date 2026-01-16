@@ -4,17 +4,16 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
   align-items: center;
 }
 // Card //
 .card {
   display: flex;
   flex-direction: column;
-  border: 1px solid v.$dark-grey;
-  border-radius: 8px;
+  border: v.$border;
+  border-radius: v.$rounded-corner;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: v.$card-shadow;
   max-width: 420px;
   width: 100%;
 }
@@ -26,21 +25,32 @@
   object-position: center center;
   display: block;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border-bottom: v.$border;
 }
 // Card Body //
 .card-body {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  background-color: v.$darker-primary;
-  align-items: center;
+  gap: 0.75rem;
+  background-color: v.$lighter-primary;
   justify-content: center;
-  text-align: center;
+  align-items: start;
+  padding: 2rem 1em;
 }
-  // Text //
+
+// Card title
+.card-title {
+  margin-bottom: 0;
+  color: v.$text-color;
+  font-size: v.$h3-sm;
+}
+
+// Text //
 .card-text {
   font-size: v.$paragraph-size;
   color: v.$text-color;
+  font-weight: 500;
 }
 
 // Responsive Design // //breakpoints medium//
@@ -53,21 +63,28 @@
 
   .card:nth-child(odd) .card-img-top {
     order: 0;
+    border-right: v.$border;
+    border-bottom: none;
+  }
+
+  .card:nth-child(even) .card-img-top {
+    border-left: v.$border;
+    border-bottom: none;
   }
 
   .card:nth-child(odd) .card-body {
     order: 1;
-    padding-left: 2rem;
+    // padding-left: 2rem;
   }
 
   .card:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  .card:nth-child(even) .card-body {
-    padding-right: 2rem;
-    padding-left: 1rem;
-  }
+  // .card:nth-child(even) .card-body {
+  //   // padding-right: 2rem;
+  //   // padding-left: 1rem;
+  // }
   .card-img-top {
     width: 50%;
     height: auto;
@@ -75,12 +92,17 @@
   }
   .card-body {
     width: 50%;
-    padding: 1rem;
+    // padding: 1rem;
+    padding: 2rem 2rem;
     box-sizing: border-box;
   }
-
- 
 }
+@media only screen and (min-width: v.$breakpoint-lg) {
+  .card-title {
+    font-size: v.$h3-lg;
+  }
+}
+
 // Responsive Design // //breakpoints large//
 @media only screen and (min-width: v.$breakpoint-xl) {
   .card {
