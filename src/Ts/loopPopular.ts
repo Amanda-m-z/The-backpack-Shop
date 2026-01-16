@@ -22,7 +22,7 @@ export const loopPopular = async (): Promise<void> => {
         const name = document.createElement("h4");
         const price = document.createElement("h5");
     
-        productContainer.className = "productContainer";
+        productContainer.className = "productContainerPopular";
         imgContainer.className = "imgContainer";
         imgContainer.id = "imgContainerID";
         img.src = item.img;
