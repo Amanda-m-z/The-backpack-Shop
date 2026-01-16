@@ -49,6 +49,9 @@ header {
     font-size: v.$h4-sm;
     font-weight: v.$weight-semibold-heading;
   }
+  a:hover{
+    color: v.$white;
+  }
 }
 
 .header-right-side {
@@ -89,6 +92,9 @@ header {
     a {
       font-size: v.$h4-lg;
     }
+    a:hover{
+      color: v.$white;
+    }
   }
 
   .header-right-side {
@@ -113,6 +119,9 @@ header {
 
     a {
       padding: 1rem 1rem;
+    }
+    a:hover{
+      color: white;
     }
   }
 
