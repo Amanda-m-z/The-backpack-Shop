@@ -5,22 +5,43 @@
 
 body {
   margin: 0;
+  background-color: white;
   overflow-x: hidden;
   
 }
 
 //Header
-
-#checkout > div:first-child {
+.checkoutHeader {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: white;
-  justify-content: space-between;
-  
+  width: 100%;
+  padding: 1rem 0;
+}
+.checkoutHeader a,
+.checkoutHeader .headLogo {
+  display: flex;
+  align-items: center;
+  /* line-height: 1; */
+}
 
-  a {
+.checkoutHeader a {
+  margin-right: auto;
+}
+
+.checkoutHeader .headLogo {
+  margin-left: auto;
+  /* font-weight: ; */
+}
+.checkoutTitle {
+  padding: 1rem;
+}
+ #checkout {
+  padding: 1rem;
+  max-width: 600px;
+  margin: 0 auto;}
+
+
+ /*  a {
     text-decoration: none;
     &:hover {
         text-decoration: underline;
@@ -28,175 +49,218 @@ body {
     
   }
 
-}
-//Checkout container
-.checkoutContainer {
-    background-color: white;
+.head {
   display: flex;
+
+  a {
+    text-decoration: none;
+  } */
+
+
+/* } */
+
+.cartSection {
+  background: white;
   padding: 1rem;
+  margin-bottom: 1.5rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
 }
-//Form
+//produktsektion
+.checkoutProducts {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+
+// Produktkort
+
+.productContainer {
+  display: flex;
+  gap: 1rem;
+  background: white;
+  padding: 0.75rem;
+  border: 1px solid v.$border;
+
+  img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+  }
+}
+
+.productInfo {
+  flex: 1;
+
+  h3 {
+    margin: 0 0 0.25rem;
+  }
+
+ /*  p {
+    margin: 0.25rem 0;
+    color: $text-muted;
+  } */
+
+  button {
+    margin-top: 0.25rem;
+    margin-right: 0.25rem;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    border: 1px solid v.$border;
+    background: white;
+    cursor: pointer;
+  }
+}
+
+//Total produkter
+
+.cartSection h3 {
+  margin-top: 1rem;
+}
+
+//formulär
+.checkoutSection {
+  background: white;
+  /* border-radius: $radius; */
+  padding: 1rem;
+  border: 1px solid v.$border;
+}
 
 #checkoutForm {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-
-  /* h1 {
-    font-size: 1.6rem; 
-    margin: 0;
-  }
-
-  h2,
-  h3 {
-    margin: 0.5rem 0;
-     font-size: 1.2rem; 
-  } */
+  gap: 1.25rem;
 }
 
 
-//Produkt 
-.checkoutProduct {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  gap: 0.75rem;
-  padding: 1rem 0;
-  /* border-bottom: 1px solid $border; */
-}
-
-.checkoutProductInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-
-  /* div:first-child {
-    font-weight: 600;
-  }
-
-  div:last-child {
-    color: $secondary;
-    font-size: 0.9rem;
-  } */
-}
-//Quantity
-
-.checkoutQty {
-  grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-
-  button {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    /* border: 1px solid $border; */
-    background: white;
-    
-  }
-
-  
-}
-//Varukorg (forEach-produkter)
-
-.productContainer {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  gap: 0.75rem;
-  padding: 1rem 0;
- /*  border-bottom: 1px solid $border; */
-
-  button {
-    padding: 0.4rem 0.6rem;
-    /* border-radius: $radius; */
-    /* border: 1px solid $border; */
-    background: white;
-    font-size: 0.8rem;
-  }
-
-  p {
-    margin: 0.3rem 0;
-    font-size: 0.85rem;
-  }
-}
-//Frakt & betalning
-
-.options,
-.paymentOptions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-
-  label {
-    display: flex;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-  }
-}
-//Kunduppgifter
+//inputs
 
 .row {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem; // avstånd mellan varje fält
 
- /*  label {
-    font-size: 0.8rem;
-    color: v.$secondary;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem; // avstånd mellan label & input
+  }
+
+  /* label {
+    font-size: 0.85rem;
+    color: #555;
   } */
 
   input {
-    padding: 0.7rem;
-    /* border-radius: $radius; */
-    /* border: 1px solid $border; */
+    width: 100%;
+    padding: 0.65rem 0.75rem;
     font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #808080;
+    box-sizing: border-box;
   }
 }
-//Totalt
 
-.total {
+//Frakt 
+.options {
   display: flex;
-  justify-content: space-between;
-  font-size: 1.1rem;
-  font-weight: 600;
-  padding-top: 1rem;
-  /* border-top: 2px solid $border; */
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
-  /* span {
-    color: $accent;
-  } */
+.shippingOption {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+
+  input {
+    accent-color: #0a84ff;
+  }
+
+  &:hover {
+    border-color: #c0c0c0;
+  }
+}
+
+/* Markerad ruta */
+.shippingOption:has(input:checked) {
+  border-color: #0a84ff;
+  background: #f0f6ff;
+}
+
+/* Text vänster */
+.shippingText {
+  font-size: 0.95rem;
+}
+
+/* Frifrakt höger */
+.shippingFree {
+  font-size: 0.85rem;
+  color: #1E1E1E;
+  font-weight: 600;
 }
 
 
-//Tablet (min-width: 768px)
+//Betalning
+.paymentOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+//Totalt att Betala 
+.total {
+  /* background: $bg-light; */
+  padding: 0.75rem;
+  /* border-radius: $radius; */
+  font-weight: 600;
+  text-align: right;
+}
+
+//Betala knapp
+.submitButton {
+  margin-top: 1rem;
+  padding: 0.9rem;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
 
 @media (min-width: 768px) {
-  .checkoutContainer {
-    background: white;
-    /* border-radius: $radius; */
-    padding: 2rem;
+  #checkout {
+    max-width: 900px;
   }
 
-  .CheckoutProduct,
-  .productContainer {
-    grid-template-columns: 80px 1fr auto;
-    align-items: center;
+  .checkoutProducts {
+    gap: 1.25rem;
   }
-
-  .checkoutQty {
-    grid-column: auto;
-  }
-
-  /* .row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-  } */
 }
-//Desktop (min-width: 1024px)
 
-/* @media (min-width: 1024px) {
-  .row {
-    grid-template-columns: repeat(3, 1fr);
-  }
-} */
+
+
+
+
+
+
+
+
+
