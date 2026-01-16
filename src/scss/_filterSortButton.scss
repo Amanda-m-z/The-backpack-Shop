@@ -1,9 +1,10 @@
 #sort {
     background-color: #f8d65d;
     border-radius: 5px;
-    height: 34px;
+    //height: 40px;
     margin-right: 6px;
-    width: 80px;
+    padding: 0.5em 1em;
+    //width: 80px;
 }
 #filter{
 @extend #sort;
