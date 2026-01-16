@@ -16,15 +16,7 @@
 @use "productAccordionStyle";
 @use "popUpAddedToCart";
 
-//.shoppingBag {
- // display: none;
-//}
-//.showCart {
- // display: block;
-  //border: red 2px solid;
-  //position: fixed;
- // z-index: 100;
-//}
+
 
 //Mobile first
 #filterSortera {
@@ -70,10 +62,19 @@
       padding-left: 10px;
       display: flex;
       flex-direction: column;
+      width: 80%;
 
       button {
         width: 4em;
         align-self: flex-end;
+       
+    background-color: #f8d65d;
+    border-radius: 5px;
+    height: 34px;
+    margin-right: 6px;
+
+
+        
       }
     }
   }
