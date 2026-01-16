@@ -84,3 +84,16 @@ ul {
     box-shadow: none;
   }
 }
+
+.btn-secondary {
+  background-color: v.$darker-secondary;
+  color: v.$white;
+
+  &:hover,
+  &:focus {
+    background-color: v.$secondary-button-hover;
+    color: v.$white;
+    border: v.$border;
+    box-shadow: none;
+  }
+}

@@ -1,5 +1,4 @@
 import type { ProductCart } from "../BackpackType/ProductCartType";
-// import { createHtmlProductInCart } from "../createHtmlProductInCart";
 import { addToCart } from "./addToCart";
 import { productCount } from "./productCount";
 import { removeFromCart } from "./removeFromCart";
@@ -9,6 +8,7 @@ let shoppingBag: ProductCart[] = [];
 
 //===== main funktion  ===== //
 export const createCart = () => {
+  console.log("DU ÖPPNAR DENNA FUNKTION");
   const cart = document.getElementById("overlay");
   if (!cart) return;
 
@@ -33,7 +33,7 @@ const createHeader = (cart: HTMLElement) => {
   const header = document.createElement("div");
 
   const title = document.createElement("h2");
-  title.innerHTML = "TESTA";
+  title.innerHTML = "VARUKORG";
 
   const count = document.createElement("p");
   count.textContent = "Total produkter: " + productCount(shoppingBag);
@@ -66,7 +66,7 @@ const createProductRow = (product: ProductCart) => {
   const info = document.createElement("div");
   info.className = "productInfo";
 
-  const name = document.createElement("h2");
+  const name = document.createElement("h5");
   name.className = "productname";
   name.textContent = product.name;
 
@@ -130,7 +130,6 @@ const createFooter = (cart: HTMLElement) => {
             theCart.className = "shoppingBag";
         }
     })
-
 
     shoppingBag.forEach((product) => {
         const productContainer = document.createElement("div");

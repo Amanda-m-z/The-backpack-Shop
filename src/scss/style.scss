@@ -15,26 +15,19 @@
 @use "varukorgOverlay";
 @use "productAccordionStyle";
 @use "popUpAddedToCart";
+@use "similarProducts";
 
-.shoppingBag {
-  display: none;
-}
-.showCart {
-  display: block;
-  border: red 2px solid;
-  position: fixed;
-  z-index: 100;
-}
+
+@use "checkout";
 
 //Mobile first
-
 #filterSortera {
   margin: 1% 6%;
   display: flex;
   justify-content: space-between;
 }
 #products-grid {
-  margin: 6%;
+  margin: 2% 6%;
   display: grid;
   gap: 2px;
   grid-template-columns: auto auto;
@@ -71,10 +64,19 @@
       padding-left: 10px;
       display: flex;
       flex-direction: column;
+      width: 80%;
 
       button {
         width: 4em;
         align-self: flex-end;
+       
+    background-color: #f8d65d;
+    border-radius: 5px;
+    height: 34px;
+    margin-right: 6px;
+
+
+        
       }
     }
   }
@@ -84,7 +86,11 @@
 @media (min-width: 768px) {
   #products-grid {
     grid-template-columns: auto auto auto;
-    gap: 8px;
+    gap: 8px; 
+    margin-top: 2%;
+  }
+    #filterSortera {
+    margin: 6% 6% 0% 6%;
   }
 }
 //Desktop version
@@ -94,6 +100,6 @@
     grid-template-columns: auto auto auto auto;
   }
   #filterSortera {
-    margin: 1% 10%;
+    margin: 6% 10% 2% 10%;
   }
 }
