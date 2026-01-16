@@ -1,27 +1,19 @@
 @use "variables" as v;
 
+/*Product Hero Section Styles */
 
-                   /*Product Hero Section Styles */
-
-                   
- // Container for Product Hero Section //
-#product-hero {
-  margin:  0.5rem;
-}
- 
-// Product Hero Section // 
+// Product Hero Section //
 .product-hero-section {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 400px;
-  background-color: v.$primary;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: v.$lighter-primary;
 }
 // Hero Image //
 .hero-image-container {
   flex: 1;
-  min-height: 300px;
+  min-height: 25rem;
   background-image: url("/images/product_list_hero.jpg");
   background-size: cover;
   background-position: center;
@@ -32,20 +24,25 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  gap: 1rem;
+
   h1 {
-    margin: 1rem;
+    font-size: v.$h1-sm;
   }
+
   p {
     font-weight: v.$weight-regular-heading;
     font-size: v.$paragraph-size;
   }
 }
 
+.hyphenManual {
+  hyphens: manual;
+}
 
-                      /* Responsive Design */
+/* Responsive Design */
 
 // Medium Screens //
 @media (min-width: v.$breakpoint-md) {
@@ -66,7 +63,7 @@
   }
 }
 
-              // Large Screens //
+// Large Screens //
 @media (min-width: v.$breakpoint-lg) {
   .hero-text-container {
     padding: 3rem;
