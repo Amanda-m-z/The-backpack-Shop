@@ -2,6 +2,7 @@ import type { Product } from "../../BackpackType/ProductType";
 import { createButtonBUY } from "../../createButtonBUY";
 import { addToCart } from "../../Shoppingbag/addToCart";
 import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
+import { createSimilarProductsSection } from "./createSimilarProductsSection";
 import { showAddedToCartPopUp } from "./showAddedToCartPopUp";
 
 export const createHTMLOneProductPage = (item: Product) => {
@@ -9,12 +10,12 @@ export const createHTMLOneProductPage = (item: Product) => {
 
   const oneProductContainer = document.createElement("div");
 
-  const imgContainer = document.createElement("div");
-  const img = document.createElement("img");
+  const oneProductImageContainer = document.createElement("div");
+  const oneProductImg = document.createElement("img");
 
   const productDetails = document.createElement("div");
-  const name = document.createElement("h1");
-  const price = document.createElement("p");
+  const productTitle = document.createElement("h1");
+  const productPrice = document.createElement("p");
 
   const reviewsContainer = document.createElement("div");
   const starsContainer = document.createElement("div");
@@ -30,9 +31,9 @@ export const createHTMLOneProductPage = (item: Product) => {
   const circleStatusIcon = document.createElement("div");
   const inStockText = document.createElement("p");
 
-  const buttonBuy = createButtonBUY(); //Skapar buyButton och lagar i buttonBuy
-  buttonBuy.innerHTML = "Lägg till varukorgen";
-  buttonBuy.addEventListener("click", () => {
+  const addToCartBtn = createButtonBUY(); //Skapar buyButton och lagar i buttonBuy
+  addToCartBtn.innerHTML = "Lägg till varukorgen";
+  addToCartBtn.addEventListener("click", () => {
     //Om du klickar buy så läggs backPack i kundkorg
     addToCart(item);
     showAddedToCartPopUp();
@@ -66,19 +67,23 @@ export const createHTMLOneProductPage = (item: Product) => {
   createProductDetailsAccordion(accordionDetails, accordion);
 
   const similarProductsContainer = document.createElement("div");
-  similarProductsContainer.id = "similarProductsContainer";
   const similarProductsHeading = document.createElement("h2");
   similarProductsHeading.textContent = "Liknande produkter";
 
+  // Get the product category
+  const category = item.type;
+  const productID = item.id;
+  // Create product cards with similar category
+  createSimilarProductsSection(category, productID, similarProductsContainer);
+
   oneProductContainer.className = "oneProductContainer";
-  imgContainer.className = "oneProductImageContainer";
-  imgContainer.id = "oneProductImageContainerID";
-  img.src = item.img;
+  oneProductImageContainer.className = "oneProductImageContainer";
+  oneProductImageContainer.id = "oneProductImageContainerID";
+  oneProductImg.src = item.img;
   productDetails.className = "productDetails";
-  name.innerHTML = item.name;
-  name.id = "nameID";
-  price.innerHTML = item.price + " kr";
-  price.className = "pricetag";
+  productTitle.innerHTML = item.name;
+  productPrice.innerHTML = item.price + " kr";
+  productPrice.className = "pricetag";
 
   reviewsContainer.className = "reviewsContainer";
 
@@ -104,49 +109,50 @@ export const createHTMLOneProductPage = (item: Product) => {
   workDayIcon.className = "fa-solid fa-calendar";
   workDayText.textContent = "4-6 arbetsdagars leveranstid";
 
-  imgContainer.appendChild(img);
+  // Append elements
+  oneProductContainer.append(
+    oneProductImageContainer,
+    productDetails,
+    similarProductsContainer
+  );
 
-  shippingOverview.appendChild(freeShippingContainer);
-  freeShippingContainer.appendChild(freeShippingIcon);
-  freeShippingContainer.appendChild(freeShippingText);
+  oneProductImageContainer.appendChild(oneProductImg);
 
-  shippingOverview.appendChild(freeReturnContainer);
-  freeReturnContainer.appendChild(freeReturnIcon);
-  freeReturnContainer.appendChild(freeReturnText);
+  productDetails.append(
+    productTitle,
+    productPrice,
+    reviewsContainer,
+    inStockStatus,
+    addToCartBtn,
+    shippingOverview,
+    accordion
+  );
 
-  shippingOverview.appendChild(workDayContainer);
-  workDayContainer.appendChild(workDayIcon);
-  workDayContainer.appendChild(workDayText);
+  reviewsContainer.append(starsContainer, reviewDetailsContainer);
 
-  productDetails.appendChild(name);
-  productDetails.appendChild(price);
-  productDetails.appendChild(reviewsContainer);
-  productDetails.appendChild(inStockStatus);
-  productDetails.appendChild(buttonBuy);
-  productDetails.appendChild(shippingOverview);
-  productDetails.appendChild(accordion);
-
-  reviewsContainer.appendChild(starsContainer);
-  reviewsContainer.appendChild(reviewDetailsContainer);
-
-  starsContainer.appendChild(firstStar);
-  starsContainer.appendChild(secondStar);
-  starsContainer.appendChild(thirdStar);
-  starsContainer.appendChild(fourthStar);
-  starsContainer.appendChild(fifthStar);
-
-  inStockStatus.appendChild(circleStatusIcon);
-  inStockStatus.appendChild(inStockText);
+  starsContainer.append(
+    firstStar,
+    secondStar,
+    thirdStar,
+    fourthStar,
+    fifthStar
+  );
 
   reviewDetailsContainer.appendChild(reviewRating);
+  inStockStatus.append(circleStatusIcon, inStockText);
+
+  shippingOverview.append(
+    freeShippingContainer,
+    freeReturnContainer,
+    workDayContainer
+  );
+  workDayContainer.append(workDayIcon, workDayText);
+  freeReturnContainer.append(freeReturnIcon, freeReturnText);
+  freeShippingContainer.append(freeShippingIcon, freeShippingText);
 
   similarProductsContainer.appendChild(similarProductsHeading);
 
-  oneProductContainer.appendChild(imgContainer);
-  oneProductContainer.appendChild(productDetails);
-  oneProductContainer.appendChild(similarProductsContainer);
-
-  // imgContainer.addEventListener("click", () => {
+  // oneProductImageContainer.addEventListener("click", () => {
   //   openOneProduct(item);
   // });
 

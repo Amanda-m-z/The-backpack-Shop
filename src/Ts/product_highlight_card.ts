@@ -1,4 +1,4 @@
-              // Define the structure of a highlight cardData //
+// Define the structure of a highlight cardData //
 type highlightCard = {
   title: string;
   text: string;
@@ -8,27 +8,27 @@ type highlightCard = {
   linkUrl: string;
 };
 
-                // Load Product Highlight Cards //
+// Load Product Highlight Cards //
 export const loadProductCard = () => {
   const cardData: highlightCard[] = [
     {
-      title: "Minst 20 % på VANDRINGSARYGGSÄCKAR",
-      text: "Påbörja en ny resa med våra Vandringsryggsäckar.",
-      buttonText: "SE VANDRINGSARYGGSÄCKAR",
+      title: "Minst 20% på vandringsryggsäckar",
+      text: "Påbörja en ny resa med våra vandringsryggsäckar.",
+      buttonText: "SE VANDRINGSRYGGSÄCKAR",
       imageUrl: "images/hiking_backpack_sale.jpg",
       imgAlt: "backpack",
       linkUrl: "",
     },
     {
-      title: "Minst 15 % på LAPTOPRYGGSÄCKAR",
-      text: "Skydda din teknik med stil med våra laptopryggsäckar.",
+      title: "Minst 15% på laptopryggsäckar",
+      text: "Förbered inför terminsstarten med en ny ryggsäck som tryggt kan förvara din laptop, anteckningsblock och vattenflaska",
       buttonText: "SE LAPTOPRYGGSÄCKAR",
       imageUrl: "images/laptop_backpack_sale.jpg",
       imgAlt: "laptop backpack",
       linkUrl: "#",
     },
   ];
-            // Get the container for highlight product cards //
+  // Get the container for highlight product cards //
   const highlightProductCards = document.getElementById(
     "highlight-card-container"
   );
@@ -38,50 +38,45 @@ export const loadProductCard = () => {
   }
   highlightProductCards.innerHTML = "";
 
+  /* Create each highlight product card */
 
-
-
-               /* Create each highlight product card */
-
-
-               
-                    // Create card container //
+  // Create card container //
   cardData.forEach((card) => {
     const highlightProductCardContainer = document.createElement("div");
     highlightProductCardContainer.className = "card";
 
-                      // Create card image //
+    // Create card image //
     const highlightProductCardimg = document.createElement("img");
     highlightProductCardimg.className = "card-img-top";
     highlightProductCardimg.src = card.imageUrl;
     highlightProductCardimg.alt = card.imgAlt;
 
-                      // Create card body //
+    // Create card body //
     const highlightProductCardbody = document.createElement("div");
     highlightProductCardbody.className = "card-body";
 
-                      // Create card title //
+    // Create card title //
     const highlightProductCardtitle = document.createElement("h3");
     highlightProductCardtitle.className = "card-title";
     highlightProductCardtitle.textContent = card.title;
 
-                      // Create card text //
+    // Create card text //
     const highlightProductCardtext = document.createElement("p");
     highlightProductCardtext.className = "card-text";
     highlightProductCardtext.textContent = card.text;
 
-                      // Create card button //
+    // Create card button //
     const highlightProductCardbtn = document.createElement("a");
     highlightProductCardbtn.href = card.linkUrl;
     highlightProductCardbtn.className = "btn btn-primary";
     highlightProductCardbtn.textContent = card.buttonText;
- 
-                      // Button click event //
+
+    // Button click event //
     highlightProductCardbtn.addEventListener("click", () => {
       window.location.href = card.linkUrl;
     });
 
-          // Append elements to build the card structure //
+    // Append elements to build the card structure //
     highlightProductCards?.appendChild(highlightProductCardContainer);
     highlightProductCardContainer.appendChild(highlightProductCardimg);
     highlightProductCardContainer.appendChild(highlightProductCardbody);
@@ -90,6 +85,6 @@ export const loadProductCard = () => {
     highlightProductCardbody.appendChild(highlightProductCardbtn);
   });
 };
- 
+
 // Initialize product cards on DOM content loaded //
 document.addEventListener("DOMContentLoaded", loadProductCard);

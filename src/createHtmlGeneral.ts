@@ -1,7 +1,8 @@
 import type { Product } from "./BackpackType/ProductType";
+import type { ProductCart } from "./BackpackType/ProductCartType";
 import { openOneProduct } from "./OneProduct/openOneProduct";
 
-export const createHTMLGeneral = (item: Product) => {
+export const createHTMLGeneral = (item: Product | ProductCart) => {
   //Skapar Basic HTML
 
   const productContainer = document.createElement("div");
