@@ -26,6 +26,7 @@
   display: block;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   border-radius: 0;
+  border-bottom: v.$border;
 }
 // Card Body //
 .card-body {
@@ -62,6 +63,13 @@
 
   .card:nth-child(odd) .card-img-top {
     order: 0;
+    border-right: v.$border;
+    border-bottom: none;
+  }
+
+  .card:nth-child(even) .card-img-top {
+    border-left: v.$border;
+    border-bottom: none;
   }
 
   .card:nth-child(odd) .card-body {
