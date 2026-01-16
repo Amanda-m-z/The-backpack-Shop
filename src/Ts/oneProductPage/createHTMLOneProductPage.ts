@@ -72,8 +72,9 @@ export const createHTMLOneProductPage = (item: Product) => {
 
   // Get the product category
   const category = item.type;
+  const productID = item.id;
   // Create product cards with similar category
-  createSimilarProductsSection(category, similarProductsContainer);
+  createSimilarProductsSection(category, productID, similarProductsContainer);
 
   oneProductContainer.className = "oneProductContainer";
   oneProductImageContainer.className = "oneProductImageContainer";
