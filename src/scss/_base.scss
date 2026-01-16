@@ -14,7 +14,7 @@ body {
 
 main {
   margin: auto;
-  margin: 2.5rem 1rem 6.25rem 1rem;
+  padding: 2.5rem 1rem 6.25rem 1rem;
 }
 
 h1,
@@ -95,5 +95,12 @@ ul {
     color: v.$white;
     border: v.$border;
     box-shadow: none;
+  }
+}
+
+@media only screen and (min-width: v.$breakpoint-xl) {
+  // Main will be max. 1500px in width
+  main {
+    max-width: 93.75rem;
   }
 }

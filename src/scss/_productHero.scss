@@ -1,31 +1,26 @@
 @use "variables" as v;
 
+/*Product Hero Section Styles */
 
-                   /*Product Hero Section Styles */
-
-                   
- // Container for Product Hero Section //
-#product-hero {
-  margin:  0.5rem;
-}
- 
-// Product Hero Section // 
+// Product Hero Section //
 .product-hero-section {
   display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 400px;
-  background-color: v.$primary;
-      box-shadow: 0.2rem 0.2rem #1e1e1e, 0.15rem 0.15rem #1e1e1e, 0.1rem 0.1rem #1e1e1e, 0.05rem 0.05rem #1e1e1e;
+  // box-shadow: 0.2rem 0.2rem #1e1e1e, 0.15rem 0.15rem #1e1e1e,
+  //   0.1rem 0.1rem #1e1e1e, 0.05rem 0.05rem #1e1e1e;
+  background-color: v.$lighter-primary;
 }
 // Hero Image //
 .hero-image-container {
   flex: 1;
-  min-height: 300px;
+  min-height: 25rem;
   background-image: url("/images/product_list_hero.jpg");
   background-size: cover;
   background-position: center;
-   box-shadow: 0.2rem 0.2rem #1e1e1e, 0.15rem 0.15rem #1e1e1e, 0.1rem 0.1rem #1e1e1e, 0.05rem 0.05rem #1e1e1e;
+  // box-shadow: 0.2rem 0.2rem #1e1e1e, 0.15rem 0.15rem #1e1e1e,
+  //   0.1rem 0.1rem #1e1e1e, 0.05rem 0.05rem #1e1e1e;
 }
 
 // Hero Text //
@@ -33,22 +28,27 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
+  gap: 1rem;
+
   h1 {
-    margin: 1rem;
-      text-shadow: 1px 2px 0 #969696, 1px 3px 2px #aba8a8;
+    // margin: 1rem;
+    // text-shadow: 1px 2px 0 #969696, 1px 3px 2px #aba8a8;
+    font-size: v.$h1-sm;
   }
+
   p {
     font-weight: v.$weight-medium-heading;
     font-size: v.$paragraph-size;
-    
   }
 }
 
+.hyphenManual {
+  hyphens: manual;
+}
 
-                      /* Responsive Design */
+/* Responsive Design */
 
 // Medium Screens //
 @media (min-width: v.$breakpoint-md) {
@@ -69,7 +69,7 @@
   }
 }
 
-              // Large Screens //
+// Large Screens //
 @media (min-width: v.$breakpoint-lg) {
   .hero-text-container {
     padding: 3rem;

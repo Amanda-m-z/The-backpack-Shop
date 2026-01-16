@@ -1,29 +1,27 @@
-             /* Product Hero Section */
+/* Product Hero Section */
 
-
-             // Load Product Hero Section //
+// Load Product Hero Section //
 export const loadProductHero = () => {
   const productHero = document.getElementById("product-hero");
 
-                // Create Hero Section //
+  // Create Hero Section //
   const heroSection = document.createElement("section");
   heroSection.className = "product-hero-section";
 
-                 // Create Hero Image //
+  // Create Hero Image //
   const heroImageContainer = document.createElement("div");
   heroImageContainer.className = "hero-image-container";
 
-                    // Create Hero Text //
+  // Create Hero Text //
   const heroTextContainer = document.createElement("div");
   heroTextContainer.className = "hero-text-container";
   const heroTitle = document.createElement("h1");
   heroTitle.textContent = "Upptäck alla våra ryggsäckar";
   const heroSubtitle = document.createElement("p");
-  heroSubtitle.textContent =
-    "Här hittar du ryggsäckar för alla tillfällen - från vardag till äventyr. Välj bland olika stilar, storlekar och funktioner för att hitta den perfekta ryggsäcken för dig. smarta laptopryggsäckar, hållbara vandringsryggsäckar och mycket mer. vandringsryggsäckar för alla dina äventyr. varje ryggsäck är designad med fokus på komfort, funktionalitet och stil. Börja utforska vårt sortiment idag och hitta din nya favoritryggsäck!";
+  heroSubtitle.className = "hyphenManual";
+  heroSubtitle.innerHTML = `Här hittar du din perfekta ryggsäck oavsett om det är för äventyr eller vardag. Välj mellan våra tre kategorier: bekväma laptop&shy;ryggsäckar för jobbet eller skolan, robusta vandrings&shy;ryggsäckar för äventyr i naturen, eller stilrena vardags&shy;ryggsäckar som följer dig överallt. Varje modell är skapad för att bära ditt liv på ett säkert, bekvämt och stilfullt sätt.`;
 
-
-                    // Append Elements //
+  // Append Elements //
   heroTextContainer.appendChild(heroTitle);
   heroTextContainer.appendChild(heroSubtitle);
   heroSection.appendChild(heroImageContainer);
