@@ -1,3 +1,4 @@
+import { createHtmlCheckout } from "./Ts/checkout";
 import { loadFooter } from "./Ts/loadFooter";
 import { loadHeader } from "./Ts/loadHeader";
 import { loopNew } from "./Ts/loopNew";
@@ -54,8 +55,16 @@ if (newsletter) {
 
 loopPopular();
 loopNew();
+
+//Checkout starts here
 const checkout = document.getElementById("temp");
 
 checkout?.addEventListener("click", () => {
   window.location.href = "src/pages/checkout.html";
 });
+
+const checkoutHtml = document.getElementById("checkout");
+if (checkoutHtml) {
+  createHtmlCheckout();
+}
+//Checkout ends here
