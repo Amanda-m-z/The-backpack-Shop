@@ -1,5 +1,5 @@
 export const openHamburgerMenu = () => {
-  const overlay = document.getElementById("overlay");
+  const overlay = document.getElementById("hamburgerOverlay");
 
   const overlayContainer = document.createElement("div");
 
