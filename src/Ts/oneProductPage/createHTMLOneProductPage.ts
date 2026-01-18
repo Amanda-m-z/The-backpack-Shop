@@ -58,7 +58,7 @@ export const createHTMLOneProductPage = (item: Product) => {
     },
     {
       category: "Material",
-      text: "<bold>Material:<bold> 65% polyester (återvunnen), 35% bomull (ekologisk)",
+      text: "<b>Material:</b> 65% polyester (återvunnen), 35% bomull (ekologisk)",
     },
     { category: "Tekniska detaljer", text: "Lorem ipsum" },
     { category: "Leverans och returer", text: "Lorem ipsum" },
@@ -113,7 +113,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   oneProductContainer.append(
     oneProductImageContainer,
     productDetails,
-    similarProductsContainer
+    similarProductsContainer,
   );
 
   oneProductImageContainer.appendChild(oneProductImg);
@@ -125,7 +125,7 @@ export const createHTMLOneProductPage = (item: Product) => {
     inStockStatus,
     addToCartBtn,
     shippingOverview,
-    accordion
+    accordion,
   );
 
   reviewsContainer.append(starsContainer, reviewDetailsContainer);
@@ -135,7 +135,7 @@ export const createHTMLOneProductPage = (item: Product) => {
     secondStar,
     thirdStar,
     fourthStar,
-    fifthStar
+    fifthStar,
   );
 
   reviewDetailsContainer.appendChild(reviewRating);
@@ -144,7 +144,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   shippingOverview.append(
     freeShippingContainer,
     freeReturnContainer,
-    workDayContainer
+    workDayContainer,
   );
   workDayContainer.append(workDayIcon, workDayText);
   freeReturnContainer.append(freeReturnIcon, freeReturnText);
