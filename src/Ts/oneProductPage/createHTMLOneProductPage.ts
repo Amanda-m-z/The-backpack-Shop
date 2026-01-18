@@ -14,7 +14,9 @@ export const createHTMLOneProductPage = (item: Product) => {
   const oneProductImg = document.createElement("img");
 
   const productDetails = document.createElement("div");
+  const topContainer = document.createElement("div");
   const productTitle = document.createElement("h1");
+  const wishListIcon = document.createElement("i");
   const productPrice = document.createElement("p");
 
   const reviewsContainer = document.createElement("div");
@@ -81,7 +83,13 @@ export const createHTMLOneProductPage = (item: Product) => {
   oneProductImageContainer.id = "oneProductImageContainerID";
   oneProductImg.src = item.img;
   productDetails.className = "productDetails";
+  topContainer.className = "topContainer";
   productTitle.innerHTML = item.name;
+  wishListIcon.className = "wishListIcon fa-regular fa-heart";
+  wishListIcon.addEventListener("click", () => {
+    wishListIcon.classList.toggle("fa-regular");
+    wishListIcon.classList.toggle("fa-solid");
+  });
   productPrice.innerHTML = item.price + " kr";
   productPrice.className = "pricetag";
 
@@ -119,7 +127,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   oneProductImageContainer.appendChild(oneProductImg);
 
   productDetails.append(
-    productTitle,
+    topContainer,
     productPrice,
     reviewsContainer,
     inStockStatus,
@@ -127,6 +135,8 @@ export const createHTMLOneProductPage = (item: Product) => {
     shippingOverview,
     accordion,
   );
+
+  topContainer.append(productTitle, wishListIcon);
 
   reviewsContainer.append(starsContainer, reviewDetailsContainer);
 
