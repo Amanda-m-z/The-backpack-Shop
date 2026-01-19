@@ -1,8 +1,7 @@
-
 @use "variables" as v;
 
 /* Overlay / shopping bag */
-#overlay {
+#cartOverlay {
   position: fixed;
   top: 0;
   right: 0;
@@ -21,20 +20,20 @@
   font-family: v.$font-body;
 }
 
-/* När overlay ska visas */
-#overlay.showCart {
+/* När cartOverlay ska visas */
+#cartOverlay.showCart {
   transform: translateX(0);
 }
 
 /* Header */
-#overlay > div:first-child {
+#cartOverlay > div:first-child {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
 
-#overlay h2 {
+#cartOverlay h2 {
   font-size: v.$h2-sm;
   font-weight: v.$weight-bold-heading;
   margin: 0;
