@@ -19,8 +19,7 @@
     justify-content: space-between;
     position: static;
 
-    padding: 20px 0px;
-    //min-height: 433px;
+    padding: 20px 20px;
     background-color: whitesmoke;
     border-radius: 10px;
     border: grey 2px solid;
@@ -35,7 +34,8 @@
         height: 17rem;
         width: 17rem;
         border-radius: 4px;
-        max-width: 100%;
+       // max-width: 100%;
+       // max-height: 100%;
         object-fit: cover;
       }
     }
@@ -44,26 +44,31 @@
       padding-left: 10px;
       display: flex;
       flex-direction: column;
-      width: 80%;
+      width: 100%;
+
+      h4 {
+        font-size: v.$h4-sm;
+        margin-bottom: 1%;
+      }
+      h5 {
+        font-size: v.$h4-lg;
+      }
 
       button {
         width: 4em;
-        align-self: flex-end;
-       
-    background-color: #f8d65d;
-    border-radius: 5px;
-    height: 34px;
-    margin-right: 6px;
-
-
-        
+       align-self: flex-end;
+       margin-top: 4%;
+       background-color: #f8d65d;
+       border-radius: 5px;
+       height: 34px;
+       margin-right: 6px;
       }
     }
   }
 }
 
 //Tablet version
-@media (min-width: 768px) {
+@media (min-width: v.$breakpoint-md) {
   #products-grid {
     grid-template-columns: auto auto auto;
     gap: 8px; 
@@ -74,12 +79,9 @@
   }
 }
 //Desktop version
-@media (min-width: 1024px) {
+@media (min-width: v.$breakpoint-lg ) {
   #products-grid {
-    margin: 2% 10%;
     grid-template-columns: auto auto auto auto;
-  }
-  #filterSortera {
-    margin: 6% 10% 2% 10%;
+    gap: 22px;
   }
 }

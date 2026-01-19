@@ -12,7 +12,6 @@ export const loopNew = async (): Promise<void> => {
   
 
   listNew = listNew.filter(item => item.freshness === "new");
-  console.log("Här är new", listNew);
 
   listNew.forEach((item) => {
 
@@ -50,12 +49,12 @@ export const loopNew = async (): Promise<void> => {
         addToCart(item);
          });
     
-        
+    
         imgContainer.addEventListener("click", () => {
-         //openOneProduct(item);
+          console.log("Du aktiverade funktionen!");
           const theBag = JSON.stringify(item);   //Gör till string
           localStorage.setItem("TheBag", theBag);   //Spara i localStorage
-          window.location.href = "src/pages/oneproduct.html"; //Öppna oneproduct sida
+          window.location.href = "../oneproduct.html"; //Öppna oneproduct sida
         });
   });
 
