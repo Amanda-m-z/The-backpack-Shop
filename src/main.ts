@@ -9,6 +9,7 @@ import "./scss/style.scss";
 import { loadHeader } from "./Ts/layout/loadHeader";
 import { loopPopular } from "./pages/home/loopPopular";
 import { loopNew } from "./pages/home/loopNew";
+import { sortProducts } from "./pages/Shop/sortProducts";
 
 const heroButton = document.getElementById("heroCta");
 
@@ -58,7 +59,7 @@ if (newsletter) {
 loopPopular();
 loopNew();
 
-// cartIcon 
+// cartIcon
 const theIconCart = document.getElementById("theCartIcon");
 theIconCart?.addEventListener("click", createCart);
 
@@ -74,3 +75,10 @@ if (checkoutHtml) {
   createHtmlCheckout();
 }
 //Checkout ends here
+
+// Sort button in shop page
+const sortBtn = document.getElementById("sortProducts");
+
+if (sortBtn) {
+  sortProducts();
+}
