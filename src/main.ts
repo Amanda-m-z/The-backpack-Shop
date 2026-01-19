@@ -1,18 +1,19 @@
-import { createCart } from "./Shoppingbag/createCart";
-import { createHtmlCheckout } from "./Ts/checkout";
-import { loadFooter } from "./Ts/loadFooter";
-import { loadHeader } from "./Ts/loadHeader";
-import { loopNew } from "./Ts/loopNew";
-import { loopPopular } from "./Ts/loopPopular";
-import { loadNewsletter } from "./Ts/newsletter";
-import { loadProductCard } from "./Ts/product_highlight_card";
+import { createCart } from "./Cart/createCart";
+import { createHtmlCheckout } from "./pages/checkout/checkout";
+import { loadFooter } from "./Ts/layout/loadFooter";
+
+import { loadNewsletter } from "./pages/home/newsletter";
+import { loadProductCard } from "./pages/home/product_highlight_card";
 
 import "./scss/style.scss";
+import { loadHeader } from "./Ts/layout/loadHeader";
+import { loopPopular } from "./pages/home/loopPopular";
+import { loopNew } from "./pages/home/loopNew";
 
 const heroButton = document.getElementById("heroCta");
 
 heroButton?.addEventListener("click", () => {
-  window.location.href = "src/pages/shop.html";
+  window.location.href = "../shop.html";
 });
 
 // Load main header
@@ -25,7 +26,7 @@ if (header) {
 
   allBackpacksLink?.addEventListener("click", (e) => {
     e.preventDefault();
-    window.location.href = "src/pages/shop.html";
+    window.location.href = "/shop.html";
   });
   //allBackpackslink to shop ends here
 } else {
@@ -65,7 +66,7 @@ theIconCart?.addEventListener("click", createCart);
 const checkout = document.getElementById("temp");
 
 checkout?.addEventListener("click", () => {
-  window.location.href = "src/pages/checkout.html";
+  window.location.href = "../checkout.html";
 });
 
 const checkoutHtml = document.getElementById("checkout");
