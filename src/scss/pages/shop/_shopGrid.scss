@@ -63,7 +63,7 @@
 }
 
 //Tablet version
-@media (min-width: 768px) {
+@media (min-width: v.$breakpoint-md) {
   #products-grid {
     grid-template-columns: auto auto auto;
     gap: 8px; 
@@ -74,7 +74,7 @@
   }
 }
 //Desktop version
-@media (min-width: 1024px) {
+@media (min-width: v.$breakpoint-lg ) {
   #products-grid {
     margin: 2% 10%;
     grid-template-columns: auto auto auto auto;

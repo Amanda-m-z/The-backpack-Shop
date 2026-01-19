@@ -47,7 +47,7 @@ export const loopPopular = async (): Promise<void> => {
       //openOneProduct(item);
       const theBag = JSON.stringify(item); //Gör till string
       localStorage.setItem("TheBag", theBag); //Spara i localStorage
-      window.location.href = "src/pages/oneproduct.html"; //Öppna oneproduct sida
+      window.location.href = "../oneproduct.html"; //Öppna oneproduct sida
     });
   });
 };
