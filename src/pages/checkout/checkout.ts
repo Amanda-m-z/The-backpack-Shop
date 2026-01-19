@@ -1,7 +1,7 @@
 import type { ProductCart } from "../../models/ProductCartType";
-import { addToCart } from "../../Cart/addToCart";
-import { removeFromCart } from "../../Cart/removeFromCart";
 import { theTotal } from "../../Cart/theTotal";
+import { removeAllFromCart } from "./removeFromCheckout";
+/* import { removeAllFromCart } from "./removeFromCheckout"; */
 
 export const createHtmlCheckout = () => {
   let shoppingBag: ProductCart[] = [];
@@ -66,7 +66,15 @@ export const createHtmlCheckout = () => {
 
   shoppingBag.forEach((product) => {
     const productContainer = document.createElement("div");
-    productContainer.className = "productContainer";
+    productContainer.className = "productContainerCheckout";
+    const removeBtnCheckout = document.createElement("button");
+    removeBtnCheckout.type = "button";
+    removeBtnCheckout.className = "removeProductBtn";
+    removeBtnCheckout.innerHTML = `<i class="fa-solid fa-circle-xmark"></i>`;
+
+    removeBtnCheckout.addEventListener("click", () => {
+      removeAllFromCart(product);
+    });
 
     const img = document.createElement("img");
     img.src = product.img;
@@ -79,31 +87,77 @@ export const createHtmlCheckout = () => {
     name.innerHTML = product.name;
 
     const price = document.createElement("p");
-    price.innerHTML = `${product.price} kr`;
+    price.innerHTML = `${product.price * product.quantity} kr`;
 
     const quantity = document.createElement("p");
-    quantity.innerHTML = `Antal: ${product.quantity}`;
+    quantity.innerHTML = `${product.quantity}`;
+
+    const plusMinBtns = document.createElement("div");
+    plusMinBtns.className = "plusMinBtns";
 
     const plusBtn = document.createElement("button");
     plusBtn.type = "button";
+    plusBtn.className = "productContainerBtn btn btn-secondary";
     plusBtn.innerHTML = "+";
-    plusBtn.onclick = () => addToCart(product);
+
+    plusBtn.addEventListener("click", () => {
+      addToCart(product);
+    });
+
+    const addToCart = (product: ProductCart) => {
+      const found = shoppingBag.find((p) => p.id === product.id);
+      if (!found) return;
+
+      found.quantity++;
+
+      localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag));
+      createHtmlCheckout();
+    };
 
     const minusBtn = document.createElement("button");
     minusBtn.type = "button";
+    minusBtn.className = "productContainerBtn btn btn-secondary";
     minusBtn.innerHTML = "-";
-    minusBtn.onclick = () => removeFromCart(product);
 
-    info.append(name, price, quantity, minusBtn, plusBtn);
-    productContainer.append(img, info);
+    minusBtn.addEventListener("click", () => {
+      removeFromCart(product);
+    });
+
+    const removeFromCart = (product: ProductCart) => {
+      const found = shoppingBag.find((p) => p.id === product.id);
+      if (!found) return;
+
+      found.quantity--;
+
+      if (found.quantity <= 0) {
+        shoppingBag = shoppingBag.filter((p) => p.id !== product.id);
+      }
+
+      localStorage.setItem("ShoppingBag", JSON.stringify(shoppingBag));
+      createHtmlCheckout();
+    };
+
+    plusMinBtns.append(minusBtn, quantity, plusBtn);
+    info.append(name, price, plusMinBtns);
+    /* info.append(name, price, quantity, minusBtn, plusBtn); */
+    productContainer.append(removeBtnCheckout, img, info);
     checkoutProducts.appendChild(productContainer);
   });
 
   const totalProductsPrice = theTotal(shoppingBag);
 
-  const cartTotal = document.createElement("h3");
-  cartTotal.innerHTML = `Produkter totalt: ${totalProductsPrice} kr`;
-  cartSection.appendChild(cartTotal);
+  const cartTotal = document.createElement("div");
+  cartTotal.className = "cartTotal";
+
+  cartTotal.innerHTML = `
+  <span class="cartTotalLabel">Total</span>
+  <span class="cartTotalAmount">${totalProductsPrice} kr</span>
+`;
+  const cartDividerTop = document.createElement("hr");
+  const cartDividerBottom = document.createElement("hr");
+
+  /* cartSection.appendChild(cartTotal); */
+  cartSection.append(cartDividerTop, cartTotal, cartDividerBottom);
 
   /* ================= FORMULÄR ================= */
   const infoTitle = document.createElement("h3");
@@ -159,14 +213,22 @@ export const createHtmlCheckout = () => {
     return label;
   };
   shippingOptions.append(
-    createShipping("PostNord Frifrakt"),
-    createShipping("Hemleverans Frifrakt")
+    createShipping("PostNord"),
+    createShipping("Hemleverans")
   );
 
   /* ================= TOTAL ================= */
   const totalDiv = document.createElement("div");
   totalDiv.className = "total";
-  totalDiv.innerHTML = `Totalt att betala: <strong>${totalProductsPrice} kr</strong>`;
+  totalDiv.innerHTML = `
+  <span class="totalLabel">Total belopp</span>
+  <span class="totalAmount">${totalProductsPrice} kr</span>
+`;
+  const totalDividerTop = document.createElement("hr");
+  totalDividerTop.className = "fullWidthDivider";
+
+  const totalDividerBottom = document.createElement("hr");
+  totalDividerBottom.className = "fullWidthDivider";
 
   /* ================= BETALNING ================= */
   const paymentTitle = document.createElement("h3");
@@ -187,9 +249,10 @@ export const createHtmlCheckout = () => {
   );
 
   /* ================= SUBMIT ================= */
+
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
-  submitButton.className = "submitButton";
+  submitButton.className = "submitButton btn btn-primary";
   submitButton.innerHTML = "Betala köpet";
 
   CheckoutForm.addEventListener("submit", (e) => {
@@ -209,9 +272,14 @@ export const createHtmlCheckout = () => {
     row,
     shippingTitle,
     shippingOptions,
-    totalDiv,
+
     paymentTitle,
     paymentOptions,
+
+    totalDividerTop,
+    totalDiv,
+    totalDividerBottom,
+
     submitButton
   );
 };
