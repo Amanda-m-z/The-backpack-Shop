@@ -1,25 +1,38 @@
 export function sortProducts() {
   const categoriesArray = [
-    "Mest populära",
-    "Nyast först",
-    "Lägsta pris",
-    "Högsta pris",
-    "Namn A-Ö",
-    "Namn Ö-A",
+    {
+      title: "Mest populära",
+      value: "popular",
+    },
+    {
+      title: "Nyast först",
+      value: "newest",
+    },
+    {
+      title: "Lägsta pris",
+      value: "cheap",
+    },
+    {
+      title: "Högsta pris",
+      value: "expensive",
+    },
+    {
+      title: "Namn A-Ö",
+      value: "ascendingAlphabet",
+    },
+    {
+      title: "Namn Ö-A",
+      value: "descendingAlphabet",
+    },
   ];
 
-  const sortBtn = document.getElementById("sortProducts");
-  sortBtn?.addEventListener("click", () => {});
-
-  const sortingCategories = document.getElementById("sortingCategories");
+  const sortBtn = document.getElementById("sortProductsBtn");
 
   categoriesArray.forEach((category) => {
-    const categoryContainer = document.createElement("div");
-    const categoryTitle = document.createElement("p");
-    categoryTitle.innerHTML = category;
+    const categoryTitle = document.createElement("option");
+    categoryTitle.innerHTML = category.title;
+    categoryTitle.value = category.value;
 
-    sortingCategories?.append(categoryContainer);
-
-    categoryContainer.append(categoryTitle);
+    sortBtn?.appendChild(categoryTitle);
   });
 }

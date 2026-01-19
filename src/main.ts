@@ -77,7 +77,7 @@ if (checkoutHtml) {
 //Checkout ends here
 
 // Sort button in shop page
-const sortBtn = document.getElementById("sortProducts");
+const sortBtn = document.getElementById("sortProductsBtn");
 
 if (sortBtn) {
   sortProducts();
