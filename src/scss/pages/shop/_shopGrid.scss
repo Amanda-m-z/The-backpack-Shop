@@ -1,0 +1,85 @@
+@use "../../base/variables" as v;
+
+//Mobile first
+#filterSortera {
+  margin: 1% 6% 3%;
+  display: flex;
+  justify-content: space-between;
+}
+#products-grid {
+  margin: 2% 6%;
+  display: grid;
+  gap: 2px;
+  grid-template-columns: auto auto;
+
+  .productContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: space-between;
+    position: static;
+
+    padding: 20px 0px;
+    //min-height: 433px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: grey 2px solid;
+
+    .imgContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        border: grey 2px solid;
+        height: 17rem;
+        width: 17rem;
+        border-radius: 4px;
+        max-width: 100%;
+        object-fit: cover;
+      }
+    }
+    .extraInfo {
+      margin: 0% 2%;
+      padding-left: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+
+      button {
+        width: 4em;
+        align-self: flex-end;
+       
+    background-color: #f8d65d;
+    border-radius: 5px;
+    height: 34px;
+    margin-right: 6px;
+
+
+        
+      }
+    }
+  }
+}
+
+//Tablet version
+@media (min-width: 768px) {
+  #products-grid {
+    grid-template-columns: auto auto auto;
+    gap: 8px; 
+    margin-top: 2%;
+  }
+    #filterSortera {
+    margin: 6% 6% 0% 6%;
+  }
+}
+//Desktop version
+@media (min-width: 1024px) {
+  #products-grid {
+    margin: 2% 10%;
+    grid-template-columns: auto auto auto auto;
+  }
+  #filterSortera {
+    margin: 6% 10% 2% 10%;
+  }
+}

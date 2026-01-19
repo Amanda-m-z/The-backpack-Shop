@@ -1,13 +1,5 @@
-@use "variables" as v;
+@use "../../base/variables" as v;
 
-.shoppingBag {
-  display: none;
- }
- .showCart {
-   display: block;
-   border: red 2px solid;
-   z-index: 1; //On top
- }
 
 #oneProductView {
   padding: 2rem 1rem;

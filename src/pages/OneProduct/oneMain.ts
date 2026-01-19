@@ -1,4 +1,4 @@
-import "../../scss/_oneProductPage.scss";
+import "../../scss/style.scss";
 import { createHTMLOneProduct } from "./createHTMLOneProduct";
 import { createCart } from "../../Cart/createCart";
 

@@ -1,105 +1,33 @@
-@use "variables";
-@use "fonts";
-@use "base";
-@use "header";
-@use "hamburgerMenuOverlay";
-@use "footer";
-@use "homepage";
-@use "product_higlightt_card";
-@use "newsletter";
-@use "popular";
-@use "buyButton";
-@use "filterSortButton";
-@use "productHero";
-@use "cartShow"; //?
-@use "varukorgOverlay";
-@use "productAccordionStyle";
-@use "popUpAddedToCart";
-@use "similarProducts";
+//BASE
+@use "base/variables";
+@use "base/fonts";
+@use "base/base";
 
+//COMPONENTS
+@use "components/buyButton";
+@use "components/filterSortButton";
+@use "components/product_higlightt_card";
+@use "components/varukorgOverlay";
 
-@use "checkout";
+//LAYOUT
+@use "layout/footer";
+@use "layout/hamburgerMenuOverlay";
+@use "layout/header";
 
-//Mobile first
-#filterSortera {
-  margin: 1% 6% 3%;
-  display: flex;
-  justify-content: space-between;
-}
-#products-grid {
-  margin: 2% 6%;
-  display: grid;
-  gap: 2px;
-  grid-template-columns: auto auto;
+//PAGES -CHECKOUT
+@use "pages/checkout/checkout";
 
-  .productContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: space-between;
-    position: static;
+//PAGES - HOME
+@use "pages/home/homepageHero";
+@use "pages/home/newsletter";
+@use "pages/home/popular";
 
-    padding: 20px 0px;
-    //min-height: 433px;
-    background-color: whitesmoke;
-    border-radius: 10px;
-    border: grey 2px solid;
+//PAGES - ONE PRODUCT
+@use "pages/oneProduct/oneProductPage";
+@use "pages/oneProduct/popUpAddedToCart";
+@use "pages/oneProduct/productAccordionStyle";
+@use "pages/oneProduct/similarProducts";
 
-    .imgContainer {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      img {
-        border: grey 2px solid;
-        height: 17rem;
-        width: 17rem;
-        border-radius: 4px;
-        max-width: 100%;
-        object-fit: cover;
-      }
-    }
-    .extraInfo {
-      margin: 0% 2%;
-      padding-left: 10px;
-      display: flex;
-      flex-direction: column;
-      width: 80%;
-
-      button {
-        width: 4em;
-        align-self: flex-end;
-       
-    background-color: #f8d65d;
-    border-radius: 5px;
-    height: 34px;
-    margin-right: 6px;
-
-
-        
-      }
-    }
-  }
-}
-
-//Tablet version
-@media (min-width: 768px) {
-  #products-grid {
-    grid-template-columns: auto auto auto;
-    gap: 8px; 
-    margin-top: 2%;
-  }
-    #filterSortera {
-    margin: 6% 6% 0% 6%;
-  }
-}
-//Desktop version
-@media (min-width: 1024px) {
-  #products-grid {
-    margin: 2% 10%;
-    grid-template-columns: auto auto auto auto;
-  }
-  #filterSortera {
-    margin: 6% 10% 2% 10%;
-  }
-}
+//PAGES - SHOP
+@use "pages/shop/productHero";
+@use "pages/shop/shopGrid";
