@@ -38,12 +38,18 @@ hr {
   margin-right: auto;
   text-decoration: none;
   color: v.$secondary;
+  &:hover{
+    text-decoration: underline 3px ;
+    text-underline-offset: 0.25rem;
+    color: v.$secondary;
+  }
 }
 
 .headLogo {
   font-family: v.$font-heading;
   font-size: v.$h5-sm;
   font-weight: v.$weight-semibold-heading;
+  
 }
 
 .checkoutTitleWrapper {

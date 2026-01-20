@@ -195,7 +195,7 @@ export const createHtmlCheckout = () => {
 
   /* ================= FRAKT ================= */
   const shippingTitle = document.createElement("h3");
-  shippingTitle.textContent = "Välj frakt";
+  shippingTitle.textContent = "Välj fraktmetod";
 
   const shippingOptions = document.createElement("div");
   shippingOptions.className = "options";
