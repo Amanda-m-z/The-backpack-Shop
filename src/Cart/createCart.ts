@@ -8,7 +8,6 @@ let shoppingBag: ProductCart[] = [];
 
 //===== main funktion  ===== //
 export const createCart = () => {
-  console.log("DU ÖPPNAR DENNA FUNKTION");
   const cart = document.getElementById("cartOverlay");
   if (!cart) return;
 
