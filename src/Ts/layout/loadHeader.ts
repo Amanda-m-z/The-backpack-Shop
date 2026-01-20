@@ -131,7 +131,7 @@ export const loadHeader = () => {
 
   // AppendChild
 
-  underHeaderRightSide.append(aboutUsLink, underHeaderRightSide, contactUsLink);
+  underHeaderRightSide.append(aboutUsLink, contactUsLink);
 
   dropDownAccessories.append(accessoriesLink, chevronDownIconAccessories);
 
@@ -155,6 +155,8 @@ export const loadHeader = () => {
     dropDownAccessories,
   );
 
+  underHeader.append(underHeaderLeftSide, underHeaderRightSide);
+
   headerRightSideContainer.append(
     searchIcon,
     userIcon,
@@ -162,7 +164,7 @@ export const loadHeader = () => {
     shoppingCartIcon,
   );
 
-  searchContainer.append(searchInput, searchIcon);
+  searchContainer.append(searchInput);
 
   headerLeftSideContainer.append(hamburgerIcon, companyName);
 
@@ -173,8 +175,6 @@ export const loadHeader = () => {
   );
 
   aboveHeader.appendChild(infoTextHeader);
-
-  underHeader.append(underHeaderLeftSide, underHeaderRightSide);
 
   headerContainer?.append(aboveHeader, mainHeader, underHeader);
 };
