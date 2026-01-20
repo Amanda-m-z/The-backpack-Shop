@@ -28,7 +28,7 @@ export const createHTML = (theProducts: Product[]) => {
 
     const buttonBuy = document.createElement("button");
     buttonBuy.innerHTML = "KÖP";
-    buttonBuy.className = "buyButton btn btn-primary";
+    buttonBuy.className = "btn btn-primary";
 
     buttonBuy.addEventListener("click", () => {
       addToCart(theProducts[i]);
