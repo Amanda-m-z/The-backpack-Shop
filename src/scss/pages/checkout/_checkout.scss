@@ -3,49 +3,68 @@
   box-sizing: border-box;
 }
 
- #checkout {
+#checkout {
   max-width: 37.5rem;
   margin: 0 auto;
   background-color: v.$white;
   overflow-x: hidden;
- }
+}
 
- hr {
+// Divider / streck
+hr {
   border: none;
   border-top: 1px solid v.$black;
   width: 100%;
   margin: 1rem 0;
 }
+
 .fullWidthDivider {
   margin-left: -1rem;
   margin-right: -1rem;
   width: calc(100% + 2rem);
 }
 
-
-//Header
+// Header
 .checkoutHeader {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   padding: 1rem;
 }
 
 .checkoutHeader a {
   margin-right: auto;
+  text-decoration: none;
+  color: v.$secondary;
 }
 
 .headLogo {
-font-family: v.$font-heading;  
-font-size: v.$h5-sm;
-font-weight: v.$weight-semibold-heading;
-} 
-.checkoutTitle {
+  font-family: v.$font-heading;
+  font-size: v.$h5-sm;
+  font-weight: v.$weight-semibold-heading;
+}
+
+.checkoutTitleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 1rem;
 }
 
+.checkoutTitle {
+  margin: 0;
+  padding: 0;
+}
 
+.checkoutSubtitle {
+  margin-top: 0.25rem;
+  font-size: v.$very-small-text;
+  color: v.$black;
+}
+
+// Cart section
 .cartSection {
   background: white;
   margin-bottom: 1.5rem;
@@ -54,16 +73,15 @@ font-weight: v.$weight-semibold-heading;
     margin-bottom: 1rem;
   }
 }
-//produktsektion
+
+// Products container
 .checkoutProducts {
   display: flex;
   flex-direction: column;
-  /* gap: 1rem; */
+  gap: 1rem;
 }
 
-
-// Produktkort
-
+// Product card
 .productContainerCheckout {
   position: relative;
   display: flex;
@@ -71,16 +89,14 @@ font-weight: v.$weight-semibold-heading;
   background: white;
   padding: 0.75rem;
   border: v.$border;
+  border-radius: 8px;
 
   img {
-    width: 80px;
-    height: 80px;
+    width: 5rem;
+    height: 5rem;
     object-fit: contain;
   }
 }
-/* .productContainerCheckout {
-  position: relative;
-} */
 
 .removeProductBtn {
   position: absolute;
@@ -90,10 +106,10 @@ font-weight: v.$weight-semibold-heading;
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
-  color: v.$grey;
+  color: v.$secondary;
 
   &:hover {
-    color: v.$red;
+    color: v.$secondary-button-hover;
   }
 }
 
@@ -101,11 +117,17 @@ font-weight: v.$weight-semibold-heading;
   flex: 1;
 
   h3 {
-    margin: 0 0 0.25rem;
+    margin: 0 0 0.25rem 0;
   }
-
-  
 }
+
+.plusMinBtns {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+
 .productContainerBtn {
   border: none;
   font-size: v.$button-font-size;
@@ -121,45 +143,40 @@ font-weight: v.$weight-semibold-heading;
     box-shadow: none;
   }
 }
-.plusMinBtns {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-}
-//Total produkter
 
-.cartSection h3 {
-  margin-top: 1rem;
-}
-.cartTotal {
+// Totals
+.cartTotal,
+.total, .finalTotal {
   display: flex;
-  justify-content: space-between; // vänster / höger
+  justify-content: space-between;
   align-items: center;
-  padding: 0.75rem 0;
+  padding: 0.75rem 1rem;
   font-weight: v.$weight-semibold-heading;
 }
 
-.cartTotalLabel {
+.cartTotalLabel,
+.totalLabel {
   font-size: v.$paragraph-size;
 }
-.cartTotalAmount {
+
+.cartTotalAmount,
+.totalAmount {
   font-size: v.$h5-sm;
   font-weight: v.$weight-bold-heading;
 }
+
 .cartSection hr {
   border: none;
   border-top: 2px solid v.$black;
   margin: 0.75rem 0;
 }
 
-
-//formulär
+// Checkout form
 .checkoutSection {
   background: white;
-  /* border-radius: $radius; */
   padding: 1rem;
   border: 1px solid v.$border;
+  border-radius: 8px;
 }
 
 #checkoutForm {
@@ -168,21 +185,17 @@ font-weight: v.$weight-semibold-heading;
   gap: 1.25rem;
 }
 
-
-//inputs
-
+// Inputs
 .row {
   display: flex;
   flex-direction: column;
-  gap: 1rem; // avstånd mellan varje fält
+  gap: 1rem;
 
   > div {
     display: flex;
     flex-direction: column;
-    gap: 0.4rem; // avstånd mellan label & input
+    gap: 0.4rem;
   }
-
-  
 
   input {
     width: 100%;
@@ -190,11 +203,10 @@ font-weight: v.$weight-semibold-heading;
     font-size: 1rem;
     border-radius: 8px;
     border: 1px solid #808080;
-    box-sizing: border-box;
   }
 }
 
-//Frakt 
+// Shipping
 .options {
   display: flex;
   flex-direction: column;
@@ -206,7 +218,6 @@ font-weight: v.$weight-semibold-heading;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 0.75rem;
-
   padding: 0.9rem 1rem;
   border-radius: 10px;
   border: 1px solid #e0e0e0;
@@ -216,105 +227,118 @@ font-weight: v.$weight-semibold-heading;
 
   input {
     accent-color: #0a84ff;
+    gap: 1rem;
   }
 
   &:hover {
     border-color: #c0c0c0;
   }
+
+  &:has(input:checked) {
+    border-color: #0a84ff;
+    background: #f0f6ff;
+  }
 }
 
-/* Markerad ruta */
-.shippingOption:has(input:checked) {
-  border-color: #0a84ff;
-  background: #f0f6ff;
-}
-
-/* Text vänster */
 .shippingText {
   font-size: 0.95rem;
 }
 
-/* Frifrakt höger */
 .shippingFree {
   font-size: 0.85rem;
   color: #1E1E1E;
   font-weight: 600;
 }
 
+// Payment options
+.paymentOption {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  gap: 1rem;
 
-//Betalning
-.paymentOptions {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  input[type="radio"] {
+    accent-color: #0a84ff;
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 
-  label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  &:hover {
+    border-color: #c0c0c0;
+  }
+
+  &:has(input:checked) {
+    border-color: #0a84ff;
+    background: #f0f6ff;
+  }
+
+  .paymentText {
+    font-size: 0.95rem;
   }
 }
 
-//Totalt att Betala 
-/* .total {
-  /* background: $bg-light; */
-/*   padding: 0.75rem;
-  /* border-radius: $radius; */
-  /* font-weight: 600;
-  text-align: right; */ 
-/* }  */
-
-.total {
-  display: flex;
-  justify-content: space-between; // 🔥 vänster / höger
-  align-items: center;
-  padding: 0.75rem 0;
-  font-weight: v.$weight-semibold-heading;
-}
-
-.totalLabel {
-  font-size: v.$paragraph-size;
-}
-
-.totalAmount {
-  font-size: v.$h5-sm;
-  font-weight: v.$weight-bold-heading;
-}
 
 
+// Submit button
 .submitButton {
   margin: 1rem auto 0;
   padding: 0.9rem;
   cursor: pointer;
-
   max-width: 17rem;
   width: 100%;
-
-  display: block;   // 🔑 VIKTIGT
-
+  display: block;
   border-top: 1px solid v.$border;
 }
 
+// Media queries
+/* @media (min-width: v.$breakpoint-md) {
+  #checkout {
+    max-width: 100%;       // tar hela bredden
+    width: 100vw;          // full viewport width
+    min-height: 100vh;     // minst hela skärmens höjd
+    margin: 0;             // ingen auto-margin
+    padding: 4rem;         // valfri padding
+    background-color: v.$white;
+  }
+  .checkoutProducts {
+    gap: 1rem;
+  } */
 
 @media (min-width: v.$breakpoint-md) {
   #checkout {
-    /* max-width: 900px; */
+    max-width: 100%; // hel skärm
+    width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // centrerar allt innehåll
     background-color: v.$white;
   }
 
-  .checkoutProducts {
-    gap: 1rem;
+ .checkoutTitleWrapper {
+    max-width: 600px; // centrera Kassa-titel med innehållet
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .checkoutHeader {
+    max-width: 1200px; // headern får vara bredare än själva kassan
+    width: 100%;
+    padding: 1rem 2rem;
+    margin-bottom: 2rem;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
+  .checkoutSection,
+  .cartSection {
+    max-width: 600px; // centrera innehållet på större skärm
+    width: 100%;
+  }
