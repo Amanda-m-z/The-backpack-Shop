@@ -1,13 +1,34 @@
 import type { ProductCart } from "../../models/ProductCartType";
-import { addToCart } from "../../Cart/addToCart";
-import { removeFromCart } from "../../Cart/removeFromCart";
 import { theTotal } from "../../Cart/theTotal";
+
+//  Uppdaterar shoppingBag och renderar om checkout
+const updateCartCheckout = (bag: ProductCart[]) => {
+  localStorage.setItem("ShoppingBag", JSON.stringify(bag));
+  createHtmlCheckout();
+};
+
+//  Dynamisk text för antal produkter
+const getProductText = (quantity: number) =>
+  quantity === 1 ? "1 produkt" : `${quantity} produkter`;
 
 export const createHtmlCheckout = () => {
   let shoppingBag: ProductCart[] = [];
 
   const app = document.getElementById("checkout");
   if (!app) return;
+
+  // Hämta varukorg från localStorage
+  const storedBag = localStorage.getItem("ShoppingBag");
+  if (storedBag) shoppingBag = JSON.parse(storedBag);
+
+  // Totalt antal produkter
+  const totalQuantity = shoppingBag.reduce(
+    (sum, product) => sum + product.quantity,
+    0
+  );
+
+  // Rensa app innan render
+  app.innerHTML = "";
 
   /* ================= HEADER ================= */
   const head = document.createElement("header");
@@ -19,95 +40,135 @@ export const createHtmlCheckout = () => {
 
   const headLogo = document.createElement("span");
   headLogo.className = "headLogo";
-  headLogo.innerHTML = "Pac Bac";
+  headLogo.textContent = "Pac Bac";
 
   head.append(backLink, headLogo);
   app.appendChild(head);
 
-  //===========   H1 kassa =================================
+  //===========   H1 Kassa med subtitle =================
+  const checkoutTitleWrapper = document.createElement("div");
+  checkoutTitleWrapper.className = "checkoutTitleWrapper";
+
   const checkoutTitle = document.createElement("h1");
-  checkoutTitle.innerHTML = "Kassa";
   checkoutTitle.className = "checkoutTitle";
-  app.appendChild(checkoutTitle);
+  checkoutTitle.textContent = "Kassa";
+
+  const checkoutSubtitle = document.createElement("p");
+  checkoutSubtitle.className = "checkoutSubtitle";
+  checkoutSubtitle.textContent = getProductText(totalQuantity);
+
+  checkoutTitleWrapper.append(checkoutTitle, checkoutSubtitle);
+  app.appendChild(checkoutTitleWrapper);
 
   /* ================= CARTSECTIONS ================= */
-  const checkoutSection = document.createElement("section");
-  checkoutSection.className = "checkoutSection";
-
   const cartSection = document.createElement("section");
   cartSection.className = "cartSection";
 
+  const checkoutSection = document.createElement("section");
+  checkoutSection.className = "checkoutSection";
+
   app.append(cartSection, checkoutSection);
 
-  /* ================= KASSA ================= */
-
-  const checkoutContainer = document.createElement("div");
-  checkoutContainer.className = "checkoutContainer";
-  checkoutSection.appendChild(checkoutContainer);
-
-  const CheckoutForm = document.createElement("form");
-  CheckoutForm.id = "checkoutForm";
-  checkoutContainer.appendChild(CheckoutForm);
-
-  /* ================= HÄMTA VARUKORG ================= */
-  const storedBag = localStorage.getItem("ShoppingBag");
-  if (storedBag) {
-    shoppingBag = JSON.parse(storedBag);
-  }
-
   /* ================= PRODUKTER ================= */
-  const cartTitle = document.createElement("h2");
-  cartTitle.innerHTML = "Dina produkter";
-  cartSection.appendChild(cartTitle);
-
   const checkoutProducts = document.createElement("div");
   checkoutProducts.className = "checkoutProducts";
   cartSection.appendChild(checkoutProducts);
 
-  shoppingBag.forEach((product) => {
+  shoppingBag.forEach((product, index) => {
     const productContainer = document.createElement("div");
-    productContainer.className = "productContainer";
+    productContainer.className = "productContainerCheckout";
 
+    // Ta bort-knapp
+    const removeBtnCheckout = document.createElement("button");
+    removeBtnCheckout.type = "button";
+    removeBtnCheckout.className = "removeProductBtn";
+    removeBtnCheckout.innerHTML = `<i class="fa-solid fa-circle-xmark"></i>`;
+    removeBtnCheckout.addEventListener("click", () => {
+      shoppingBag = shoppingBag.filter((p) => p.id !== product.id);
+      updateCartCheckout(shoppingBag);
+    });
+
+    //  Bild
     const img = document.createElement("img");
     img.src = product.img;
     img.alt = product.name;
 
+    //  Info
     const info = document.createElement("div");
     info.className = "productInfo";
 
     const name = document.createElement("h3");
-    name.innerHTML = product.name;
+    name.textContent = product.name;
 
     const price = document.createElement("p");
-    price.innerHTML = `${product.price} kr`;
+    price.textContent = `${product.price * product.quantity} kr`;
 
     const quantity = document.createElement("p");
-    quantity.innerHTML = `Antal: ${product.quantity}`;
+    quantity.textContent = `${product.quantity}`;
+
+    // knappar
+    const plusMinBtns = document.createElement("div");
+    plusMinBtns.className = "plusMinBtns";
 
     const plusBtn = document.createElement("button");
     plusBtn.type = "button";
-    plusBtn.innerHTML = "+";
-    plusBtn.onclick = () => addToCart(product);
+    plusBtn.className = "productContainerBtn btn btn-secondary";
+    plusBtn.textContent = "+";
+    plusBtn.addEventListener("click", () => {
+      product.quantity++;
+      updateCartCheckout(shoppingBag);
+    });
 
     const minusBtn = document.createElement("button");
     minusBtn.type = "button";
-    minusBtn.innerHTML = "-";
-    minusBtn.onclick = () => removeFromCart(product);
+    minusBtn.className = "productContainerBtn btn btn-secondary";
+    minusBtn.textContent = "-";
+    minusBtn.addEventListener("click", () => {
+      product.quantity--;
+      if (product.quantity <= 0) {
+        shoppingBag = shoppingBag.filter((p) => p.id !== product.id);
+      }
+      updateCartCheckout(shoppingBag);
+    });
 
-    info.append(name, price, quantity, minusBtn, plusBtn);
-    productContainer.append(img, info);
+    plusMinBtns.append(minusBtn, quantity, plusBtn);
+    info.append(name, price, plusMinBtns);
+
+    productContainer.append(removeBtnCheckout, img, info);
     checkoutProducts.appendChild(productContainer);
-  });
 
+    //  HR mellan produkter (men inte efter sista)
+    if (index < shoppingBag.length - 1) {
+      const divider = document.createElement("hr");
+      divider.className = "productDivider";
+      checkoutProducts.appendChild(divider);
+    }
+  });
+  /* ================= TOTAL ================= */
   const totalProductsPrice = theTotal(shoppingBag);
 
-  const cartTotal = document.createElement("h3");
-  cartTotal.innerHTML = `Produkter totalt: ${totalProductsPrice} kr`;
-  cartSection.appendChild(cartTotal);
+  const cartDividerTop = document.createElement("hr");
+  const cartTotal = document.createElement("div");
+  cartTotal.className = "cartTotal";
+  cartTotal.innerHTML = `
+    <span class="cartTotalLabel">Total</span>
+    <span class="cartTotalAmount">${totalProductsPrice} kr</span>
+  `;
+  const cartDividerBottom = document.createElement("hr");
+
+  cartSection.append(cartDividerTop, cartTotal, cartDividerBottom);
 
   /* ================= FORMULÄR ================= */
+  const checkoutContainer = document.createElement("div");
+  checkoutContainer.className = "checkoutContainer";
+  checkoutSection.appendChild(checkoutContainer);
+
+  const checkoutForm = document.createElement("form");
+  checkoutForm.id = "checkoutForm";
+  checkoutContainer.appendChild(checkoutForm);
+
   const infoTitle = document.createElement("h3");
-  infoTitle.innerHTML = "Dina uppgifter";
+  infoTitle.textContent = "Dina uppgifter";
 
   const row = document.createElement("div");
   row.className = "row";
@@ -115,7 +176,7 @@ export const createHtmlCheckout = () => {
   const createInput = (labelText: string) => {
     const div = document.createElement("div");
     const label = document.createElement("label");
-    label.innerHTML = labelText;
+    label.textContent = labelText;
 
     const input = document.createElement("input");
     input.required = true;
@@ -134,7 +195,7 @@ export const createHtmlCheckout = () => {
 
   /* ================= FRAKT ================= */
   const shippingTitle = document.createElement("h3");
-  shippingTitle.innerHTML = "Välj frakt";
+  shippingTitle.textContent = "Välj frakt";
 
   const shippingOptions = document.createElement("div");
   shippingOptions.className = "options";
@@ -149,69 +210,87 @@ export const createHtmlCheckout = () => {
 
     const title = document.createElement("span");
     title.className = "shippingText";
-    title.innerHTML = text;
+    title.textContent = text;
 
     const free = document.createElement("span");
     free.className = "shippingFree";
-    free.innerHTML = "Frifrakt";
+    free.textContent = "Frifrakt";
 
     label.append(input, title, free);
     return label;
   };
-  shippingOptions.append(
-    createShipping("PostNord Frifrakt"),
-    createShipping("Hemleverans Frifrakt")
-  );
 
-  /* ================= TOTAL ================= */
-  const totalDiv = document.createElement("div");
-  totalDiv.className = "total";
-  totalDiv.innerHTML = `Totalt att betala: <strong>${totalProductsPrice} kr</strong>`;
+  shippingOptions.append(
+    createShipping("PostNord"),
+    createShipping("Hemleverans")
+  );
 
   /* ================= BETALNING ================= */
   const paymentTitle = document.createElement("h3");
-  paymentTitle.innerHTML = "Betalningsmetod";
+  paymentTitle.textContent = "Betalningsmetod";
 
   const paymentOptions = document.createElement("div");
-  paymentOptions.className = "paymentOptions";
+  paymentOptions.className = "options"; // återanvänd .options för kolumn-layout
+
+  const createPaymentOption = (method: string) => {
+    const label = document.createElement("label");
+    label.className = "paymentOption"; // styling lik frakt
+
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "payment";
+
+    const span = document.createElement("span");
+    span.textContent = method;
+    span.className = "paymentText";
+
+    label.append(input, span);
+    return label;
+  };
 
   ["Kort", "Klarna", "Swish", "PayPal", "Google Pay", "Apple Pay"].forEach(
     (method) => {
-      const label = document.createElement("label");
-      const input = document.createElement("input");
-      input.type = "radio";
-      input.name = "payment";
-      label.append(input, ` ${method}`);
-      paymentOptions.appendChild(label);
+      paymentOptions.appendChild(createPaymentOption(method));
     }
   );
+  checkoutForm.append(paymentTitle, paymentOptions);
+
+  // Slut-total ovanför betalningsknapp
+  const finalTotalDiv = document.createElement("div");
+  finalTotalDiv.className = "cartTotal";
+  finalTotalDiv.innerHTML = `
+  <span class="totalLabel">Totalbelopp</span>
+  <span class="totalAmount">${totalProductsPrice} kr</span>
+`;
 
   /* ================= SUBMIT ================= */
   const submitButton = document.createElement("button");
   submitButton.type = "submit";
-  submitButton.className = "submitButton";
-  submitButton.innerHTML = "Betala köpet";
+  submitButton.className = "submitButton btn btn-primary";
+  submitButton.textContent = "Betala köpet";
 
-  CheckoutForm.addEventListener("submit", (e) => {
+  checkoutForm.addEventListener("submit", (e) => {
     e.preventDefault();
-
     if (shoppingBag.length === 0) {
       alert("Varukorgen är tom");
       return;
     }
-
     alert("Tack för ditt köp!");
   });
+  const finalDividerTop = document.createElement("hr");
+  const finalDividerBottom = document.createElement("hr");
 
   /* ================= APPEND ================= */
-  CheckoutForm.append(
+  checkoutForm.append(
     infoTitle,
     row,
     shippingTitle,
     shippingOptions,
-    totalDiv,
     paymentTitle,
     paymentOptions,
+    finalDividerTop,
+    finalTotalDiv,
+    finalDividerBottom,
     submitButton
   );
 };
