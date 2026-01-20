@@ -3,7 +3,7 @@ import { createButtonBUY } from "../../../Ts/components/createButtonBUY";
 import { addToCart } from "../../../Cart/addToCart";
 import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
 import { createSimilarProductsSection } from "./createSimilarProductsSection";
-import { showAddedToCartPopUp } from "./showAddedToCartPopUp";
+// import { showAddedToCartPopUp } from "./showAddedToCartPopUp";
 
 export const createHTMLOneProductPage = (item: Product) => {
   //Skapar Basic HTML
@@ -38,7 +38,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   addToCartBtn.addEventListener("click", () => {
     //Om du klickar buy så läggs backPack i kundkorg
     addToCart(item);
-    showAddedToCartPopUp();
+    // showAddedToCartPopUp();
   });
 
   const shippingOverview = document.createElement("div");

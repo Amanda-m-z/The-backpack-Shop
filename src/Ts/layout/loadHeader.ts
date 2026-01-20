@@ -1,6 +1,5 @@
 import { openHamburgerMenu } from "../openHamburgerMenu";
 
-
 export const loadHeader = () => {
   const overlay = document.getElementById("hamburgerOverlay");
   const headerContainer = document.getElementById("headerContainer");
@@ -131,47 +130,51 @@ export const loadHeader = () => {
   // UNDER HEADER ENDS HERE
 
   // AppendChild
+
+  underHeaderRightSide.append(aboutUsLink, underHeaderRightSide, contactUsLink);
+
+  dropDownAccessories.append(accessoriesLink, chevronDownIconAccessories);
+
+  dropDownContent.append(
+    allBackpacksLink,
+    everydayBackpacksLink,
+    laptopBackpacksLink,
+    hikingBackpacksLink,
+  );
+
+  dropDownBackpackContainer.append(
+    dropdownLink,
+    chevronDownIconBackpack,
+    dropDownContent,
+  );
+
+  underHeaderLeftSide.append(
+    newProductsLink,
+    bestsellerLink,
+    dropDownBackpackContainer,
+    dropDownAccessories,
+  );
+
+  headerRightSideContainer.append(
+    searchIcon,
+    userIcon,
+    heartIcon,
+    shoppingCartIcon,
+  );
+
+  searchContainer.append(searchInput, searchIcon);
+
+  headerLeftSideContainer.append(hamburgerIcon, companyName);
+
+  mainHeader.append(
+    headerLeftSideContainer,
+    searchContainer,
+    headerRightSideContainer,
+  );
+
   aboveHeader.appendChild(infoTextHeader);
 
-  headerLeftSideContainer.appendChild(hamburgerIcon);
-  headerLeftSideContainer.appendChild(companyName);
+  underHeader.append(underHeaderLeftSide, underHeaderRightSide);
 
-  searchContainer.appendChild(searchInput);
-  searchContainer.appendChild(searchIcon);
-
-  headerRightSideContainer.appendChild(searchIcon);
-  headerRightSideContainer.appendChild(userIcon);
-  headerRightSideContainer.appendChild(heartIcon);
-  headerRightSideContainer.appendChild(shoppingCartIcon);
-
-  mainHeader.appendChild(headerLeftSideContainer);
-  mainHeader.appendChild(searchContainer);
-  mainHeader.appendChild(headerRightSideContainer);
-
-  underHeaderLeftSide.appendChild(newProductsLink);
-  underHeaderLeftSide.appendChild(bestsellerLink);
-  underHeaderLeftSide.appendChild(dropDownBackpackContainer);
-  underHeaderLeftSide.appendChild(dropDownAccessories);
-
-  dropDownBackpackContainer.appendChild(dropdownLink);
-  dropDownBackpackContainer.appendChild(chevronDownIconBackpack);
-  dropDownBackpackContainer.appendChild(dropDownContent);
-  dropDownContent.appendChild(allBackpacksLink);
-  dropDownContent.appendChild(everydayBackpacksLink);
-  dropDownContent.appendChild(laptopBackpacksLink);
-  dropDownContent.appendChild(hikingBackpacksLink);
-
-  dropDownAccessories.appendChild(accessoriesLink);
-  dropDownAccessories.appendChild(chevronDownIconAccessories);
-
-  underHeaderRightSide.appendChild(aboutUsLink);
-  underHeaderRightSide.appendChild(sustainablityLink);
-  underHeaderRightSide.appendChild(contactUsLink);
-
-  underHeader.appendChild(underHeaderLeftSide);
-  underHeader.appendChild(underHeaderRightSide);
-
-  headerContainer?.appendChild(aboveHeader);
-  headerContainer?.appendChild(mainHeader);
-  headerContainer?.appendChild(underHeader);
+  headerContainer?.append(aboveHeader, mainHeader, underHeader);
 };
