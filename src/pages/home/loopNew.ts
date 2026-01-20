@@ -9,7 +9,6 @@ export const loopNew = async (): Promise<void> => {
   let listNew: Product[] = await getProduct();
   const div = document.getElementById("newDiv");
 
-  
 
   listNew = listNew.filter(item => item.freshness === "new");
 
