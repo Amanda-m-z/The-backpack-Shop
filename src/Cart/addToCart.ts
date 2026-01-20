@@ -4,9 +4,10 @@ import { createCart } from "./createCart";
 
 export const addToCart = (theNewBag: Product | ProductCart) => {
   //Denna fuktion lägger till ett produkt i kundkorgen
+  
   let shoppingBag: ProductCart[] = [];
 
-  const theCartString = localStorage.getItem("ShoppingBag");
+  const theCartString = localStorage.getItem("ShoppingBag");  //Hämta lista från localstorage och lagra i lista
   if (theCartString) {
     shoppingBag = JSON.parse(theCartString);
   }
@@ -23,7 +24,6 @@ export const addToCart = (theNewBag: Product | ProductCart) => {
       name: theNewBag.name,
       price: theNewBag.price,
       img: theNewBag.img,
-      purchases: theNewBag.purchases,
       type: theNewBag.type,
       color: theNewBag.color,
       quantity: 1,

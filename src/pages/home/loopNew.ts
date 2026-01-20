@@ -10,7 +10,13 @@ export const loopNew = async (): Promise<void> => {
   const div = document.getElementById("newDiv");
 
 
-  listNew = listNew.filter(item => item.freshness === "new");
+  //listNew = listNew.filter(item => item.freshness === "new");
+
+   listNew = listNew.sort(
+          (a: Product, b: Product) =>
+            new Date(b.dateAdded).getTime() - new Date(a.dateAdded).getTime(),
+   );
+
 
   listNew.forEach((item) => {
 
@@ -47,8 +53,7 @@ export const loopNew = async (): Promise<void> => {
         buttonBuy.addEventListener("click", () => {        //Om du klickar buy så läggs backPack i kundkorg
         addToCart(item);
          });
-    
-    
+      
         imgContainer.addEventListener("click", () => {
           console.log("Du aktiverade funktionen!");
           const theBag = JSON.stringify(item);   //Gör till string

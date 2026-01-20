@@ -1,6 +1,6 @@
 import "../../scss/style.scss";
-import { createHTMLOneProduct } from "./createHTMLOneProduct";
 import { createCart } from "../../Cart/createCart";
+import { createHTMLOneProduct } from "./createHTMLOneProduct";
 
 //Detta är för sidan där en produkt syns = oneproduct.html
 
