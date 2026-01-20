@@ -7,8 +7,6 @@
   flex-direction: column;
   width: 100%;
   min-height: 400px;
-  // box-shadow: 0.2rem 0.2rem #1e1e1e, 0.15rem 0.15rem #1e1e1e,
-  //   0.1rem 0.1rem #1e1e1e, 0.05rem 0.05rem #1e1e1e;
   background-color: v.$lighter-primary;
 }
 // Hero Image //
@@ -18,8 +16,6 @@
   background-image: url("/images/product_list_hero.jpg");
   background-size: cover;
   background-position: center;
-  // box-shadow: 0.2rem 0.2rem #1e1e1e, 0.15rem 0.15rem #1e1e1e,
-  //   0.1rem 0.1rem #1e1e1e, 0.05rem 0.05rem #1e1e1e;
 }
 
 // Hero Text //
@@ -32,8 +28,6 @@
   gap: 1rem;
 
   h1 {
-    // margin: 1rem;
-    // text-shadow: 1px 2px 0 #969696, 1px 3px 2px #aba8a8;
     font-size: v.$h1-sm;
   }
 

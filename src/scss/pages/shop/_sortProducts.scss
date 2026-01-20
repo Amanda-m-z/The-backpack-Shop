@@ -1,10 +1,31 @@
 @use "../../base/variables" as v;
 
-#filterSortera {
+// div container for both filter and sort button
+#filterSortContainer {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 }
+
+// Sort button
 #sortProductsBtn {
   text-align: left;
+  width: 10rem;
+}
+
+@media only screen and (min-width: v.$breakpoint-md) {
+  #sortProductsBtn {
+    width: 12rem;
+  }
+}
+
+@media only screen and (min-width: v.$breakpoint-lg) {
+  #shopContent {
+    width: 80%;
+  }
+  #sortProductsBtn {
+    width: 14rem;
+  }
 }
