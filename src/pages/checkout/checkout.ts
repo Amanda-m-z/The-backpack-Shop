@@ -74,7 +74,7 @@ export const createHtmlCheckout = () => {
   checkoutProducts.className = "checkoutProducts";
   cartSection.appendChild(checkoutProducts);
 
-  shoppingBag.forEach((product) => {
+  shoppingBag.forEach((product, index) => {
     const productContainer = document.createElement("div");
     productContainer.className = "productContainerCheckout";
 
@@ -88,12 +88,12 @@ export const createHtmlCheckout = () => {
       updateCartCheckout(shoppingBag);
     });
 
-    // Produktbild
+    //  Bild
     const img = document.createElement("img");
     img.src = product.img;
     img.alt = product.name;
 
-    // Info
+    //  Info
     const info = document.createElement("div");
     info.className = "productInfo";
 
@@ -106,7 +106,7 @@ export const createHtmlCheckout = () => {
     const quantity = document.createElement("p");
     quantity.textContent = `${product.quantity}`;
 
-    // Plus/Minus knappar
+    // knappar
     const plusMinBtns = document.createElement("div");
     plusMinBtns.className = "plusMinBtns";
 
@@ -136,8 +136,14 @@ export const createHtmlCheckout = () => {
 
     productContainer.append(removeBtnCheckout, img, info);
     checkoutProducts.appendChild(productContainer);
-  });
 
+    //  HR mellan produkter (men inte efter sista)
+    if (index < shoppingBag.length - 1) {
+      const divider = document.createElement("hr");
+      divider.className = "productDivider";
+      checkoutProducts.appendChild(divider);
+    }
+  });
   /* ================= TOTAL ================= */
   const totalProductsPrice = theTotal(shoppingBag);
 

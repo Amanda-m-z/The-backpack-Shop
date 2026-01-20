@@ -6,7 +6,7 @@
 #checkout {
   max-width: 37.5rem;
   margin: 0 auto;
-  background-color: v.$white;
+  background-color: v.$product-card;
   overflow-x: hidden;
 }
 
@@ -66,7 +66,7 @@ hr {
 
 // Cart section
 .cartSection {
-  background: white;
+  background: v.$product-card;
   margin-bottom: 1.5rem;
 
   h2 {
@@ -86,17 +86,27 @@ hr {
   position: relative;
   display: flex;
   gap: 1rem;
-  background: white;
+  background: v.$product-card;
   padding: 0.75rem;
-  border: v.$border;
-  border-radius: 8px;
+  border: none;          // mobil: ingen border
+  border-radius: 0;
+
+
 
   img {
     width: 5rem;
     height: 5rem;
     object-fit: contain;
   }
+
+  
+
 }
+
+.productDivider {
+  display: block;
+}
+
 
 .removeProductBtn {
   position: absolute;
@@ -173,10 +183,10 @@ hr {
 
 // Checkout form
 .checkoutSection {
-  background: white;
+  background: v.$product-card;
   padding: 1rem;
   border: 1px solid v.$border;
-  border-radius: 8px;
+  border-radius: v.$rounded-corner;
 }
 
 #checkoutForm {
@@ -201,8 +211,8 @@ hr {
     width: 100%;
     padding: 0.65rem 0.75rem;
     font-size: 1rem;
-    border-radius: 8px;
-    border: 1px solid #808080;
+    border-radius: v.$rounded-corner;
+    border: v.$border;
   }
 }
 
@@ -219,14 +229,14 @@ hr {
   align-items: center;
   gap: 0.75rem;
   padding: 0.9rem 1rem;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
+  border-radius: v.$rounded-corner;
+  border: v.$border;
   background: #fff;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
 
   input {
-    accent-color: #0a84ff;
+    accent-color: v.$secondary;
     gap: 1rem;
   }
 
@@ -235,20 +245,11 @@ hr {
   }
 
   &:has(input:checked) {
-    border-color: #0a84ff;
+    border-color: v.$secondary;
     background: #f0f6ff;
   }
 }
 
-.shippingText {
-  font-size: 0.95rem;
-}
-
-.shippingFree {
-  font-size: 0.85rem;
-  color: #1E1E1E;
-  font-weight: 600;
-}
 
 // Payment options
 .paymentOption {
@@ -256,25 +257,25 @@ hr {
   grid-template-columns: auto 1fr;
   align-items: center;
   padding: 0.9rem 1rem;
-  border-radius: 10px;
-  border: 1px solid #e0e0e0;
+  border-radius: v.$rounded-corner;
+  border: v.$border;
   background: #fff;
   cursor: pointer;
   transition: border-color 0.2s, background 0.2s;
   gap: 1rem;
 
   input[type="radio"] {
-    accent-color: #0a84ff;
+    accent-color: v.$secondary;
     width: 1.2rem;
     height: 1.2rem;
   }
 
   &:hover {
-    border-color: #c0c0c0;
+    border-color: v.$border;
   }
 
   &:has(input:checked) {
-    border-color: #0a84ff;
+    border-color: v.$secondary;
     background: #f0f6ff;
   }
 
@@ -296,20 +297,6 @@ hr {
   border-top: 1px solid v.$border;
 }
 
-// Media queries
-/* @media (min-width: v.$breakpoint-md) {
-  #checkout {
-    max-width: 100%;       // tar hela bredden
-    width: 100vw;          // full viewport width
-    min-height: 100vh;     // minst hela skärmens höjd
-    margin: 0;             // ingen auto-margin
-    padding: 4rem;         // valfri padding
-    background-color: v.$white;
-  }
-  .checkoutProducts {
-    gap: 1rem;
-  } */
-
 @media (min-width: v.$breakpoint-md) {
   #checkout {
     max-width: 100%; // hel skärm
@@ -320,25 +307,34 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center; // centrerar allt innehåll
-    background-color: v.$white;
+    background-color: v.$product-card;;
   }
 
  .checkoutTitleWrapper {
-    max-width: 600px; // centrera Kassa-titel med innehållet
+    max-width: v.$breakpoint-md; // centrera Kassa-titel med innehållet
     width: 100%;
     margin: 0 auto;
   }
 
   .checkoutHeader {
-    max-width: 1200px; // headern får vara bredare än själva kassan
+    max-width: v.$breakpoint-xl; // headern får vara bredare än själva kassan
     width: 100%;
     padding: 1rem 2rem;
     margin-bottom: 2rem;
   }
-}
-
   .checkoutSection,
   .cartSection {
-    max-width: 600px; // centrera innehållet på större skärm
+    max-width: v.$breakpoint-md; // centrera innehållet på större skärm
     width: 100%;
   }
+
+   .productContainerCheckout {
+    border: v.$border;
+    border-radius: 8px;
+    padding: 0.75rem;
+  }
+
+  .productDivider {
+    display: none;
+  }
+}
