@@ -1,8 +1,8 @@
-import type { ProductAccordionItem } from "./ProductAccordionItem";
+import type { ProductAccordionItem } from "../../../models/ProductAccordionType";
 
 export function createProductDetailsAccordion(
   accordionDetails: ProductAccordionItem[],
-  container: HTMLElement
+  container: HTMLElement,
 ) {
   container.innerHTML = "";
   container.className = "accordion";

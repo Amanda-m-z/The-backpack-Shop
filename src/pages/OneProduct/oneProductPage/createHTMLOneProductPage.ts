@@ -3,8 +3,10 @@ import { createButtonBUY } from "../../../Ts/components/createButtonBUY";
 import { addToCart } from "../../../Cart/addToCart";
 import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
 import { createSimilarProductsSection } from "./createSimilarProductsSection";
-import { addedToWishlistPopUp } from "./addedToWishlistPopUp";
-// import { showAddedToCartPopUp } from "./showAddedToCartPopUp";
+import { addedToWishlistPopUp } from "./wishlist/addedToWishlistPopUp";
+import { addToWishlistArray } from "./wishlist/addToWishlistArray";
+import { removeFromWislistArray } from "./wishlist/removeFromWislistArray";
+import { isInWishlist } from "./wishlist/isInWishlist";
 
 export const createHTMLOneProductPage = (item: Product) => {
   //Skapar Basic HTML
@@ -74,11 +76,8 @@ export const createHTMLOneProductPage = (item: Product) => {
   const similarProductsHeading = document.createElement("h2");
   similarProductsHeading.textContent = "Liknande produkter";
 
-  // Get the product category
-  const category = item.type;
-  const productID = item.id;
   // Create product cards with similar category
-  createSimilarProductsSection(category, productID, similarProductsContainer);
+  createSimilarProductsSection(item, similarProductsContainer);
 
   oneProductContainer.className = "oneProductContainer";
   oneProductImageContainer.className = "oneProductImageContainer";
@@ -87,15 +86,30 @@ export const createHTMLOneProductPage = (item: Product) => {
   productDetails.className = "productDetails";
   topContainer.className = "topContainer";
   productTitle.innerHTML = item.name;
-  wishListIcon.className = "wishListIcon fa-regular fa-heart";
+  wishListIcon.id = "wishListIcon";
+
+  if (isInWishlist(item.id)) {
+    // if a product already is in the wishlist the heart will already be filled
+    wishListIcon.className = " fa-solid fa-heart";
+  } else {
+    // if a product is not in the wishlist it will be an unfilled heart
+    wishListIcon.className = " fa-regular fa-heart";
+  }
+
   wishListIcon.addEventListener("click", () => {
     // Toggles between unfilled and filled heart each time the user clicks on the heart
+    const isFilled = wishListIcon.classList.contains("fa-regular");
     wishListIcon.classList.toggle("fa-regular");
     wishListIcon.classList.toggle("fa-solid");
 
-    // If the heart gets filled a pop uo will show up
-    if (wishListIcon.classList.contains("fa-solid")) {
+    if (isFilled) {
+      // If the heart gets filled a pop up will show up
       addedToWishlistPopUp();
+      // when it gets filled it will also add the product to an array that will be stored in localStorage
+      addToWishlistArray(item);
+    } else {
+      // if it's not filled the product will be removed from the array/localStorage
+      removeFromWislistArray(item);
     }
   });
 

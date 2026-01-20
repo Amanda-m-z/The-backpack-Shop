@@ -4,9 +4,8 @@ import { getProduct } from "../../../Services/getProduct";
 import { createProductItemCard } from "./createProductItemCard";
 
 export async function createSimilarProductsSection(
-  category: string,
-  productID: number,
-  similarProductsContainer: HTMLElement
+  item: Product,
+  similarProductsContainer: HTMLElement,
 ): Promise<void> {
   similarProductsContainer.id = "similarProductsContainer";
 
@@ -15,12 +14,12 @@ export async function createSimilarProductsSection(
 
   // Removed the same product that is already shown on one product page from the array
   const removedSameProduct = theProducts.filter(
-    (product) => product.id !== productID
+    (product) => product.id !== item.id,
   );
 
-  // Filter products that have similar categories and limit it to show only 4 products
+  // Filter products that have similar categories and limit it to show only 2 products
   const similarCategory = removedSameProduct
-    .filter((product) => product.type === category)
+    .filter((product) => product.type === item.type)
     .slice(0, 2);
 
   console.log(similarCategory);

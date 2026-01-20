@@ -1,17 +1,6 @@
 export function addedToWishlistPopUp() {
   const container = document.getElementById("addedToWishlist");
 
-  const popUpExists = document.getElementById("popUpContainer");
-  const isPopUpClosed = container?.classList.contains("close-overlay");
-
-  if (popUpExists && !isPopUpClosed) {
-    return;
-  }
-
-  if (popUpExists && isPopUpClosed) {
-    popUpExists.remove();
-  }
-
   const popUpContainer = document.createElement("div");
   const textContainer = document.createElement("div");
   const popUpIcon = document.createElement("i");
@@ -28,7 +17,7 @@ export function addedToWishlistPopUp() {
   showWishlistBtn.className = "btn btn-primary";
   showWishlistBtn.addEventListener("click", () => {
     container?.classList.add("close-overlay");
-    window.location.href = "../../pages/checkout.html";
+    // window.location.href = "";
   });
 
   buttonsContainer.appendChild(showWishlistBtn);
