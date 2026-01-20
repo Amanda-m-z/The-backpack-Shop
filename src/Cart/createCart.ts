@@ -77,6 +77,9 @@ const createProductRow = (product: ProductCart) => {
   info.append(name, price);
 
   // -btn quantity +btn//
+  const btnQuantityBtn= document.createElement("div")
+  btnQuantityBtn.className= "btnQuantityBtn"
+  
   const minus = document.createElement("button");
   minus.textContent = "-";
   minus.onclick = () => removeFromCart(product);
