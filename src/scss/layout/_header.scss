@@ -48,9 +48,10 @@
   a {
     font-size: v.$h4-sm;
     font-weight: v.$weight-semibold-heading;
-  }
-  a:hover {
-    color: v.$white;
+
+    &:hover {
+      color: v.$lighter-secondary;
+    }
   }
 }
 
@@ -60,6 +61,11 @@
   font-size: 1.25rem;
   gap: 0.7rem;
   align-items: center;
+
+  i:hover {
+    cursor: pointer;
+    color: v.$lighter-secondary;
+  }
 }
 
 #under-header {
@@ -92,9 +98,6 @@
     a {
       font-size: v.$h4-lg;
     }
-    a:hover {
-      color: v.$white;
-    }
   }
 
   .header-right-side {
@@ -119,9 +122,10 @@
 
     a {
       padding: 1rem 1rem;
-    }
-    a:hover {
-      color: white;
+      &:hover {
+        text-decoration: underline 3px;
+        text-underline-offset: 0.25rem;
+      }
     }
   }
 
@@ -167,6 +171,7 @@
       transition: background-color 0.2s ease;
 
       &:hover {
+        text-decoration: none !important;
         background-color: v.$lighter-secondary;
       }
     }

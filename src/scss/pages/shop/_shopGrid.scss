@@ -1,13 +1,8 @@
 @use "../../base/variables" as v;
 
 //Mobile first
-#filterSortera {
-  margin: 1% 6% 3%;
-  display: flex;
-  justify-content: space-between;
-}
 #products-grid {
-  margin: 2% 6%;
+  // margin: 2% 6%;
   display: grid;
   gap: 2px;
   grid-template-columns: auto auto;
@@ -36,7 +31,7 @@
         width: 17rem;
         border-radius: 4px;
         //max-width: 100%;
-       // max-height: 100%;
+        // max-height: 100%;
         //object-fit: cover;
       }
     }
@@ -56,15 +51,15 @@
       }
 
       button {
-      width: 4em;
-       align-self: flex-end;
-       margin-top: 4%;
-       //background-color: #f8d65d;
-       //border-radius: 5px;
-       height: 34px;
-       margin-right: 6px;
-       box-shadow: none;
-       border: v.$border;
+        width: 4em;
+        align-self: flex-end;
+        margin-top: 4%;
+        //background-color: #f8d65d;
+        //border-radius: 5px;
+        height: 34px;
+        margin-right: 6px;
+        box-shadow: none;
+        border: v.$border;
       }
     }
   }
@@ -74,15 +69,12 @@
 @media (min-width: v.$breakpoint-md) {
   #products-grid {
     grid-template-columns: auto auto auto;
-    gap: 8px; 
+    gap: 8px;
     margin-top: 2%;
-  }
-    #filterSortera {
-    margin: 6% 6% 0% 6%;
   }
 }
 //Desktop version
-@media (min-width: v.$breakpoint-lg ) {
+@media (min-width: v.$breakpoint-lg) {
   #products-grid {
     grid-template-columns: auto auto auto auto;
     gap: 22px;

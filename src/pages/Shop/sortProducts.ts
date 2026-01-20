@@ -38,7 +38,7 @@ export async function sortProducts() {
     "sortProductsBtn",
   ) as HTMLSelectElement;
 
-  // Creates <option> that will be inside of the <select>
+  // Creates <option> that will be inside of <select>
   sortOptionsArray.forEach((category) => {
     const option = document.createElement("option");
     option.innerHTML = category.title;
