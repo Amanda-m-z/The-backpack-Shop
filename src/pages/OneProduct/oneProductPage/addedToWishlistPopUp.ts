@@ -1,5 +1,5 @@
-export function showAddedToCartPopUp() {
-  const container = document.getElementById("addedToCartPopUpSection");
+export function addedToWishlistPopUp() {
+  const container = document.getElementById("addedToWishlist");
 
   const popUpExists = document.getElementById("popUpContainer");
   const isPopUpClosed = container?.classList.contains("close-overlay");
@@ -17,28 +17,22 @@ export function showAddedToCartPopUp() {
   const popUpIcon = document.createElement("i");
   const popUpText = document.createElement("p");
   const buttonsContainer = document.createElement("div");
-  const continueShoppingBtn = document.createElement("button");
-  const showShoppingCartBtn = document.createElement("button");
+  const showWishlistBtn = document.createElement("button");
 
   popUpContainer.id = "popUpContainer";
   textContainer.className = "textContainer";
-  popUpIcon.className = "fa-regular fa-circle-check";
-  popUpText.textContent = "Varan har lagts till i varukorgen! :D";
+  popUpIcon.className = "fa-solid fa-heart";
+  popUpText.textContent = "Varan har lagts till din önskelista";
   buttonsContainer.className = "buttonsContainer";
-  continueShoppingBtn.textContent = "Fortsätt handla";
-  continueShoppingBtn.className = "btn btn-secondary";
-  continueShoppingBtn.addEventListener("click", () => {
-    container?.classList.add("close-overlay");
-  });
-  showShoppingCartBtn.textContent = "Gå till kassan";
-  showShoppingCartBtn.className = "btn btn-primary";
-  showShoppingCartBtn.addEventListener("click", () => {
+  showWishlistBtn.textContent = "Gå till önskelistan";
+  showWishlistBtn.className = "btn btn-primary";
+  showWishlistBtn.addEventListener("click", () => {
     container?.classList.add("close-overlay");
     window.location.href = "../../pages/checkout.html";
   });
 
+  buttonsContainer.appendChild(showWishlistBtn);
   textContainer.append(popUpIcon, popUpText);
-  buttonsContainer.append(continueShoppingBtn, showShoppingCartBtn);
   popUpContainer.append(textContainer, buttonsContainer);
   // Remove close-overlay class to show the popup
   container?.classList.remove("close-overlay");

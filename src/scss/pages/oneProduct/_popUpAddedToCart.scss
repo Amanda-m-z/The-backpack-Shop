@@ -23,12 +23,11 @@
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  font-size: v.$paragraph-size;
+  font-size: v.$h6-sm;
 }
 
 .buttonsContainer {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   button {
@@ -39,12 +38,6 @@
 @media only screen and (min-width: v.$breakpoint-md) {
   #popUpContainer {
     width: 70%;
-  }
-
-  .buttonsContainer {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
   }
 }
 

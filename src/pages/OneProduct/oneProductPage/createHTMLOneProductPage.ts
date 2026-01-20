@@ -3,6 +3,7 @@ import { createButtonBUY } from "../../../Ts/components/createButtonBUY";
 import { addToCart } from "../../../Cart/addToCart";
 import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
 import { createSimilarProductsSection } from "./createSimilarProductsSection";
+import { addedToWishlistPopUp } from "./addedToWishlistPopUp";
 // import { showAddedToCartPopUp } from "./showAddedToCartPopUp";
 
 export const createHTMLOneProductPage = (item: Product) => {
@@ -17,6 +18,7 @@ export const createHTMLOneProductPage = (item: Product) => {
   const topContainer = document.createElement("div");
   const productTitle = document.createElement("h1");
   const wishListIcon = document.createElement("i");
+
   const productPrice = document.createElement("p");
 
   const reviewsContainer = document.createElement("div");
@@ -87,9 +89,17 @@ export const createHTMLOneProductPage = (item: Product) => {
   productTitle.innerHTML = item.name;
   wishListIcon.className = "wishListIcon fa-regular fa-heart";
   wishListIcon.addEventListener("click", () => {
+    // Toggles between unfilled and filled heart each time the user clicks on the heart
     wishListIcon.classList.toggle("fa-regular");
     wishListIcon.classList.toggle("fa-solid");
+
+    // If the heart gets filled a pop uo will show up
+    if (wishListIcon.classList.contains("fa-solid")) {
+      addedToWishlistPopUp();
+    }
   });
+
+  // wishListIcon.addEventListener("click", () => {});
   productPrice.innerHTML = item.price + " kr";
   productPrice.className = "pricetag";
 
