@@ -16,7 +16,6 @@ export const removeFromCart = (theNewBag: ProductCart) => {  //Denna funtion tar
     existingItem.quantity--;
    }
    else {
-     console.log("Varutypen tas bort från listan")  //Annars ta bort produkten från listan
       shoppingBag = shoppingBag.filter(item => item.id !== theNewBag.id); //Filtrerar bort produktem
    }
 
