@@ -1,5 +1,5 @@
 import type { Product } from "../../../models/ProductType";
-import { getProduct } from "../../../Services/productServices";
+import { getProduct } from "../../../services/productServices";
 import { createProductItemCard } from "./createProductItemCard";
 
 

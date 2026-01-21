@@ -1,4 +1,4 @@
-import { addToCart } from "../../../Cart/addToCart";
+import { addToCart } from "../../../cart/addToCart";
 import type { Product } from "../../../models/ProductType";
 
 

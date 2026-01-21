@@ -1,4 +1,4 @@
-import { theTotal } from "../../Cart/theTotal";
+import { theTotal } from "../../cart/theTotal";
 import type { ProductCart } from "../../models/ProductCartType";
 
 

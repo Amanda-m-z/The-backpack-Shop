@@ -1,8 +1,5 @@
 import type { Product } from "../../models/ProductType";
 import { createHTMLOneProductPage } from "./oneProductPage/createHTMLOneProductPage";
-// import { createButtonBUY } from "../createButtonBUY";
-// import { addToCart } from "../Shoppingbag/addToCart";
-// import { createHTMLGeneral } from "../createHtmlGeneral";
 
 export const createHTMLOneProduct = () => {
   //Detta skapar view för en produkt
