@@ -1,19 +1,5 @@
 @use "../../base/variables" as v;
 
-// .shoppingBag {
-//   display: none;
-// }
-// .showCart {
-//   display: block;
-//   border: red 2px solid;
-// }
-
-// #oneProductView {
-//   display: grid;
-//   grid-template-columns: repeat(12, [col-start] 1fr);
-//   gap: 1rem;
-// }
-
 .oneProductContainer {
   display: grid;
   grid-template-columns: repeat(12, [col-start] 1fr);
