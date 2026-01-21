@@ -2,7 +2,6 @@ import { addToCart } from "../../cart/addToCart";
 import type { Product } from "../../models/ProductType";
 import { getProduct } from "../../services/productServices";
 
-
 export const loopPopular = async (): Promise<void> => {
   let listPopular: Product[] = await getProduct();
   const div = document.getElementById("popularDiv");
