@@ -4,7 +4,7 @@ import { addToCart } from "../../../Cart/addToCart";
 export function createProductItemCard(
   product: Product,
   similarProductsContainer: HTMLElement,
-  similarProducts: HTMLElement
+  similarProducts: HTMLElement,
 ) {
   similarProducts.id = "similarProducts";
 
@@ -37,7 +37,7 @@ export function createProductItemCard(
     //openOneProduct(product);
     const theBag = JSON.stringify(product); //Gör till string
     localStorage.setItem("TheBag", theBag); //Spara i localStorage
-    window.location.href = "src/pages/oneproduct.html"; //Öppna oneproduct sida
+    window.location.href = "../../../../oneproduct.html"; //Öppna oneproduct sida
   });
 
   extraInfo.append(name, price, buttonBuy);
