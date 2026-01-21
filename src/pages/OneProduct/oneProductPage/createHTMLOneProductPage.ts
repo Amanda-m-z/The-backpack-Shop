@@ -1,12 +1,11 @@
 import type { Product } from "../../../models/ProductType";
 import { createButtonBUY } from "../../../Ts/components/createButtonBUY";
-import { addToCart } from "../../../Cart/addToCart";
 import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
 import { createSimilarProductsSection } from "./createSimilarProductsSection";
 import { addedToWishlistPopUp } from "./wishlist/addedToWishlistPopUp";
 import { addToWishlistArray } from "./wishlist/addToWishlistArray";
-import { removeFromWislistArray } from "./wishlist/removeFromWislistArray";
 import { isInWishlist } from "./wishlist/isInWishlist";
+import { removeFromWislistArray } from "./wishlist/removeFromWislistArray";
 
 export const createHTMLOneProductPage = (item: Product) => {
   //Skapar Basic HTML

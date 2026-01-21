@@ -1,5 +1,6 @@
-import type { Product } from "../../../models/ProductType";
 import { addToCart } from "../../../Cart/addToCart";
+import type { Product } from "../../../models/ProductType";
+
 
 export function createProductItemCard(
   product: Product,

@@ -1,4 +1,4 @@
-import { createCart } from "./Cart/createCart";
+import { createCart } from "./cart/createCart";
 import { createHtmlCheckout } from "./pages/checkout/checkout";
 import { loadFooter } from "./Ts/layout/loadFooter";
 
@@ -9,7 +9,7 @@ import "./scss/style.scss";
 import { loadHeader } from "./Ts/layout/loadHeader";
 import { loopPopular } from "./pages/home/loopPopular";
 import { loopNew } from "./pages/home/loopNew";
-import { sortProducts } from "./pages/Shop/sortProducts";
+import { sortProducts } from "./pages/shop/sortProducts";
 
 const heroButton = document.getElementById("heroCta");
 

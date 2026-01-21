@@ -1,5 +1,6 @@
-import type { ProductCart } from "../../models/ProductCartType";
 import { theTotal } from "../../Cart/theTotal";
+import type { ProductCart } from "../../models/ProductCartType";
+
 
 //  Uppdaterar shoppingBag och renderar om checkout
 const updateCartCheckout = (bag: ProductCart[]) => {

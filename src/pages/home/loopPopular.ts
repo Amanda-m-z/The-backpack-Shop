@@ -1,6 +1,6 @@
-import { addToCart } from "../../Cart/addToCart";
+import { addToCart } from "../../cart/addToCart";
 import type { Product } from "../../models/ProductType";
-import { getProduct } from "../../Services/getProduct";
+import { getProduct } from "../../Services/productServices";
 
 
 export const loopPopular = async (): Promise<void> => {

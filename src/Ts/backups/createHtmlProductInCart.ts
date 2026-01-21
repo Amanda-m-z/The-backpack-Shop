@@ -1,5 +1,6 @@
-import type { Product } from "./BackpackType/ProductType";
-import { openOneProduct } from "./pages/OneProduct/openOneProduct";
+import type { Product } from "../../models/ProductType";
+import { openOneProduct } from "../../pages/oneProduct/openOneProduct";
+
 
 export const createHtmlProductInCart = (item: Product) => {
   //Skapar Basic HTML

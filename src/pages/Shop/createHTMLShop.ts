@@ -1,6 +1,6 @@
 import type { Product } from "../../models/ProductType";
-import { openOneProduct } from "../OneProduct/openOneProduct";
-import { addToCart } from "../../Cart/addToCart";
+import { openOneProduct } from "../oneProduct/openOneProduct";
+import { addToCart } from "../../cart/addToCart";
 
 export const createHTML = (theProducts: Product[]) => {
   //Detta är för shop Main
