@@ -1,6 +1,6 @@
-export type ProductCart = {
-    type: string;
-    price: number;
+export type ProductCart = {   //Produkter i cart
+    type: string;    //Typ av produkt
+    price: number;   
     name: string;
     img: string;
     color: string;

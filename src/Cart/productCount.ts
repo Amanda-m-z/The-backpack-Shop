@@ -5,9 +5,7 @@ export const productCount = (shoppingBag: ProductCart[]) => {
 
   let productCount: number = 0; //Variabel för antal
 
-  shoppingBag.forEach((item) => {
-    //Loppar igenom lista
-
+  shoppingBag.forEach((item) => { //Loppar igenom lista
     productCount += item.quantity; //Antalet är + antal för varje produkt i listan
   });
 

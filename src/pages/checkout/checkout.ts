@@ -276,6 +276,9 @@ export const createHtmlCheckout = () => {
       return;
     }
     alert("Tack för ditt köp!");
+   localStorage.removeItem("ShoppingBag");
+   createHtmlCheckout();
+
   });
   const finalDividerTop = document.createElement("hr");
   const finalDividerBottom = document.createElement("hr");

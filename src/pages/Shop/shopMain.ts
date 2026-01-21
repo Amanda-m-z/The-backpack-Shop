@@ -1,6 +1,5 @@
 import "../../scss/style.scss";
 import { createHTML } from "./createHTMLShop";
-
 import type { Product } from "../../models/ProductType";
 import { loadProductHero } from "../../Ts/productHero";
 import { getProduct } from "../../Services/getProduct";
