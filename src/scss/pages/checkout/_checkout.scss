@@ -1,7 +1,4 @@
 @use "../../base/variables" as v;
-* {
-  box-sizing: border-box;
-}
 
 #checkout {
   max-width: 37.5rem;
@@ -38,8 +35,8 @@ hr {
   margin-right: auto;
   text-decoration: none;
   color: v.$secondary;
-  &:hover{
-    text-decoration: underline 3px ;
+  &:hover {
+    text-decoration: underline 3px;
     text-underline-offset: 0.25rem;
     color: v.$secondary;
   }
@@ -49,7 +46,6 @@ hr {
   font-family: v.$font-heading;
   font-size: v.$h5-sm;
   font-weight: v.$weight-semibold-heading;
-  
 }
 
 .checkoutTitleWrapper {
@@ -94,25 +90,19 @@ hr {
   gap: 1rem;
   background: v.$product-card;
   padding: 0.75rem;
-  border: none;          // mobil: ingen border
+  border: none; // mobil: ingen border
   border-radius: 0;
-
-
 
   img {
     width: 5rem;
     height: 5rem;
     object-fit: contain;
   }
-
-  
-
 }
 
 .productDivider {
   display: block;
 }
-
 
 .removeProductBtn {
   position: absolute;
@@ -162,7 +152,8 @@ hr {
 
 // Totals
 .cartTotal,
-.total, .finalTotal {
+.total,
+.finalTotal {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -239,7 +230,9 @@ hr {
   border: v.$border;
   background: #fff;
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
 
   input {
     accent-color: v.$secondary;
@@ -256,7 +249,6 @@ hr {
   }
 }
 
-
 // Payment options
 .paymentOption {
   display: grid;
@@ -267,7 +259,9 @@ hr {
   border: v.$border;
   background: #fff;
   cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
+  transition:
+    border-color 0.2s,
+    background 0.2s;
   gap: 1rem;
 
   input[type="radio"] {
@@ -290,8 +284,6 @@ hr {
   }
 }
 
-
-
 // Submit button
 .submitButton {
   margin: 1rem auto 0;
@@ -313,10 +305,10 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center; // centrerar allt innehåll
-    background-color: v.$product-card;;
+    background-color: v.$product-card;
   }
 
- .checkoutTitleWrapper {
+  .checkoutTitleWrapper {
     max-width: v.$breakpoint-md; // centrera Kassa-titel med innehållet
     width: 100%;
     margin: 0 auto;
@@ -334,7 +326,7 @@ hr {
     width: 100%;
   }
 
-   .productContainerCheckout {
+  .productContainerCheckout {
     border: v.$border;
     border-radius: 8px;
     padding: 0.75rem;

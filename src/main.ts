@@ -52,8 +52,6 @@ const newsletter = document.getElementById("newsletter");
 
 if (newsletter) {
   loadNewsletter();
-} else {
-  console.error("div element with the id 'newsletter' not found");
 }
 
 loopPopular();

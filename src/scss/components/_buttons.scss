@@ -1,0 +1,42 @@
+@use "../base/variables" as v;
+
+// Overwrite bootstraps default button styling
+.btn {
+  text-transform: uppercase;
+  border: v.$border;
+  border-radius: v.$rounded-corner;
+  padding: v.$padding-button;
+  font-family: v.$font-heading;
+  font-size: v.$button-font-size;
+  font-weight: 600;
+  box-shadow: v.$button-shadow;
+  letter-spacing: 0.02rem;
+}
+
+// Overwrite bootstraps primary button styling
+.btn-primary {
+  background-color: v.$primary;
+  color: v.$text-color;
+
+  &:hover,
+  &:focus {
+    background-color: v.$primary-button-hover;
+    color: v.$text-color;
+    border: v.$border;
+    box-shadow: none;
+  }
+}
+
+// Overwrite bootstraps secondary button styling
+.btn-secondary {
+  background-color: v.$darker-secondary;
+  color: v.$white;
+
+  &:hover,
+  &:focus {
+    background-color: v.$secondary-button-hover;
+    color: v.$white;
+    border: v.$border;
+    box-shadow: none;
+  }
+}

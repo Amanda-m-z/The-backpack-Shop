@@ -30,7 +30,7 @@ export const loadProductCard = () => {
   ];
   // Get the container for highlight product cards //
   const highlightProductCards = document.getElementById(
-    "highlight-card-container"
+    "highlight-card-container",
   );
   if (!highlightProductCards) {
     console.error("Element with id 'highlight-card-container' not found");

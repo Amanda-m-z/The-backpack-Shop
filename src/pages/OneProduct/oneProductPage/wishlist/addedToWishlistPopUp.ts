@@ -28,6 +28,7 @@ export function addedToWishlistPopUp() {
   container?.appendChild(popUpContainer);
 
   setTimeout(() => {
+    // Add class close-overlay to hide the popup after 3 seconds
     container?.classList.add("close-overlay");
   }, 3000);
 }

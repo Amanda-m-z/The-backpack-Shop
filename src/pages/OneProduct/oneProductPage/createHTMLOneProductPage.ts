@@ -1,3 +1,4 @@
+import { addToCart } from "../../../cart/addToCart";
 import type { Product } from "../../../models/ProductType";
 import { createButtonBUY } from "../../../Ts/components/createButtonBUY";
 import { createProductDetailsAccordion } from "./createProductDetailsAccordion";
@@ -184,10 +185,6 @@ export const createHTMLOneProductPage = (item: Product) => {
   freeShippingContainer.append(freeShippingIcon, freeShippingText);
 
   similarProductsContainer.appendChild(similarProductsHeading);
-
-  // oneProductImageContainer.addEventListener("click", () => {
-  //   openOneProduct(item);
-  // });
 
   return oneProductContainer;
 };

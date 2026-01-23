@@ -2,14 +2,12 @@ import type { ProductCart } from "../models/ProductCartType";
 import type { Product } from "../models/ProductType";
 import { createCart } from "./createCart";
 
-
-
 export const addToCart = (theNewBag: Product | ProductCart) => {
   //Denna fuktion lägger till ett produkt i kundkorgen
-  
+
   let shoppingBag: ProductCart[] = [];
 
-  const theCartString = localStorage.getItem("ShoppingBag");  //Hämta lista från localstorage och lagra i lista
+  const theCartString = localStorage.getItem("ShoppingBag"); //Hämta lista från localstorage och lagra i lista
   if (theCartString) {
     shoppingBag = JSON.parse(theCartString);
   }
