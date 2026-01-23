@@ -2,9 +2,6 @@ import type { Product } from "../../../models/ProductType";
 import { getProduct } from "../../../services/productServices";
 import { createProductItemCard } from "./createProductItemCard";
 
-
-
-
 export async function createSimilarProductsSection(
   item: Product,
   similarProductsContainer: HTMLElement,
