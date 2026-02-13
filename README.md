@@ -32,7 +32,7 @@ This project showcases full-stack development, responsive design, and collaborat
 
 - Created the JSON file for product data and implemented Axios requests to fetch data  
 - Developed the product page with a grid layout, including filter and sort buttons (UI only)  
-- Built the backend API to serve product data to the frontend  
+- Built the JSON file with info
 - Implemented full shopping cart functionality: add, remove, increase, decrease items, and calculate total cost  
 - Created homepage sections for popular products and latest arrivals  
 
