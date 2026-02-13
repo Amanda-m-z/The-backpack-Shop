@@ -54,5 +54,4 @@ This project showcases full-stack development, responsive design, and collaborat
 Based on feedback and potential enhancements, the following improvements could make the project more robust and closer to production-ready:
 
 - **Standardize file and folder structure:** Ensure consistent naming conventions for files and imports to improve maintainability and cross-platform stability  
-- **Enhance navigation robustness:** Replace fragile relative paths with consistent absolute paths or centralized routing helpers to prevent broken links  
-- **Implement API er**
+- **Enhance navigation robustness:** Replace fragile relative paths with consistent absolute paths or centralized routing helpers to prevent broken links
