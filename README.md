@@ -9,7 +9,7 @@
 The web application allows users to:
 
 - Browse a catalog of backpacks with images, descriptions, and prices  
-- Filter and sort products (UI only)  
+- Sort products  
 - Add and remove items from a shopping cart, adjust quantities, and see total cost  
 - Explore popular products and latest arrivals on the homepage  
 - Simulate a checkout process  
