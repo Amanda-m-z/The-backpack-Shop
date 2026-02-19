@@ -41,7 +41,7 @@ This project showcases full-stack development, responsive design, and collaborat
 ## What I Learned
 
 - Fetching and handling data from a backend using Axios and JSON  
-- Frontend layout design with React and CSS Grid  
+- Frontend layout design with CSS Grid  
 - Implementing dynamic shopping cart functionality  
 - Creating interactive UI elements like filters and product highlights  
 - Integrating frontend and backend systems  
